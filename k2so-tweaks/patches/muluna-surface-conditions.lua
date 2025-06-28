@@ -31,6 +31,7 @@ local function relax_gravity_conditions(type, id)
 end
 
 function patch.on_data_final_fixes()
+	relax_gravity_conditions("car", "kr-advanced-tank")
 	relax_gravity_conditions("locomotive", "kr-nuclear-locomotive")
 end
 
