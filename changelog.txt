@@ -1,6 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 2025-06-28
+  Features:
+    - New patch: Rebalance Crushing Industry around Krastorio 2's ratios.
+    - New patch: Standardize stack sizes for other mods to fit with K2's defaults.
+  Changes:
+    - Muluna surface conditions now support the K2 advanced tank. For some reason...
+---------------------------------------------------------------------------------------------------
 Version: 1.0.0
 Date: 2025-06-28
-  Additions:
+  Features:
     - New patch: Fix Lighted Poles to respect K2SO's increased wire reach/supply area.
     - New patch: Fix K2SO's nuclear locomotive not being placeable on Muluna.
