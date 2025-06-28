@@ -23,6 +23,7 @@ Krastorio 2 + Crushing Industry:
 	- Molten Crushed (Big): 357% effective (60 plates = 16.8 ore + 0.5 calcite)
 Krastorio 2 + Crushing Industry + This Mod:
 	- Direct Smelt: 50% effective (60 plates = 120 ore)
+	- Enriched Smelt: 67% effective (60 plates + 0.7 stone = 89.7 ore + 30 sulfuric acid)
 	- Crushed Smelt: 78.9% effective (60 plates = 76 ore)
 	- Crushed Smelt (Big): 84.3% effective (60 plates = 50.6 ore)
 	- Enriched Crushed Smelt (Big): 157% effective (60 plates = 38 ore)
