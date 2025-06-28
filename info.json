@@ -10,7 +10,8 @@
 		"Krastorio2-spaced-out >= 1.4.0",
 		"PlanetsLib >= 1.6.2",
 		"? Lighted-Poles-Plus >= 2.0.4",
-		"? planet-muluna >= 1.44.18"
+		"? planet-muluna >= 1.44.18",
+		"? crushing-industry >= 0.4.5"
 	],
 	"description": "A collection of personal tweaks and patches for Krastorio 2: Spaced Out and other mods."
 }
