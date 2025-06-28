@@ -1,0 +1,15 @@
+{
+	"name": "nulls-k2so-tweaks",
+	"version": "1.0.0",
+	"title": "Null's K2SO Tweaks",
+	"author": "NullCascade",
+	"factorio_version": "2.0",
+	"dependencies": [
+		"base >= 2.0",
+		"space-age >= 2.0.47",
+		"Krastorio2-spaced-out >= 1.4.0",
+		"PlanetsLib >= 1.6.2",
+    	"? Lighted-Poles-Plus >= 2.0.4"
+	],
+	"description": "A collection of personal tweaks and patches for Krastorio 2: Spaced Out and other mods."
+}

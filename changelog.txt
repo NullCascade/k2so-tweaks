@@ -1,0 +1,6 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 2025-06-28
+  Additions:
+    - New patch: Fix Lighted Poles to respect K2SO's increased wire reach/supply area.
+    - New patch: Fix K2SO's nuclear locomotive not being placeable on Muluna.
