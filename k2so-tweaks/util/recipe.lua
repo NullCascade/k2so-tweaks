@@ -52,26 +52,21 @@ end
 
 --- Gets the ingredients table for a given recipe.
 --- @param recipe_name string The name of the recipe.
---- @param expensive boolean? If true, the expensive ingredient is fetched.
 --- @return table?
-function util_recipe.get_ingredient_table(recipe_name, expensive)
+function util_recipe.get_ingredient_table(recipe_name)
 	local recipe = data.raw.recipe[recipe_name]
 	if (recipe == nil) then
 		return
 	end
 
-	if (expensive) then
-		return assert((recipe.expensive and recipe.expensive.ingredients) or recipe.ingredients)
-	else
-		return assert((recipe.normal and recipe.normal.ingredients) or recipe.ingredients)
-	end
+	return recipe.ingredients
 end
 
 --- Returns the ingredient entry for a given recipe.
 --- @param recipe_name string
 --- @param search_ingredient string
 --- @param type string
---- @return IngredientPrototype|nil ingredient
+--- @return data.IngredientPrototype|nil ingredient
 --- @return integer|nil ingredient_index
 function util_recipe.find_ingredient(recipe_name, search_ingredient, type)
 	local recipe = data.raw.recipe[recipe_name]
@@ -79,8 +74,8 @@ function util_recipe.find_ingredient(recipe_name, search_ingredient, type)
 		return
 	end
 
-	local ingredients = assert(util_recipe.get_ingredient_table(recipe_name))
-	for ingredient_index, ingredient in ipairs(ingredients) do
+	local ingredients = util_recipe.get_ingredient_table(recipe_name)
+	for ingredient_index, ingredient in ipairs(ingredients or {}) do
 		if (util_ingredient.get_name(ingredient) == search_ingredient and util_ingredient.get_type(ingredient) == type) then
 			return ingredient, ingredient_index
 		end
@@ -132,7 +127,7 @@ end
 --- @param recipe_name string The recipe name.
 --- @param old_ingredient string The ingredient name to replace.
 --- @param new_ingredient string The ingredient name to use instead.
---- @param amount number The amount of the ingredient needed.
+--- @param amount number? The amount of the ingredient needed.
 --- @param type string The ingredient type, defaulting to "item".
 function util_recipe.replace_ingredient(recipe_name, old_ingredient, new_ingredient, amount, type)
 	if (old_ingredient) then
@@ -141,6 +136,36 @@ function util_recipe.replace_ingredient(recipe_name, old_ingredient, new_ingredi
 		end
 	else
 		util_recipe.add_ingredient(recipe_name, new_ingredient, amount, type)
+	end
+end
+
+--- A simple in-place ingredient swap.
+--- @param recipe_name string The recipe name.
+--- @param old_ingredient string The ingredient name to replace.
+--- @param new_ingredient string The ingredient name to use instead.
+--- @param ingredient_type string The ingredient type, defaulting to "item".
+function util_recipe.replace_ingredient_in_place(recipe_name, old_ingredient, new_ingredient, ingredient_type)
+	local ingredient = util_recipe.find_ingredient(recipe_name, old_ingredient, ingredient_type)
+	if (ingredient == nil) then
+		return
+	end
+
+	ingredient.name = new_ingredient
+end
+
+function util_recipe.replace_all(old, new)
+	local util = require("k2so-tweaks.util")
+
+	for id, recipe in pairs(data.raw["recipe"]) do
+		util.recipe.replace_ingredient_in_place(id, old, new, "item")
+		if recipe.main_product == old then
+			recipe.main_product = new
+		end
+		for _, result in ipairs(recipe.results or {}) do
+			if (result.name == old) then
+				result.name = new
+			end
+		end
 	end
 end
 
