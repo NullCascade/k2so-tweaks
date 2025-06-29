@@ -1,8 +1,10 @@
 ---------------------------------------------------------------------------------------------------
-Version: 1.2.1
+Version: 1.3.0
 Date: 2025-06-29
+  Features:
+    - Allow crushing of imersite in Crushing Industries electric crusher.
   Changes:
-    - Fixed oversight of mining entities with a single minable result not giving the right converted sand/glass item.
+    - Fixed oversight of mining entities with a single minable result not giving the right converted sand/glass item. No known mods were affected.
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.0
 Date: 2025-06-29

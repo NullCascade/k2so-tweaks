@@ -169,4 +169,20 @@ function util_recipe.replace_all(old, new)
 	end
 end
 
+function util_recipe.add_additional_category(recipe_name, category)
+	local recipe = data.raw["recipe"][recipe_name]
+	if (recipe == nil) then
+		return
+	end
+
+	recipe.additional_categories = recipe.additional_categories or {}
+	for _, existing in ipairs(recipe.additional_categories) do
+		if (existing == category) then
+			return
+		end
+	end
+
+	table.insert(recipe.additional_categories, category)
+end
+
 return util_recipe
