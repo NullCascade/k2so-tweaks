@@ -11,7 +11,7 @@ Solutions:
 
 local util = require("k2so-tweaks.util")
 
-local patch = util.patch.new_patch("sand-glass")
+local patch = util.patch.new_patch("universal-k2-sand-glass")
 
 function patch.on_data_final_fixes()
 	local sand = data.raw["item"]["sand"]

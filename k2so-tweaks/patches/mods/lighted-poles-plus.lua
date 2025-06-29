@@ -2,7 +2,8 @@
 
 local util = require("k2so-tweaks.util")
 
-local patch = util.patch.new_patch("lighted-poles-reach")
+local patch = util.patch.new_patch("mod-lighted-poles-plus")
+patch:add_required_mod("Lighted-Poles-Plus")
 
 local function is_lighted_pole(id)
 	return util.string.starts_with(id, "lighted-")

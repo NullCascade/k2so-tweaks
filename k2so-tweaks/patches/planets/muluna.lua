@@ -1,8 +1,14 @@
---- Lighted Power Poles makes copies of existing entities, which can miss configurations done by other mods.
+--[[
+    - Relaxes surface conditions to allow K2 trains (and other vehicles) to work there.
+
+    TODO:
+        - Add recipe for making processing units using Alumina
+--]]
 
 local util = require("k2so-tweaks.util")
 
-local patch = util.patch.new_patch("muluna-surface-conditions")
+local patch = util.patch.new_patch("planet-muluna")
+patch:add_required_mod("planet-muluna")
 
 local gravity_condition = { property = "gravity", min = 0.1 }
 
@@ -15,14 +21,16 @@ local function has_default_gravity_condition(entity)
 	return gravity_condition.min == 1.0
 end
 
-local function relax_gravity_conditions(type, id)
-    if (id) then
-        local entity = data.raw[type][id]
+local function relax_gravity_conditions(prototype_id, entity_id)
+    if (entity_id) then
+        -- Convert a specific entity
+        local entity = data.raw[prototype_id][entity_id]
         if (entity and has_default_gravity_condition(entity)) then
             PlanetsLib.relax_surface_conditions(entity, gravity_condition)
         end
     else
-        for _, entity in pairs(data.raw[type] or {}) do
+        -- Work on all entities of a given prototype
+        for _, entity in pairs(data.raw[prototype_id] or {}) do
             if (has_default_gravity_condition(entity)) then
 	            PlanetsLib.relax_surface_conditions(entity, gravity_condition)
             end
@@ -31,6 +39,7 @@ local function relax_gravity_conditions(type, id)
 end
 
 function patch.on_data_final_fixes()
+    -- Let nuclear trains and other vehicles work on Muluna.
 	relax_gravity_conditions("car", "kr-advanced-tank")
 	relax_gravity_conditions("locomotive", "kr-nuclear-locomotive")
 end

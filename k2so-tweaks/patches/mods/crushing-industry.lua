@@ -9,7 +9,7 @@ TODO:
 
 local util = require("k2so-tweaks.util")
 
-local patch = util.patch.new_patch("crushing-industry")
+local patch = util.patch.new_patch("mod-crushing-industry")
 patch:add_required_mod("crushing-industry")
 
 function patch.on_data_final_fixes()

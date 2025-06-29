@@ -40,7 +40,7 @@ This tweak changes it so that:
 
 local util = require("k2so-tweaks.util")
 
-local patch = util.patch.new_patch("crushing-industry")
+local patch = util.patch.new_patch("mod-crushing-industry-ratios")
 patch:add_required_mod("crushing-industry")
 patch:add_required_startup_setting_equal("nulls-k2so-crushing-industry-ratios", true)
 
