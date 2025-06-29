@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.1
+Date: 2025-06-29
+  Changes:
+    - Fixed oversight of mining entities with a single minable result not giving the right converted sand/glass item.
+---------------------------------------------------------------------------------------------------
 Version: 1.2.0
 Date: 2025-06-29
   Features:
