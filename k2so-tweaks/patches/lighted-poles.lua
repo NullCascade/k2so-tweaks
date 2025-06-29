@@ -4,15 +4,24 @@ local util = require("k2so-tweaks.util")
 
 local patch = util.patch.new_patch("lighted-poles-reach")
 
+local function is_lighted_pole(id)
+	return util.string.starts_with(id, "lighted-")
+end
+
+local function get_unlighted_pole(lit_id)
+	local unlit_id = string.sub(lit_id, string.len("lighted-") + 1)
+	return data.raw["electric-pole"][unlit_id]
+end
+
 function patch.on_data_final_fixes()
-	local poles = data.raw["electric-pole"]
-	for id, pole in pairs(poles) do
-		if (util.string.starts_with(id, "lighted-")) then
-			local originalId = string.sub(id, string.len("lighted-") + 1)
-			local original = poles[originalId]
-			pole.maximum_wire_distance = original.maximum_wire_distance
-			pole.supply_area_distance = original.supply_area_distance
-			pole.surface_conditions = original.surface_conditions
+	for lit_id, lit_pole in pairs(data.raw["electric-pole"]) do
+		if (is_lighted_pole(lit_id)) then
+			local unlit_pole = get_unlighted_pole(lit_id)
+			if (unlit_pole) then
+				lit_pole.maximum_wire_distance = unlit_pole.maximum_wire_distance
+				lit_pole.supply_area_distance = unlit_pole.supply_area_distance
+				lit_pole.surface_conditions = unlit_pole.surface_conditions
+			end
 		end
 	end
 end
