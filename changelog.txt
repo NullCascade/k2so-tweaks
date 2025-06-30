@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.4.0
+Date: 2025-06-30
+  Features:
+    - Standardized gas uses. Oxygen, hydrogen, and nitrogen are now common versions, compatible with Muluna, Maraxsis, and Paracelsin. Migration file exists to convert existing factories.
+    - Maraxsis: Atmosphere collection is now done in the atmospheric condenser.
+    - Maraxsis: Salt electrolysis is now done in the K2 electrolysis plant.
+    - Muluna: Carbon dioxide harvesting from Vulcanus' atmosphere is now done in the K2 atmospheric condenser.
+    - Muluna: Disable Muluna's water electrolysis recipe. Buffed K2's electrolysis plant water seperation recipe to match it. The two were redundant with one another.
+  Changes:
+    - Switched from K2 sand/glass over to common sand/glass. This has a migration, and should not be a breaking change. All factories/filters/circuitry will automatically use the new version and all items will convert.
+---------------------------------------------------------------------------------------------------
 Version: 1.3.0
 Date: 2025-06-29
   Features:
