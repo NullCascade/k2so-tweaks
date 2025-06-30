@@ -23,9 +23,23 @@ local function replace_k2_item(k2_id, common_id)
 	util.item.replace_all(k2_id, common_id)
 end
 
+local function replace_k2_fluid(k2_id, common_id)
+	local fluid = data.raw["fluid"][common_id]
+	if (fluid == nil) then
+		fluid = table.deepcopy(data.raw["fluid"][k2_id])
+		fluid.name = common_id
+		data:extend({ fluid })
+	end
+	util.fluid.replace_all(k2_id, common_id)
+end
+
 function patch.on_data_final_fixes()
 	replace_k2_item("kr-sand", "sand")
 	replace_k2_item("kr-glass", "glass")
+
+	replace_k2_fluid("kr-oxygen", "oxygen")
+	replace_k2_fluid("kr-hydrogen", "hydrogen")
+	replace_k2_fluid("kr-nitrogen", "nitrogen")
 end
 
 return patch
