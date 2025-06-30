@@ -1,6 +1,6 @@
 -- Generic patches.
+require("k2so-tweaks.patches.common-k2-resources")
 require("k2so-tweaks.patches.standardize-stack-sizes")
-require("k2so-tweaks.patches.universal-k2-sand-glass")
 
 -- Other mod-specific patches.
 require("k2so-tweaks.patches.mods.lighted-poles-plus")
