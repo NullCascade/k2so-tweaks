@@ -2,9 +2,11 @@
 Version: 1.3.0
 Date: 2025-06-29
   Features:
+    - New patch: Expanded Alternate Recipes. Currently this adds two new recipes for processing units that do not require rare metals, allowing for their production on Muluna and Moshine. These alternates require aluminum or silicon cells.
     - Allow crushing of imersite in Crushing Industries electric crusher.
   Changes:
     - Fixed oversight of mining entities with a single minable result not giving the right converted sand/glass item. No known mods were affected.
+    - General refactor of codebase.
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.0
 Date: 2025-06-29

@@ -4,6 +4,13 @@ local mod_prefix = "nulls-k2so-"
 local settings = {
 	{
 		type = "bool-setting",
+		name = mod_prefix .. "expanded-alternate-recipes",
+		setting_type = "startup",
+		default_value = true,
+		order = "1-expanded-alternate-recipes",
+	},
+	{
+		type = "bool-setting",
 		name = mod_prefix .. "standardize-stack-sizes",
 		setting_type = "startup",
 		default_value = true,

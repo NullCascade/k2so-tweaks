@@ -10,56 +10,14 @@ local limitation_strings = {
 --- @param module string The substring name for the module.
 --- @param recipe_name string The id of the recipe.
 function util_recipe.allow_module(module, recipe_name)
-	local recipe = data.raw.recipe[recipe_name]
-	if (recipe == nil) then
-		return
-	end
-
-	for _, prototype in pairs(data.raw["module"]) do
-		if (prototype.limitation_blacklist and string.find(prototype.name, module, 1, true)) then
-			local limitation_message_key = limitation_strings[module]
-			if (limitation_message_key and prototype.limitation_message_key == limitation_message_key) then
-				prototype.limitation_message_key = nil
-			end
-			util_table.remove_value(prototype.limitation_blacklist, recipe_name)
-		end
-	end
+	error("Needs to be rewritten for 2.0")
 end
 
 --- Disallows the use of a module by a given recipe.
 --- @param module string The substring name for the module.
 --- @param recipe_name string The id of the recipe.
 function util_recipe.disallow_module(module, recipe_name)
-	local recipe = data.raw.recipe[recipe_name]
-	if (recipe == nil) then
-		return
-	end
-
-	for _, prototype in pairs(data.raw["module"]) do
-		if (string.find(prototype.name, module, 1, true)) then
-			local limitation_message_key = limitation_strings[module]
-			if (limitation_message_key and prototype.limitation_message_key == nil) then
-				prototype.limitation_message_key = limitation_message_key
-			end
-
-			prototype.limitation_blacklist = prototype.limitation_blacklist or {}
-			if not util_table.contains(prototype.limitation_blacklist, recipe_name) then
-				table.insert(prototype.limitation_blacklist, recipe_name)
-			end
-		end
-	end
-end
-
---- Gets the ingredients table for a given recipe.
---- @param recipe_name string The name of the recipe.
---- @return table?
-function util_recipe.get_ingredient_table(recipe_name)
-	local recipe = data.raw.recipe[recipe_name]
-	if (recipe == nil) then
-		return
-	end
-
-	return recipe.ingredients
+	error("Needs to be rewritten for 2.0")
 end
 
 --- Returns the ingredient entry for a given recipe.
@@ -74,12 +32,24 @@ function util_recipe.find_ingredient(recipe_name, search_ingredient, type)
 		return
 	end
 
-	local ingredients = util_recipe.get_ingredient_table(recipe_name)
-	for ingredient_index, ingredient in ipairs(ingredients or {}) do
+	for ingredient_index, ingredient in ipairs(recipe.ingredients or {}) do
 		if (util_ingredient.get_name(ingredient) == search_ingredient and util_ingredient.get_type(ingredient) == type) then
 			return ingredient, ingredient_index
 		end
 	end
+end
+
+function util_recipe.add_ingredient(recipe_name, ingredient_name, amount, type)
+	local recipe = data.raw.recipe[recipe_name]
+	if (recipe == nil) then
+		return false
+	end
+
+	if (recipe.ingredients == nil) then
+		recipe.ingredients = {}
+	end
+
+	table.insert(recipe.ingredients, { type = type, name = ingredient_name, amount = amount })
 end
 
 --- Removes an ingredient from a given recipe.
@@ -93,8 +63,7 @@ function util_recipe.remove_ingredient(recipe_name, ingredient_name, type)
 		return false
 	end
 
-	local ingredients = util_recipe.get_ingredient_table(recipe_name)
-	if (not ingredients) then
+	if (not recipe.ingredients) then
 		return false
 	end
 
@@ -103,7 +72,7 @@ function util_recipe.remove_ingredient(recipe_name, ingredient_name, type)
 		return false
 	end
 
-	table.remove(ingredients, ingredient_index)
+	table.remove(recipe.ingredients, ingredient_index)
 	return true
 end
 
@@ -183,6 +152,26 @@ function util_recipe.add_additional_category(recipe_name, category)
 	end
 
 	table.insert(recipe.additional_categories, category)
+end
+
+--- Creates a copy of a recipe.
+--- @param recipe_name string
+--- @param copy_name string
+--- @return data.RecipePrototype
+function util_recipe.clone(recipe_name, copy_name)
+	assert(data.raw["recipe"][recipe_name], "Recipe to clone does not exist")
+	assert(data.raw["recipe"][copy_name] == nil, "A recipe of this name already exists")
+	local recipe = table.deepcopy(data.raw["recipe"][recipe_name])
+	recipe.name = copy_name
+	data:extend({ recipe })
+	return recipe
+end
+
+function util_recipe.set_standardized_icon(recipe_name, primary_item_name, secondary_item_name)
+	local util = require("k2so-tweaks.util")
+
+	data.raw["recipe"][recipe_name].icon = nil
+	data.raw["recipe"][recipe_name].icons = util.item.create_double_icon(primary_item_name, secondary_item_name)
 end
 
 return util_recipe
