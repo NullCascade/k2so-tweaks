@@ -39,6 +39,16 @@ local function relax_gravity_conditions(prototype_id, entity_id)
 end
 
 function patch.on_data_final_fixes()
+	-- Atmosphere is obtained using atmosphere condensation
+    data.raw["recipe"]["muluna-carbon-dioxide"].category = "kr-atmosphere-condensation"
+
+	-- K2's hydrogen and oxygen ratios are odd. We'll buff K2 and hide Maraxsis' recipe.
+	data.raw["recipe"]["muluna-electrolysis"].hidden = true
+    data.raw["recipe"]["kr-water-electrolysis"]["results"] = {
+        { type = "fluid", name = "oxygen", amount = 100 },
+        { type = "fluid", name = "hydrogen", amount = 200 },
+    }
+
     -- Let nuclear trains and other vehicles work on Muluna.
 	relax_gravity_conditions("car", "kr-advanced-tank")
 	relax_gravity_conditions("locomotive", "kr-nuclear-locomotive")
