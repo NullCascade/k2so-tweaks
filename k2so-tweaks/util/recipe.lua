@@ -167,11 +167,11 @@ function util_recipe.clone(recipe_name, copy_name)
 	return recipe
 end
 
-function util_recipe.set_standardized_icon(recipe_name, primary_item_name, secondary_item_name)
+function util_recipe.set_standardized_dual_icon(recipe_name, primary_item_name, secondary_item_name)
 	local util = require("k2so-tweaks.util")
 
 	data.raw["recipe"][recipe_name].icon = nil
-	data.raw["recipe"][recipe_name].icons = util.item.create_double_icon(primary_item_name, secondary_item_name)
+	data.raw["recipe"][recipe_name].icons = util.item.create_dual_icon(primary_item_name, secondary_item_name)
 end
 
 return util_recipe
