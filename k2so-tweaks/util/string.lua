@@ -4,7 +4,7 @@ local util_string = {}
 --- @param str string
 --- @param needle string
 function util_string.starts_with(str, needle)
-   return string.sub(str, 1, string.len(needle)) == needle
+	return string.sub(str, 1, string.len(needle)) == needle
 end
 
 return util_string
