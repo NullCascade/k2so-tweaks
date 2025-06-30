@@ -33,6 +33,13 @@ function util_technology.replace(id, old, new)
 end
 
 function util_technology.replace_all_unlocks(old, new)
+	if (data.raw["recipe"][old] == nil) then
+		return
+	end
+	if (data.raw["recipe"][new] == nil) then
+		return
+	end
+
 	for id, _ in pairs(data.raw["technology"]) do
 		util_technology.replace(id, old, new)
 	end

@@ -13,7 +13,7 @@ local util = require("k2so-tweaks.util")
 
 local patch = util.patch.new_patch("common-k2-resources")
 
-local function replace_k2_item(common_id, k2_id)
+local function replace_k2_item(k2_id, common_id)
 	local item = data.raw["item"][common_id]
 	if (item == nil) then
 		item = table.deepcopy(data.raw["item"][k2_id])
@@ -21,15 +21,11 @@ local function replace_k2_item(common_id, k2_id)
 		data:extend({ item })
 	end
 	util.item.replace_all(k2_id, common_id)
-	util.technology.replace_all_unlocks(k2_id, common_id)
-	data.raw["recipe"][common_id].hidden = false
-	data.raw["recipe"][k2_id].hidden = true
-	item.default_import_location = "nauvis"
 end
 
 function patch.on_data_final_fixes()
-	replace_k2_item("sand", "kr-sand")
-	replace_k2_item("glass", "kr-glass")
+	replace_k2_item("kr-sand", "sand")
+	replace_k2_item("kr-glass", "glass")
 end
 
 return patch

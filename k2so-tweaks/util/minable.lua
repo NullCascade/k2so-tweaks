@@ -1,5 +1,7 @@
 local util_minable = {}
 
+--- @param old string
+--- @param new string
 function util_minable.replace_all(old, new)
 	for _, prototype in pairs(data.raw) do
 		for _, entity in pairs(prototype) do

@@ -13,6 +13,9 @@ local patch = util.patch.new_patch("mod-crushing-industry")
 patch:add_required_mod("crushing-industry")
 
 function patch.on_data_final_fixes()
+	-- Fix K2 glass recipe not being available.
+	data.raw["recipe"]["kr-glass"].hidden = false
+
 	-- Allow more things to be processed by crushing machines.
 	util.recipe.add_additional_category("kr-imersite-powder", "basic-crushing")
 end

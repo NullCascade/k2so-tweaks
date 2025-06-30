@@ -122,22 +122,27 @@ function util_recipe.replace_ingredient_in_place(recipe_name, old_ingredient, ne
 	ingredient.name = new_ingredient
 end
 
-function util_recipe.replace_all(old, new)
+--- @param old string
+--- @param new string
+--- @param type string
+function util_recipe.replace_all(old, new, type)
 	local util = require("k2so-tweaks.util")
 
 	for id, recipe in pairs(data.raw["recipe"]) do
-		util.recipe.replace_ingredient_in_place(id, old, new, "item")
+		util.recipe.replace_ingredient_in_place(id, old, new, type)
 		if recipe.main_product == old then
 			recipe.main_product = new
 		end
 		for _, result in ipairs(recipe.results or {}) do
-			if (result.name == old) then
+			if (result.name == old and result.type == type) then
 				result.name = new
 			end
 		end
 	end
 end
 
+--- @param recipe_name string
+--- @param category string
 function util_recipe.add_additional_category(recipe_name, category)
 	local recipe = data.raw["recipe"][recipe_name]
 	if (recipe == nil) then
@@ -167,6 +172,9 @@ function util_recipe.clone(recipe_name, copy_name)
 	return recipe
 end
 
+--- @param recipe_name string
+--- @param primary_item_name string
+--- @param secondary_item_name string
 function util_recipe.set_standardized_dual_icon(recipe_name, primary_item_name, secondary_item_name)
 	local util = require("k2so-tweaks.util")
 

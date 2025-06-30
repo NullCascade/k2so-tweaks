@@ -1,5 +1,6 @@
 local util = {}
 
+util.fluid = require("k2so-tweaks.util.fluid")
 util.ingredient = require("k2so-tweaks.util.ingredient")
 util.item = require("k2so-tweaks.util.item")
 util.log = require("k2so-tweaks.util.log")

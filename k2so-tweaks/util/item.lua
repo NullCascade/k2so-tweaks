@@ -11,7 +11,7 @@ function util_item.replace_all(old, new)
 	local new_entity = data.raw["item"][new]
 	assert(new_entity, "Replacement item does not exist!")
 
-	util.recipe.replace_all(old, new)
+	util.recipe.replace_all(old, new, "item")
 	util.minable.replace_all(old, new)
 
 	old_entity.hidden = true

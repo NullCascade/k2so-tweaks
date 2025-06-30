@@ -26,13 +26,13 @@ local function relax_gravity_conditions(prototype_id, entity_id)
         -- Convert a specific entity
         local entity = data.raw[prototype_id][entity_id]
         if (entity and has_default_gravity_condition(entity)) then
-            PlanetsLib.relax_surface_conditions(entity, gravity_condition)
+            PlanetsLib.relax_surface_conditions(entity, gravity_condition) --- @diagnostic disable-line
         end
     else
         -- Work on all entities of a given prototype
         for _, entity in pairs(data.raw[prototype_id] or {}) do
             if (has_default_gravity_condition(entity)) then
-	            PlanetsLib.relax_surface_conditions(entity, gravity_condition)
+	            PlanetsLib.relax_surface_conditions(entity, gravity_condition) --- @diagnostic disable-line
             end
         end
     end

@@ -34,9 +34,9 @@ end
 
 function util_ingredient.get_type(ingredient)
 	if (#ingredient == 0) then
-		return assert(ingredient.type or "item")
+		return ingredient.type or "item"
 	else
-		return assert("item")
+		return "item"
 	end
 end
 
