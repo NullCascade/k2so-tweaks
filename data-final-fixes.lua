@@ -1,5 +1,4 @@
 -- Generic patches.
-require("k2so-tweaks.patches.common-k2-resources")
 require("k2so-tweaks.patches.standardize-stack-sizes")
 
 -- Other mod-specific patches.
