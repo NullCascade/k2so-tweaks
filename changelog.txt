@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.5.0
+Date: 2025-07-01
+  Changes:
+    - Restored default pumpjack behavior, and hid the mineral water pumpjack. In the context of Space Age, it didn't make much sense to be mining sulfuric acid with mineral water pumpjacks. Oil pumpjacks are renamed back to pumpjacks, and can mine basic fluid. Existing mineral pumpjacks will continue to function, but should be replaced. A migration file exists to convert the item form to normal pumpjacks.
+---------------------------------------------------------------------------------------------------
 Version: 1.4.0
 Date: 2025-06-30
   Features:
