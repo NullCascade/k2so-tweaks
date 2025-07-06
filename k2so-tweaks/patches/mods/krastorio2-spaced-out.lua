@@ -14,6 +14,8 @@ local function replace_k2_item(k2_id, common_id)
 	if (item == nil) then
 		item = table.deepcopy(data.raw["item"][k2_id])
 		item.name = common_id
+		item.localised_name = {"item-name." .. k2_id}
+		item.localised_description = {"item-description." .. k2_id}
 		data:extend({ item })
 	end
 	util.item.replace_all(k2_id, common_id)
@@ -24,6 +26,8 @@ local function replace_k2_fluid(k2_id, common_id)
 	if (fluid == nil) then
 		fluid = table.deepcopy(data.raw["fluid"][k2_id])
 		fluid.name = common_id
+		fluid.localised_name = {"fluid-name." .. k2_id}
+		fluid.localised_description = {"fluid-description." .. k2_id}
 		data:extend({ fluid })
 	end
 	util.fluid.replace_all(k2_id, common_id)
