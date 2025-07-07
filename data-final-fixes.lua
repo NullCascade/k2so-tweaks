@@ -2,6 +2,7 @@
 require("k2so-tweaks.patches.standardize-stack-sizes")
 
 -- Other mod-specific patches.
+require("k2so-tweaks.patches.mods.age-of-production")
 require("k2so-tweaks.patches.mods.crushing-industry")
 require("k2so-tweaks.patches.mods.crushing-industry-ratios")
 require("k2so-tweaks.patches.mods.krastorio2-spaced-out")
