@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.6.1
+Date: 2025-07-07
+  Bugfixes:
+    - Re-enabled atmosphere collection in machines other than the atmosphere condensator, until I can playtest Maraxsis and figure out how I want that recipe to integrate with K2SO.
+---------------------------------------------------------------------------------------------------
 Version: 1.6.0
 Date: 2025-07-06
   Changes:
