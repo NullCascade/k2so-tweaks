@@ -26,6 +26,10 @@ function patch.on_data_final_fixes()
 	local default_stack_size = 200
 	local machine_stack_size = 50
 
+	-- Generic items
+	set_stack_size("item", "glass", default_stack_size)
+	set_stack_size("item", "sand", default_stack_size)
+
 	-- Age of Production
 	set_stack_size("item", "aop-biomass", default_stack_size)
 	set_stack_size("item", "aop-deep-mineral", default_stack_size)

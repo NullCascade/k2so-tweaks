@@ -5,6 +5,7 @@ Date: 2025-07-06
     - Add crafting category compatibility between K2SO and Age of Production's armory.
   Bugfixes:
     - Fixed sand/glass names when no other mod is installed that adds these items.
+    - Fixed sand/glass stack sizes back to K2 defaults.
 ---------------------------------------------------------------------------------------------------
 Version: 1.5.0
 Date: 2025-07-01
