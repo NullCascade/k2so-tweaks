@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.6.2
+Date: 2025-07-08
+  Bugfixes:
+    - Fixes compatibility with Maraxsis that disabled certain flare stack burning of common fluids. Standardizes burn rates in K2 flare stacks.
+---------------------------------------------------------------------------------------------------
 Version: 1.6.1
 Date: 2025-07-07
   Bugfixes:
