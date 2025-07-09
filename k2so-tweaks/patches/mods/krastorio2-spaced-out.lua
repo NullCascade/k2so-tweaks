@@ -33,6 +33,16 @@ local function replace_k2_fluid(k2_id, common_id)
 	util.fluid.replace_all(k2_id, common_id)
 end
 
+local function enforce_burn_limits()
+	for _, recipe in pairs(data.raw["recipe"]) do
+		if (util.string.starts_with(recipe.name, "kr-burn-")) then
+			for _, ingredient in ipairs(recipe.ingredients or {}) do
+				ingredient.amount = 100
+			end
+		end
+	end
+end
+
 function patch.on_data_final_fixes()
 	-- Standardize items/fluids.
 	replace_k2_item("kr-sand", "sand")
@@ -58,6 +68,9 @@ function patch.on_data_final_fixes()
 		data.raw["mining-drill"]["pumpjack"].resource_categories = { "basic-fluid" }
 		data.raw["resource"]["crude-oil"].category = "basic-fluid"
 	end
+
+	-- Enforce burn limits to 100 fluid/2 seconds.
+	enforce_burn_limits()
 end
 
 return patch
