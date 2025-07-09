@@ -69,4 +69,20 @@ function util_technology.remove(id, replace_with)
 	end
 end
 
+--- @param id string
+function util_technology.remove_all_unlocks(id)
+	local util = require("k2so-tweaks.util")
+	for _, tech in pairs(data.raw["technology"]) do
+		local to_remove = {}
+		for _, effect in ipairs(tech.effects or {}) do
+			if (effect.type == "unlock-recipe" and effect.recipe == id) then
+				table.insert(to_remove, effect)
+			end
+		end
+		for _, effect in ipairs(to_remove) do
+			util.table.remove_value(tech.effects, effect)
+		end
+	end
+end
+
 return util_technology
