@@ -31,6 +31,11 @@ local function replace_k2_fluid(k2_id, common_id)
 		data:extend({ fluid })
 	end
 	util.fluid.replace_all(k2_id, common_id)
+
+	local k2_recipe = data.raw["recipe"][k2_id]
+	if (k2_recipe) then
+		k2_recipe.localised_name = { "fluid-name." .. common_id }
+	end
 end
 
 local function enforce_burn_limits()
