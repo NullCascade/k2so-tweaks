@@ -55,6 +55,7 @@ function patch.on_data_final_fixes()
 	replace_k2_fluid("kr-oxygen", "oxygen")
 	replace_k2_fluid("kr-hydrogen", "hydrogen")
 	replace_k2_fluid("kr-nitrogen", "nitrogen")
+	replace_k2_fluid("kr-nitric-acid", "nitric-acid")
 
 	-- Revert back to just one pumpjack. Back when there were only two minable fluids this made more sense.
 	-- As it is, K2SO ends up just using mineral water pumping for everything that isn't oil.
