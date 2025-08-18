@@ -40,10 +40,14 @@ end
 
 function patch.on_data_final_fixes()
 	-- Atmosphere is obtained using atmosphere condensation
-	data.raw["recipe"]["muluna-carbon-dioxide"].category = "kr-atmosphere-condensation"
+	if (data.raw["recipe"]["muluna-carbon-dioxide"]) then
+		data.raw["recipe"]["muluna-carbon-dioxide"].category = "kr-atmosphere-condensation"
+	end
 
 	-- K2's hydrogen and oxygen ratios are odd. We'll buff K2 and hide Maraxsis' recipe.
-	data.raw["recipe"]["muluna-electrolysis"].hidden = true
+	if (data.raw["recipe"]["muluna-electrolysis"]) then
+		data.raw["recipe"]["muluna-electrolysis"].hidden = true
+	end
 	data.raw["recipe"]["kr-water-separation"]["results"] = {
 		{ type = "fluid", name = "oxygen", amount = 100 },
 		{ type = "fluid", name = "hydrogen", amount = 200 },
