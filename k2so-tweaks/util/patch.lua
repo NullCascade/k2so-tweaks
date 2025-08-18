@@ -81,7 +81,7 @@ function util_patch.do_data_final_fixes()
 	local util = require("k2so-tweaks.util")
 	for _, patch in ipairs(patch_install_order) do
 		if (patch.on_data_final_fixes == nil) then
-			util.log("WARNING: Patch '%s' is instanced during phase 'data_final_fixes' but does not have a valid callback. It can be removed from data-updates.lua.")
+			util.log("WARNING: Patch '%s' is instanced during phase 'data_final_fixes' but does not have a valid callback. It can be removed from data-updates.lua.", patch.name)
 		end
 
 		if (patch.on_data_final_fixes and patch:check_requirements()) then
