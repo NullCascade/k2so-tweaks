@@ -80,6 +80,12 @@ function patch.on_data_final_fixes()
 	set_stack_size("item", "thorium", default_stack_size)
 	set_stack_size("item", "uranium-233", default_stack_size)
 
+	-- Moshine
+	set_stack_size("item", "neodymium", default_stack_size)
+	set_stack_size("item", "magnet", default_stack_size)
+	set_stack_size("item", "silicon-carbide", default_stack_size)
+	set_stack_size("item", "hard-drive", default_stack_size)
+
 	-- Muluna
 	set_stack_size("item", "alumina-crushed", default_stack_size)
 	set_stack_size("item", "alumina", default_stack_size)
