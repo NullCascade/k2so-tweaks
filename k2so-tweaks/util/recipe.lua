@@ -141,6 +141,23 @@ function util_recipe.replace_all(old, new, type)
 	end
 end
 
+--- Returns true if a recipe exists and has a given result.
+--- @param recipe string
+--- @param item string
+--- @return boolean
+function util_recipe.has_result(recipe, item)
+	local recipe_prototype = data.raw["recipe"][recipe]
+	if (not recipe_prototype) then return false end
+
+	for _, result in ipairs(recipe_prototype.results) do
+		if (result.name == item) then
+			return true
+		end
+	end
+
+	return false
+end
+
 --- @param recipe_name string
 --- @param category string
 function util_recipe.add_additional_category(recipe_name, category)

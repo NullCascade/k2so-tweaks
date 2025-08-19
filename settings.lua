@@ -11,6 +11,13 @@ local settings = {
 	},
 	{
 		type = "bool-setting",
+		name = mod_prefix .. "modify-recycling-results",
+		setting_type = "startup",
+		default_value = true,
+		order = "1-modify-recycling-results",
+	},
+	{
+		type = "bool-setting",
 		name = mod_prefix .. "standardize-stack-sizes",
 		setting_type = "startup",
 		default_value = true,

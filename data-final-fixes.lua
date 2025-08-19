@@ -12,5 +12,8 @@ require("k2so-tweaks.patches.mods.lighted-poles-plus")
 require("k2so-tweaks.patches.planets.maraxsis")
 require("k2so-tweaks.patches.planets.muluna")
 
+-- Other compatibility patches.
+require("k2so-tweaks.patches.modify-recycling-results")
+
 local util = require("k2so-tweaks.util")
 util.patch.do_data_final_fixes()
