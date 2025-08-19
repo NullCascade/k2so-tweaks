@@ -11,6 +11,10 @@ function patch.on_data_updates()
 		util.recipe.replace_ingredient_in_place("processing-unit-via-aluminum", "kr-rare-metals", "aluminum-plate", "item")
 		util.recipe.set_standardized_dual_icon("processing-unit-via-aluminum", "processing-unit", "aluminum-plate")
 		util.technology.add_recipe_unlock("muluna-aluminum-processing", "processing-unit-via-aluminum")
+
+		-- This is no longer needed because of a recipe added in Muluna 2.0.15.
+		-- We'll keep it hidden instead of deleting it for existing factories.
+		data.raw["recipe"]["processing-unit-via-aluminum"].hidden = true
 	end
 
 	-- Allow processing units on Muluna and Moshine by substituting a silicon cell
