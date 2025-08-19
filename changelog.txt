@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.7.0
+Date: 2025-08-19
+  Changes:
+    - Nitric Acid is now a common fluid, like oxygen/hydrogen/nitrogen.
+    - Added stack size standardization to Moshine.
+    - Hid processing unit via alumium recipe, now that Muluna 2.0 provides a way to get rare metals on the planet.
+    - Added a new (optional) module to help fix up unintended recycling recipes from various mods. This currently helps fix carbon with Moon and Stars, electronic circuits with Automatic Train Painter, and ice platforms recycling from ice.
+  Bugfixes:
+    - Fix localization in atmospheric condenser recipes.
+    - Fixed error from Muluna 2.0 update.
+---------------------------------------------------------------------------------------------------
 Version: 1.6.2
 Date: 2025-07-08
   Bugfixes:
