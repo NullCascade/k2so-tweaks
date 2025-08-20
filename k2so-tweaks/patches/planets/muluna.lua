@@ -47,6 +47,7 @@ function patch.on_data_final_fixes()
 	-- K2's hydrogen and oxygen ratios are odd. We'll buff K2 and hide Maraxsis' recipe.
 	if (data.raw["recipe"]["muluna-electrolysis"]) then
 		data.raw["recipe"]["muluna-electrolysis"].hidden = true
+		data.raw["recipe"]["muluna-electrolysis"].hidden_in_factoriopedia = true
 	end
 	data.raw["recipe"]["kr-water-separation"]["results"] = {
 		{ type = "fluid", name = "oxygen", amount = 100 },

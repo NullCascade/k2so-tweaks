@@ -15,6 +15,7 @@ function patch.on_data_updates()
 		-- This is no longer needed because of a recipe added in Muluna 2.0.15.
 		-- We'll keep it hidden instead of deleting it for existing factories.
 		data.raw["recipe"]["processing-unit-via-aluminum"].hidden = true
+		data.raw["recipe"]["processing-unit-via-aluminum"].hidden_in_factoriopedia = true
 	end
 
 	-- Allow processing units on Muluna and Moshine by substituting a silicon cell

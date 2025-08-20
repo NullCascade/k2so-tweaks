@@ -63,7 +63,9 @@ function patch.on_data_final_fixes()
 	if (data.raw["item"]["kr-mineral-water-pumpjack"]) then
 		-- Get rid of the K2 pumpjack.
 		data.raw["item"]["kr-mineral-water-pumpjack"].hidden = true
+		data.raw["item"]["kr-mineral-water-pumpjack"].hidden_in_factoriopedia = true
 		data.raw["recipe"]["kr-mineral-water-pumpjack"].hidden = true
+		data.raw["recipe"]["kr-mineral-water-pumpjack"].hidden_in_factoriopedia = true
 		util.technology.remove("kr-mineral-water-gathering", "kr-fluids-chemistry")
 
 		-- Restore defaults.

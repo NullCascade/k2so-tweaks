@@ -15,7 +15,9 @@ function util_item.replace_all(old, new)
 	util.minable.replace_all(old, new)
 
 	old_entity.hidden = true
+	old_entity.hidden_in_factoriopedia = true
 	new_entity.hidden = false
+	new_entity.hidden_in_factoriopedia = false
 
 	-- As a help to mid-save changes, make the old item spoil into the new item.
 	if (new_entity.spoil_result ~= old_entity) then

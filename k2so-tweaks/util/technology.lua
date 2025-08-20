@@ -60,6 +60,7 @@ function util_technology.remove(id, replace_with)
 	end
 
 	data.raw["technology"][id].hidden = true
+	data.raw["technology"][id].hidden_in_factoriopedia = true
 
 	local util = require("k2so-tweaks.util")
 	for _, tech in pairs(data.raw["technology"]) do
