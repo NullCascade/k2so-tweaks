@@ -57,6 +57,9 @@ function patch.on_data_final_fixes()
 	-- Let nuclear trains and other vehicles work on Muluna.
 	relax_gravity_conditions("car", "kr-advanced-tank")
 	relax_gravity_conditions("locomotive", "kr-nuclear-locomotive")
+
+	-- Replace silicon to use K2 silicon.
+	util.item.replace_all("silicon", "kr-silicon")
 end
 
 return patch
