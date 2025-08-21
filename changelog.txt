@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.8.0
+Date: 2025-08-21
+  Changes:
+    - Improve compatibility between K2SO, Moshine, and Muluna. This primarily impacts silicon mining from Muluna's surface and Muluna recipes that use silicon ore. Instead, they will produce and use K2's silicon.
+---------------------------------------------------------------------------------------------------
 Version: 1.7.0
 Date: 2025-08-19
   Changes:
