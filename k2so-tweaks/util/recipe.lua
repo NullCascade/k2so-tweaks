@@ -101,7 +101,9 @@ end
 function util_recipe.replace_ingredient(recipe_name, old_ingredient, new_ingredient, amount, type)
 	if (old_ingredient) then
 		if (util_recipe.remove_ingredient(recipe_name, old_ingredient, type)) then
-			util_recipe.add_ingredient(recipe_name, new_ingredient, amount, type)
+			if (not util_recipe.has_ingredient(recipe_name, new_ingredient, type)) then
+				util_recipe.add_ingredient(recipe_name, new_ingredient, amount, type)
+			end
 		end
 	else
 		util_recipe.add_ingredient(recipe_name, new_ingredient, amount, type)
@@ -114,12 +116,18 @@ end
 --- @param new_ingredient string The ingredient name to use instead.
 --- @param ingredient_type string The ingredient type, defaulting to "item".
 function util_recipe.replace_ingredient_in_place(recipe_name, old_ingredient, new_ingredient, ingredient_type)
-	local ingredient = util_recipe.find_ingredient(recipe_name, old_ingredient, ingredient_type)
-	if (ingredient == nil) then
+	local old_ingredient_entry = util_recipe.find_ingredient(recipe_name, old_ingredient, ingredient_type)
+	if (old_ingredient_entry == nil) then
 		return
 	end
 
-	ingredient.name = new_ingredient
+	-- Make sure if the ingredient already exists that we just remove the old one.
+	if (util_recipe.has_ingredient(recipe_name, new_ingredient, ingredient_type)) then
+		util_table.remove_value(data.raw["recipe"][recipe_name].ingredients, old_ingredient_entry)
+		return
+	end
+
+	old_ingredient_entry.name = new_ingredient
 end
 
 --- @param old string
@@ -139,6 +147,19 @@ function util_recipe.replace_all(old, new, type)
 			end
 		end
 	end
+end
+
+function util_recipe.has_ingredient(recipe, ingredient, type)
+	local recipe_prototype = data.raw["recipe"][recipe]
+	if (not recipe_prototype) then return false end
+
+	for _, result in ipairs(recipe_prototype.ingredients) do
+		if (result.name == ingredient and result.type == type) then
+			return true
+		end
+	end
+
+	return false
 end
 
 --- Returns true if a recipe exists and has a given result.
