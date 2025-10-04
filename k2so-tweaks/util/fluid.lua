@@ -2,6 +2,24 @@ local util_fluid = {}
 
 local flare_stack_lib = require("__Krastorio2-spaced-out__.prototypes.libraries.flare-stack")
 
+local function copy_flare_data(old, new)
+	local util = require("k2so-tweaks.util")
+
+	if ("kr-burn-" .. new) then
+		return
+	end
+
+	local byproducts = flare_stack_lib.get_byproducts(old)
+	local emissions = flare_stack_lib.get_fluid_emissions_multiplier(old)
+	flare_stack_lib.make_recipe(new, emissions, byproducts)
+
+	if (flare_stack_lib.is_blacklisted(old)) then
+		flare_stack_lib.add_blacklist(new)
+	end
+
+	util.recipe.remove("kr-burn-" .. old)
+end
+
 function util_fluid.replace_all(old, new)
 	local util = require("k2so-tweaks.util")
 	util.log("Replacing all '%s' with '%s'", old, new)
@@ -21,24 +39,7 @@ function util_fluid.replace_all(old, new)
 	new_entity.hidden = false
 	new_entity.hidden_in_factoriopedia = false
 
-	-- Copy flare stack data
-	do
-		if (flare_stack_lib.is_blacklisted(old)) then
-			flare_stack_lib.add_blacklist(new)
-		end
-
-		local byproducts = flare_stack_lib.get_byproducts(old)
-		if (byproducts) then
-			flare_stack_lib.set_byproducts(new, byproducts)
-		end
-
-		local emissions = flare_stack_lib.get_fluid_emissions_multiplier(old)
-		if (emissions) then
-			flare_stack_lib.set_fluid_emissions_multiplier(new, emissions)
-		end
-
-		util.recipe.remove("kr-burn-" .. old)
-	end
+	copy_flare_data(old, new)
 end
 
 return util_fluid
