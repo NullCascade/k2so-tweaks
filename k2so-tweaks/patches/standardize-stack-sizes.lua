@@ -26,6 +26,10 @@ function patch.on_data_final_fixes()
 	local default_stack_size = 200
 	local machine_stack_size = 50
 
+	-- Base items? Some mods revert them to vanilla stack sizes, and I don't know why.
+	set_stack_size("item", "explosives", default_stack_size)
+	set_stack_size("item", "solid-fuel", default_stack_size)
+
 	-- Generic items
 	set_stack_size("item", "glass", default_stack_size)
 	set_stack_size("item", "sand", default_stack_size)
@@ -57,6 +61,7 @@ function patch.on_data_final_fixes()
 	set_stack_size("item", "pressure-lab", machine_stack_size)
 	set_stack_size("item", "red-steam-engine", machine_stack_size)
 	set_stack_size("item", "sulfur-ore", default_stack_size)
+	set_stack_size("item", "sulfuric-oxidizer", default_stack_size)
 
 	-- Crushing Industry
 	set_stack_size("item", "crushed-coal", default_stack_size)
@@ -67,8 +72,10 @@ function patch.on_data_final_fixes()
 	set_stack_size("item", "holmium-powder", default_stack_size)
 
 	-- Dea Dia System
-	set_stack_size("item", "rhenium-alloy-plate", default_stack_size)
 	set_stack_size("item", "navicomputer", default_stack_size)
+	set_stack_size("item", "rhenium-alloy-plate", default_stack_size)
+	set_stack_size("item", "rhenium-dust", default_stack_size)
+	set_stack_size("item", "rhenium-plate", default_stack_size)
 
 	-- Metal and Stars
 	set_stack_size("item", "algae-bacteria", default_stack_size)
@@ -91,6 +98,7 @@ function patch.on_data_final_fixes()
 	set_stack_size("item", "alumina", default_stack_size)
 	set_stack_size("item", "aluminum-plate", default_stack_size)
 	set_stack_size("item", "cellulose", default_stack_size)
+	set_stack_size("item", "microcellular-plastic", default_stack_size)
 	set_stack_size("item", "muluna-lunar-regolith", default_stack_size)
 	set_stack_size("item", "silicon-cell", default_stack_size)
 	set_stack_size("item", "silicon", default_stack_size)
@@ -127,6 +135,9 @@ function patch.on_data_final_fixes()
 	set_stack_size("item", "quartz-ore", default_stack_size)
 	set_stack_size("item", "tenecap-spore", default_stack_size)
 	set_stack_size("item", "tenecap", default_stack_size)
+
+	-- Vesta
+	set_stack_size("item", "iridium-plate", default_stack_size)
 end
 
 return patch
