@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.9.1
+Date: 2025-11-14
+  Changes:
+    - Fixed issue where the "Standardize Stack Size" feature could not be disabled.
+    - Matter balance tweaks to try to be better in line with the changes in K2SO v1.5.4. 
+    - Code cleanup. Pumpjack unification patch is no longer necessary.
+---------------------------------------------------------------------------------------------------
 Version: 1.9.0
 Date: 2025-11-13
   Changes:
