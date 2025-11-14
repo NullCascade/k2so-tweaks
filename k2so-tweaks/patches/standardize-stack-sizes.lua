@@ -3,6 +3,7 @@
 local util = require("k2so-tweaks.util")
 
 local patch = util.patch.new_patch("standardize-stack-sizes")
+patch:add_required_startup_setting_equal("nulls-k2so-standardize-stack-sizes", true)
 
 local function set_stack_size(prototype, entity, size)
 	local parent = data.raw[prototype]
