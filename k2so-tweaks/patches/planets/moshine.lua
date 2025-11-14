@@ -40,7 +40,7 @@ local function make_matter_recipes()
 	-- Neodymium
 	matter_lib.make_recipes({
 		material = { type = "item", name = "neodymium", amount = 10 },
-		matter_count = 10,
+		matter_count = 30,
 		energy_required = 2,
 		unlocked_by = "k2sotweak-matter-neodymium-processing",
 	})

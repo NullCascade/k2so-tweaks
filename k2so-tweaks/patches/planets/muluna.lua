@@ -76,7 +76,7 @@ local function make_matter_recipes()
 	-- Alumina
 	matter_lib.make_recipes({
 		material = { type = "item", name = "alumina", amount = 10 },
-		matter_count = 10,
+		matter_count = 20,
 		energy_required = 2,
 		unlocked_by = "k2sotweak-matter-alumina-processing",
 	})
