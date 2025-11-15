@@ -78,6 +78,18 @@ function patch.on_data_final_fixes()
 	set_stack_size("item", "rhenium-dust", default_stack_size)
 	set_stack_size("item", "rhenium-plate", default_stack_size)
 
+	-- Maraxsis
+	set_stack_size("item", "maraxsis-big-cliff-explosives", default_stack_size)
+	set_stack_size("item", "maraxsis-empty-research-vessel", default_stack_size)
+	set_stack_size("item", "maraxsis-fish-food", default_stack_size)
+	set_stack_size("item", "maraxsis-microplastics", default_stack_size)
+	set_stack_size("item", "maraxsis-salt-filter", default_stack_size)
+	set_stack_size("item", "maraxsis-saturated-salt-filter", default_stack_size)
+	set_stack_size("item", "maraxsis-super-sealant-substance", default_stack_size)
+	set_stack_size("item", "maraxsis-tropical-fish", default_stack_size)
+	set_stack_size("item", "maraxsis-wyrm-confinement-cell", default_stack_size)
+	set_stack_size("item", "maraxsis-wyrm-specimen", default_stack_size)
+
 	-- Metal and Stars
 	set_stack_size("item", "algae-bacteria", default_stack_size)
 	set_stack_size("item", "antimatter", default_stack_size)
