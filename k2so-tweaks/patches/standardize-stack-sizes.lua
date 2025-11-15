@@ -125,6 +125,16 @@ function patch.on_data_final_fixes()
 	-- Secretas & Frozeta
 	set_stack_size("item", "spaceship-scrap", default_stack_size)
 
+	-- SLP - Dyson Sphere Reworked
+	set_stack_size("item", "ds-energy-loader-mk1", machine_stack_size)
+	set_stack_size("item", "ds-energy-loader-mk2", machine_stack_size)
+	set_stack_size("item", "ds-energy-loader-mk3", machine_stack_size)
+	set_stack_size("item", "ds-energy-loader", machine_stack_size)
+	set_stack_size("item", "ds-energy-small-loader", machine_stack_size)
+	set_stack_size("item", "ds-entangled-core", default_stack_size)
+	set_stack_size("item", "slp-sun-fuel-mk2", default_stack_size)
+	set_stack_size("item", "slp-sun-fuel", default_stack_size)
+
 	-- Tenebris Prime
 	set_stack_size("item", "bioluminescent-crystal", default_stack_size)
 	set_stack_size("item", "chitin", default_stack_size)
