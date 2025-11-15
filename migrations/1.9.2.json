@@ -1,0 +1,13 @@
+{
+	"item": [
+		[ "kr-sand", "sand" ],
+		[ "kr-glass", "glass" ],
+		[ "silicon", "kr-silicon" ]
+	],
+	"fluid": [
+		[ "kr-oxygen", "oxygen" ],
+		[ "kr-hydrogen", "hydrogen" ],
+		[ "kr-nitric-acid", "nitric-acid" ],
+		[ "kr-nitrogen", "nitrogen" ]
+	]
+}
