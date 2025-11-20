@@ -11,79 +11,69 @@ local function make_matter_icon(icon_path)
 	}
 end
 
+local function make_matter_technology(params)
+	local ingredients = {
+		{ "production-science-pack", 1 },
+		{ "utility-science-pack", 1 },
+		{ "space-science-pack", 1 },
+		{ "kr-matter-tech-card", 1 },
+	}
+	for _, ingredient in ipairs(params.additional_ingredients or {}) do
+		if (data.raw["item"][ingredient]) then
+			table.insert(ingredients, ingredient)
+		end
+	end
+	local prerequisites = { "kr-matter-processing" }
+	for _, requirement in ipairs(params.additional_requirements or {}) do
+		if (data.raw["technology"][requirement]) then
+			table.insert(prerequisites, requirement)
+		end
+	end
+	return {
+		type = "technology",
+		name = assert(params.name),
+		icons = make_matter_icon(assert(params.base_icon_path)),
+		icon_size = 256,
+		order = "g-e-e",
+		unit = {
+			time = 45,
+			count = 1000,
+			ingredients = ingredients,
+		},
+		prerequisites = prerequisites,
+		effects = {},
+	}
+end
+
 local function make_matter_technologies()
 	-- K2SO: Basic Gases
 	data:extend({
-		{
-			type = "technology",
+		make_matter_technology({
 			name = "k2sotweak-matter-gas-processing",
-			icons = make_matter_icon("__Krastorio2Assets__/icons/fluids/nitrogen.png"),
-			icon_size = 256,
-			order = "g-e-e",
-			unit = {
-				time = 45,
-				count = 1000,
-				ingredients = {
-					{ "production-science-pack", 1 },
-					{ "utility-science-pack", 1 },
-					{ "space-science-pack", 1 },
-					{ "kr-matter-tech-card", 1 },
-					{ "interstellar-science-pack", 1 },
-				},
-			},
-			prerequisites = { "kr-matter-processing" },
-			effects = {},
-		},
+			base_icon_path = "__Krastorio2Assets__/icons/fluids/nitrogen.png",
+		}),
 	})
 
 	-- Muluna: Alumina
 	if (data.raw["item"]["alumina"]) then
 		data:extend({
-			{
-				type = "technology",
+			make_matter_technology({
 				name = "k2sotweak-matter-alumina-processing",
-				icons = make_matter_icon("__muluna-graphics__/graphics/icons/crushed-alumina.png"),
-				icon_size = 256,
-				order = "g-e-e",
-				unit = {
-					time = 45,
-					count = 1000,
-					ingredients = {
-						{ "production-science-pack", 1 },
-						{ "utility-science-pack", 1 },
-						{ "space-science-pack", 1 },
-						{ "kr-matter-tech-card", 1 },
-						{ "interstellar-science-pack", 1 },
-					},
-				},
-				prerequisites = { "kr-matter-processing", "interstellar-science-pack" },
-				effects = {},
-			},
+				base_icon_path = "__muluna-graphics__/graphics/icons/crushed-alumina.png",
+				additional_ingredients = { "interstellar-science-pack" },
+				additional_requirements = { "interstellar-science-pack" },
+			}),
 		})
 	end
 
 	-- Moshine: Neodymium
 	if (data.raw["item"]["neodymium"]) then
 		data:extend({
-			{
-				type = "technology",
+			make_matter_technology({
 				name = "k2sotweak-matter-neodymium-processing",
-				icons = make_matter_icon("__Moshine__/graphics/icons/neodymium.png"),
-				icon_size = 256,
-				order = "g-e-e",
-				unit = {
-					time = 45,
-					count = 1000,
-					ingredients = {
-						{ "production-science-pack", 1 },
-						{ "utility-science-pack", 1 },
-						{ "space-science-pack", 1 },
-						{ "kr-matter-tech-card", 1 },
-					},
-				},
-				prerequisites = { "kr-matter-processing", "planet-discovery-moshine" },
-				effects = {},
-			},
+				base_icon_path = "__Moshine__/graphics/icons/neodymium.png",
+				additional_requirements = { "planet-discovery-moshine" },
+			}),
 		})
 	end
 end
@@ -93,19 +83,19 @@ local function make_matter_recipes()
 
 	-- K2SO: Basic Gases
 	matter_lib.make_deconversion_recipe({
-		material = { type = "fluid", name = "oxygen", amount = 100 },
+		material = { type = "fluid", name = "kr-oxygen", amount = 100 },
 		matter_count = 10,
 		energy_required = 2,
 		unlocked_by = "k2sotweak-matter-gas-processing",
 	})
 	matter_lib.make_deconversion_recipe({
-		material = { type = "fluid", name = "hydrogen", amount = 100 },
+		material = { type = "fluid", name = "kr-hydrogen", amount = 100 },
 		matter_count = 10,
 		energy_required = 2,
 		unlocked_by = "k2sotweak-matter-gas-processing",
 	})
 	matter_lib.make_deconversion_recipe({
-		material = { type = "fluid", name = "nitrogen", amount = 100 },
+		material = { type = "fluid", name = "kr-nitrogen", amount = 100 },
 		matter_count = 10,
 		energy_required = 2,
 		unlocked_by = "k2sotweak-matter-gas-processing",
