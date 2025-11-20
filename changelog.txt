@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.10.0
+Date: 2025-11-20
+  Changes:
+    - Added/updated stack size standardization for Dyson Sphere Reworked, Maraxsis, and Muluna.
+    - Added matter deconversion recipe for basic gases (oxygen, hydrogen, nitrogen). This is intended to make producing things like nitric acid on other planets more viable. All added matter recipes can now be disabled.
+    - Age of Production: Added pass to try to ensure that the K2 advanced machines (assembling, furnace, chemical) have access to all the base machine's recipes.
+---------------------------------------------------------------------------------------------------
 Version: 1.9.1
 Date: 2025-11-14
   Changes:
