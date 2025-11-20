@@ -55,7 +55,7 @@ function util_patch.do_data()
 	local util = require("k2so-tweaks.util")
 	for _, patch in ipairs(patch_install_order) do
 		if (patch.on_data == nil) then
-			util.log("WARNING: Patch '%s' is instanced during phase 'data' but does not have a valid callback. It can be removed from data.lua.")
+			util.log("WARNING: Patch '%s' is instanced during phase 'data' but does not have a valid callback. It can be removed from data.lua.", patch.name)
 		end
 
 		if (patch.on_data and patch:check_requirements()) then
@@ -68,7 +68,7 @@ function util_patch.do_data_updates()
 	local util = require("k2so-tweaks.util")
 	for _, patch in ipairs(patch_install_order) do
 		if (patch.on_data_updates == nil) then
-			util.log("WARNING: Patch '%s' is instanced during phase 'data_updates' but does not have a valid callback. It can be removed from data-updates.lua.")
+			util.log("WARNING: Patch '%s' is instanced during phase 'data_updates' but does not have a valid callback. It can be removed from data-updates.lua.", patch.name)
 		end
 
 		if (patch.on_data_updates and patch:check_requirements()) then

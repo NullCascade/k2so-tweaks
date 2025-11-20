@@ -38,59 +38,6 @@ local function relax_gravity_conditions(prototype_id, entity_id)
 	end
 end
 
-local function make_matter_icon(icon_path)
-	return {
-		{ icon = "__Krastorio2Assets__/icons/fluids/matter.png" },
-		{ icon = icon_path, scale = 0.85 },
-	}
-end
-
-local function make_matter_technologies()
-	data:extend({
-		{
-			type = "technology",
-			name = "k2sotweak-matter-alumina-processing",
-			icons = make_matter_icon("__muluna-graphics__/graphics/icons/crushed-alumina.png"),
-			icon_size = 256,
-			order = "g-e-e",
-			unit = {
-				time = 45,
-				count = 1000,
-				ingredients = {
-					{ "production-science-pack", 1 },
-					{ "utility-science-pack", 1 },
-					{ "space-science-pack", 1 },
-					{ "kr-matter-tech-card", 1 },
-					{ "interstellar-science-pack", 1 },
-				},
-			},
-			prerequisites = { "kr-matter-processing", "interstellar-science-pack" },
-			effects = {},
-		},
-	})
-end
-
-local function make_matter_recipes()
-	local matter_lib = require("__Krastorio2-spaced-out__.prototypes.libraries.matter")
-
-	-- Alumina
-	matter_lib.make_recipes({
-		material = { type = "item", name = "alumina", amount = 10 },
-		matter_count = 20,
-		energy_required = 2,
-		unlocked_by = "k2sotweak-matter-alumina-processing",
-	})
-	data.raw.recipe["kr-matter-to-alumina"].surface_conditions = { { property = "pressure", min = 50, max = 50 } }
-end
-
-function patch.on_data()
-	make_matter_technologies()
-end
-
-function patch.on_data_updates()
-	make_matter_recipes()
-end
-
 function patch.on_data_final_fixes()
 	-- Atmosphere is obtained using atmosphere condensation
 	if (data.raw["recipe"]["muluna-carbon-dioxide"]) then

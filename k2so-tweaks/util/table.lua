@@ -28,6 +28,17 @@ function util_table.find(t, value)
 	end
 end
 
+--- Inserts a value into a table, if it doesn't already exist as a value.
+--- @param t table
+--- @param value any
+function util_table.insert_unique(t, value)
+	if (util_table.contains(t, value)) then
+		return false
+	end
+	table.insert(t, value)
+	return true
+end
+
 --- Removes the first (arbitrary) instance of a value in a given table.
 --- @param t table The table to modify.
 --- @param value any The value to remove.

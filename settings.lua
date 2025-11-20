@@ -11,6 +11,13 @@ local settings = {
 	},
 	{
 		type = "bool-setting",
+		name = mod_prefix .. "expanded-matter-recipes",
+		setting_type = "startup",
+		default_value = true,
+		order = "1-expanded-matter-recipes",
+	},
+	{
+		type = "bool-setting",
 		name = mod_prefix .. "modify-recycling-results",
 		setting_type = "startup",
 		default_value = true,
