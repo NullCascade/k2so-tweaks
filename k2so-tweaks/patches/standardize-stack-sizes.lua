@@ -29,6 +29,7 @@ function patch.on_data_final_fixes()
 
 	-- Base items? Some mods revert them to vanilla stack sizes, and I don't know why.
 	set_stack_size("item", "explosives", default_stack_size)
+	set_stack_size("item", "rocket-fuel", default_stack_size)
 	set_stack_size("item", "solid-fuel", default_stack_size)
 
 	-- Generic items
