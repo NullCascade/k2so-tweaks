@@ -25,6 +25,11 @@ function patch.on_data_updates()
 		util.recipe.set_standardized_dual_icon("processing-unit-via-silicon-cell", "processing-unit", "silicon-cell")
 		util.technology.add_recipe_unlock("muluna-silicon-processing", "processing-unit-via-silicon-cell")
 		util.technology.add_recipe_unlock("moshine-tech-silicon-cell", "processing-unit-via-silicon-cell")
+
+		-- This is no longer needed because of a recipe added in K2SO 1.5.6.
+		-- We'll keep it hidden instead of deleting it for existing factories.
+		data.raw["recipe"]["processing-unit-via-silicon-cell"].hidden = true
+		data.raw["recipe"]["processing-unit-via-silicon-cell"].hidden_in_factoriopedia = true
 	end
 end
 

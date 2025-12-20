@@ -3,8 +3,9 @@ Version: 1.11.0
 Date: 2025-12-20
   Changes:
     - Made expanded matter recipes more resilient to different mod lists.
-    - Removed the vast majority of Muluna patches in favor of using improved native support between the two mods. This means that water separation has a different ratio. Be sure to check existing factories.
     - New Patch: More Asteroids. Currently this just ensures that the Big Crusher can process recipes that require fluids.
+    - !! Removed the vast majority of Muluna patches in favor of using improved native support between the two mods. This means that water separation has a different ratio. Be sure to check existing factories.
+    - !! Disabled making processing units from silicon cells. Now that rare metals can be obtained on Muluna and Moshine, the alternate recipe isn't needed. Existing factories will continue to work, but new factories will need to use the rare metal recipe.
 ---------------------------------------------------------------------------------------------------
 Version: 1.10.0
 Date: 2025-11-20
