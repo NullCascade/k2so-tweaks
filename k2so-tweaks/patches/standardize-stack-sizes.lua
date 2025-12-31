@@ -46,6 +46,7 @@ function patch.on_data_final_fixes()
 	set_stack_size("item", "cerys-nuclear-scrap", default_stack_size)
 	set_stack_size("item", "methane-ice", default_stack_size)
 	set_stack_size("item", "plutonium-238", default_stack_size)
+	set_stack_size("item", "plutonium-239", default_stack_size)
 
 	-- Common Prototypes
 	set_stack_size("item", "gold-ore", default_stack_size)
