@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.12.0
+Date: 2026-01-01
+  Changes:
+    - Crushing Industry: Add enriched iron/copper melting to the infinite "Molten Mineral Productivity" technology.
+    - Cerys: Changed plutonium-239's stack size to 200 for consistency.
+---------------------------------------------------------------------------------------------------
 Version: 1.11.0
 Date: 2025-12-20
   Changes:
