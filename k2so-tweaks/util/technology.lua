@@ -52,15 +52,34 @@ function util_technology.replace_all_unlocks(old, new)
 	end
 end
 
---- @param id string
---- @param replace_with string?
-function util_technology.remove(id, replace_with)
-	if (data.raw["technology"][id] == nil) then
+--- @param id any
+--- @param effect any
+function util_technology.has_effect(id, effect)
+	local prototype = data.raw["technology"][id]
+	if (prototype == nil) then
 		return
 	end
 
-	data.raw["technology"][id].hidden = true
-	data.raw["technology"][id].hidden_in_factoriopedia = true
+	local util = require("k2so-tweaks.util")
+	for _, existing_effect in ipairs(prototype.effects or {}) do
+		if util.table.match_all(effect, existing_effect) then
+			return true
+		end
+	end
+
+	return false
+end
+
+--- @param id string
+--- @param replace_with string?
+function util_technology.remove(id, replace_with)
+	local prototype = data.raw["technology"][id]
+	if (prototype == nil) then
+		return
+	end
+
+	prototype.hidden = true
+	prototype.hidden_in_factoriopedia = true
 
 	local util = require("k2so-tweaks.util")
 	for _, tech in pairs(data.raw["technology"]) do

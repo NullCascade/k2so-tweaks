@@ -52,5 +52,18 @@ function util_table.remove_value(t, value)
 	return false
 end
 
+--- Returns true if all keys/values in a can be found in b.
+--- @param a any
+--- @param b any
+function util_table.match_all(a, b)
+	for k, v in pairs(a) do
+		if (type(v) == "table") then
+			return util_table.match_all(v, k[v])
+		elseif (b[k] ~= v) then
+			return false
+		end
+	end
+end
+
 return util_table
 
