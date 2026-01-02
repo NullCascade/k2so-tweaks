@@ -125,6 +125,7 @@ function patch.on_data_final_fixes()
 
 	-- Paracelsin
 	set_stack_size("item", "electric-coil", default_stack_size)
+	set_stack_size("item", "galvanized-steel", default_stack_size)
 	set_stack_size("item", "sphalerite", default_stack_size)
 	set_stack_size("item", "tetrahedrite", default_stack_size)
 	set_stack_size("item", "vaterite", default_stack_size)
