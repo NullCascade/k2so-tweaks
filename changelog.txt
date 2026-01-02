@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.13.1
+Date: 2026-01-02
+  Changes:
+    - AAI Industry: Another attempt at fixing early sand/glass technology.
+    - Paracelsin: Standardized stack size of galvanized steel.
+---------------------------------------------------------------------------------------------------
 Version: 1.13.0
 Date: 2026-01-01
   Changes:
