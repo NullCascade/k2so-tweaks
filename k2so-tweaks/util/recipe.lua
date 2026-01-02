@@ -227,4 +227,15 @@ function util_recipe.remove(recipe_name)
 	data.raw["recipe"][recipe_name] = nil
 end
 
+--- @param id string
+--- @param hidden boolean
+function util_recipe.set_hidden(id, hidden)
+	local prototype = data.raw["recipe"][id]
+	if (prototype == nil) then
+		return
+	end
+
+	prototype.hidden = hidden
+end
+
 return util_recipe

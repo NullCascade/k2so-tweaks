@@ -6,9 +6,9 @@ patch:add_required_mod("aai-industry")
 
 function patch.on_data_final_fixes()
 	util.technology.replace("sand-processing", "kr-sand", "sand")
-	util.technology.set_hidden("sand", false)
+	util.recipe.set_hidden("sand", false)
 	util.technology.replace("glass-processing", "kr-glass", "glass")
-	util.technology.set_hidden("glass", false)
+	util.recipe.set_hidden("glass", false)
 end
 
 return patch

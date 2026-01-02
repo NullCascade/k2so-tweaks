@@ -30,6 +30,13 @@ function util_technology.replace(id, old, new)
 		return
 	end
 
+	-- Ensure that both recipes exist.
+	local old_prototype = data.raw["recipe"][old]
+	local new_prototype = data.raw["recipe"][new]
+	if (not old_prototype or not new_prototype) then
+		return
+	end
+
 	for _, effect in ipairs(tech.effects or {}) do
 		if (effect.type == "unlock-recipe" and effect.recipe == old) then
 			effect.recipe = new
