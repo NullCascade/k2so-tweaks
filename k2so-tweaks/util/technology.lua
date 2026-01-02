@@ -105,4 +105,15 @@ function util_technology.remove_all_unlocks(id)
 	end
 end
 
+--- @param id string
+--- @param hidden boolean
+function util_technology.set_hidden(id, hidden)
+	local prototype = data.raw["technology"][id]
+	if (prototype == nil) then
+		return
+	end
+
+	prototype.hidden = hidden
+end
+
 return util_technology

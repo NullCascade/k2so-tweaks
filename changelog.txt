@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.13.0
+Date: 2026-01-01
+  Changes:
+    - AAI Industry: Initial compatibility attempt. I don't play with this mod in my K2SO run, so I can't promise it does everything.
+---------------------------------------------------------------------------------------------------
 Version: 1.12.0
 Date: 2026-01-01
   Changes:

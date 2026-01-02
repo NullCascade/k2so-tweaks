@@ -21,6 +21,12 @@ end
 function patch.on_data()
 	-- Allow certain other buildings to function in water.
 	copy_buildability_rules("assembling-machine", "chemical-plant", "kr-advanced-chemical-plant")
+
+	-- Update constants to point to the standard sand ID.
+	local maraxis_constants = data.raw["mod-data"]["maraxsis-constants"]
+	if (maraxis_constants) then
+		maraxis_constants.SAND_ITEM_NAME = "sand" --- @diagnostic disable-line
+	end
 end
 
 function patch.on_data_final_fixes()

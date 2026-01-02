@@ -12,6 +12,11 @@ local function replace_k2_item(k2_id, common_id)
 		data:extend({ item })
 	end
 	util.item.replace_all(k2_id, common_id)
+
+	local k2_recipe = data.raw["recipe"][k2_id]
+	if (k2_recipe) then
+		k2_recipe.localised_name = { "item-name." .. common_id }
+	end
 end
 
 local function replace_k2_fluid(k2_id, common_id)

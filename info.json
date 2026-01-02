@@ -1,6 +1,6 @@
 {
 	"name": "nulls-k2so-tweaks",
-	"version": "1.12.0",
+	"version": "1.13.0",
 	"title": "Null's K2SO Tweaks",
 	"author": "NullCascade",
 	"factorio_version": "2.0",
@@ -9,6 +9,7 @@
 		"space-age >= 2.0.47",
 		"Krastorio2-spaced-out >= 1.4.0",
 		"PlanetsLib >= 1.6.2",
+		"? aai-industry >= 0.6.0",
 		"? Age-of-Production >= 1.6.22",
 		"? Cerys-Moon-of-Fulgora >= 3.4.6",
 		"? common-prototypes >= 0.0.3",
