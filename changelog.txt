@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.14.0
+Date: 2026-01-03
+  Changes:
+    - Maraxsis: Added optional setting to revert this planet's changes to K2SO's Quantum Computer. This re-enables the use of the machine on most planets, but also removes the 50% quality bonus.
+---------------------------------------------------------------------------------------------------
 Version: 1.13.1
 Date: 2026-01-02
   Changes:

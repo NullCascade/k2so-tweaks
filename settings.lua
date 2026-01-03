@@ -37,5 +37,12 @@ local settings = {
 		default_value = true,
 		order = "2-crushing-industry-nerf",
 	},
+	{
+		type = "bool-setting",
+		name = mod_prefix .. "maraxsis-quantum-revert",
+		setting_type = "startup",
+		default_value = false,
+		order = "3-maraxsis-quantum-revert",
+	},
 }
 data:extend(settings)
