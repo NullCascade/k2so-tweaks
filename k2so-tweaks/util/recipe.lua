@@ -39,10 +39,21 @@ function util_recipe.find_ingredient(recipe_name, search_ingredient, type)
 	end
 end
 
+---@param recipe_name string
+---@param ingredient_name string
+---@param amount number
+---@param type string
+---@return boolean
 function util_recipe.add_ingredient(recipe_name, ingredient_name, amount, type)
 	local recipe = data.raw.recipe[recipe_name]
 	if (recipe == nil) then
 		return false
+	end
+
+	local ingredient = util_recipe.find_ingredient(recipe_name, ingredient_name, type)
+	if (ingredient) then
+		ingredient.amount = amount
+		return true
 	end
 
 	if (recipe.ingredients == nil) then
@@ -162,21 +173,31 @@ function util_recipe.has_ingredient(recipe, ingredient, type)
 	return false
 end
 
+--- Returns the result entry for a given recipe.
+--- @param recipe_name string
+--- @param name string
+--- @param type string
+--- @return data.ProductPrototype|nil ingredient
+--- @return integer|nil result_index
+function util_recipe.find_result(recipe_name, name, type)
+	local recipe = data.raw.recipe[recipe_name]
+	if (recipe == nil) then
+		return
+	end
+
+	for index, result in ipairs(recipe.results or {}) do
+		if (result.name == name and result.type == type) then
+			return result, index
+		end
+	end
+end
+
 --- Returns true if a recipe exists and has a given result.
 --- @param recipe string
 --- @param item string
 --- @return boolean
 function util_recipe.has_result(recipe, item)
-	local recipe_prototype = data.raw["recipe"][recipe]
-	if (not recipe_prototype) then return false end
-
-	for _, result in ipairs(recipe_prototype.results) do
-		if (result.name == item) then
-			return true
-		end
-	end
-
-	return false
+	return util_recipe.find_result(recipe, item, "item") ~= nil
 end
 
 --- @param recipe_name string

@@ -57,6 +57,21 @@ function patch.on_data_final_fixes()
 
 	-- Enforce burn limits to 100 fluid/2 seconds.
 	enforce_burn_limits()
+
+	-- Make a holmium-catalyzed lithium recipe.
+	local lithium_recipe = data.raw["recipe"]["lithium"]
+	if (lithium_recipe ) then
+		local existing_holmium = util.recipe.find_ingredient("lithium", "holmium-plate", "item")
+		if (not existing_holmium) then
+			util.data.clone("recipe", "lithium", "lithium-from-holmium")
+			util.recipe.add_ingredient("lithium-from-holmium", "holmium-plate", 1, "item")
+			util.technology.add_recipe_unlock("kr-lithium-processing", "lithium-from-holmium")
+			local lithium_result = util.recipe.find_result("lithium-from-holmium", "kr-lithium", "item")
+			if (lithium_result) then
+				lithium_result.amount = math.floor(lithium_result.amount * 1.2)
+			end
+		end
+	end
 end
 
 return patch
