@@ -60,7 +60,7 @@ function patch.on_data_final_fixes()
 
 	-- Make a holmium-catalyzed lithium recipe.
 	local lithium_recipe = data.raw["recipe"]["lithium"]
-	if (lithium_recipe ) then
+	if (lithium_recipe) then
 		local existing_holmium = util.recipe.find_ingredient("lithium", "holmium-plate", "item")
 		if (not existing_holmium) then
 			util.data.clone("recipe", "lithium", "lithium-from-holmium")
