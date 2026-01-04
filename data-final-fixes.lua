@@ -14,6 +14,7 @@ require("k2so-tweaks.patches.mods.lighted-poles-plus")
 require("k2so-tweaks.patches.planets.maraxsis")
 require("k2so-tweaks.patches.planets.maraxsis-quantum-revert")
 require("k2so-tweaks.patches.planets.muluna")
+require("k2so-tweaks.patches.planets.rubia")
 
 -- Other compatibility patches.
 require("k2so-tweaks.patches.modify-recycling-results")
