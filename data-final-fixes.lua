@@ -6,6 +6,7 @@ require("k2so-tweaks.patches.mods.aai-industry")
 require("k2so-tweaks.patches.mods.age-of-production")
 require("k2so-tweaks.patches.mods.crushing-industry")
 require("k2so-tweaks.patches.mods.crushing-industry-ratios")
+require("k2so-tweaks.patches.mods.k2so-thruster-fix")
 require("k2so-tweaks.patches.mods.krastorio2-spaced-out")
 require("k2so-tweaks.patches.mods.lighted-poles-plus")
 
