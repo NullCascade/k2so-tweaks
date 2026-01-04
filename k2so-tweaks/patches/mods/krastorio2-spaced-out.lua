@@ -72,6 +72,15 @@ function patch.on_data_final_fixes()
 			end
 		end
 	end
+
+	-- Some mods (Cerys, Moshine) indiscriminately changes all accumulators to not work on the surface.
+	-- The teleporter is technically an accumulator. This reverts that restriction.
+	local teleporter = data.raw["accumulator"]["kr-planetary-teleporter"]
+	if (teleporter) then
+		util.table.remove_with_keyvalues(teleporter.surface_conditions, { property = "cerys-ambient-radiation" })
+		util.table.remove_with_keyvalues(teleporter.surface_conditions, { property = "harenic-energy-signatures" })
+		util.table.remove_with_keyvalues(teleporter.surface_conditions, { property = "temperature-celcius" })
+	end
 end
 
 return patch
