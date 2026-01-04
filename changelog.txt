@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.15.0
-Date: ???
+Date: 2026-01-03
   Changes:
     - Added a catalyst recipe for lithium using holmium. This produces 1 more lithium at the expense of the vanilla use of holmium. Allows the use of quality holmium to make quality lithium.
     - Allow the interplanetary teleporter to function on Cerys, Moshine, and Rabbasca.
