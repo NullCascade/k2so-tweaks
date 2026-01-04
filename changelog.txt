@@ -5,6 +5,7 @@ Date: ????
     - Tag K2's explosion damage type for less ambiguity in factoriopedia.
     - !! Made all asteroids use the same resistance values for K2's specialized explosion damage type as the normal explosion damage type. Radioactive resistances are copied from physical resistances.
     - Rubia: Make K2's railguns use kinetic damage when Rubia is installed.
+    - Added compatibility patch between k2so-thruster-fix and Muluna's thruster productivity technology, for people who prefer the simplified thruster recipe from that mod.
 ---------------------------------------------------------------------------------------------------
 Version: 1.15.0
 Date: 2026-01-03
