@@ -3,6 +3,7 @@ Version: 1.16.0
 Date: ????
   Changes:
     - Tag K2's explosion damage type for less ambiguity in factoriopedia.
+    - !! Made all asteroids use the same resistance values for K2's specialized explosion damage type as the normal explosion damage type. Radioactive resistances are copied from physical resistances.
 ---------------------------------------------------------------------------------------------------
 Version: 1.15.0
 Date: 2026-01-03

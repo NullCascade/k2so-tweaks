@@ -11,6 +11,16 @@ function util_table.keys(t)
 end
 
 --- @param t table
+--- @return table
+function util_table.values(t)
+	local values = {}
+	for _, v in pairs(t) do
+		table.insert(values, v)
+	end
+	return values
+end
+
+--- @param t table
 --- @return number
 function util_table.size(t)
 	local size = 0
@@ -47,6 +57,15 @@ function util_table.find(t, value)
 			return i
 		end
 	end
+end
+
+function util_table.find_keyvalues(t, keyvalues)
+	local index = util_table.get_index_with_keyvalues(t, keyvalues)
+	if (not index) then
+		return
+	end
+
+	return t[index]
 end
 
 --- Inserts a value into a table, if it doesn't already exist as a value.

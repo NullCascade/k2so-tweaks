@@ -46,6 +46,30 @@ local function enforce_burn_limits()
 	end
 end
 
+local function copy_resistance_type(prototype, from_type, to_type)
+	if (not data.raw["damage-type"][to_type]) then
+		return
+	end
+
+	local resistance_from = util.table.find_keyvalues(prototype.resistances, { type = from_type })
+	if (not resistance_from) then
+		-- No existing? Remove the 'to' entry instead.
+		util.table.remove_with_keyvalues(prototype.resistances, { type = to_type })
+		return
+	end
+
+	local resistance_to = util.table.find_keyvalues(prototype.resistances, { type = to_type })
+	if (not resistance_to) then
+		local copied = table.deepcopy(resistance_from)
+		copied.type = to_type
+		table.insert(prototype.resistances, copied)
+		return
+	end
+
+	resistance_to.percent = resistance_from.percent
+	resistance_to.decrease = resistance_from.decrease
+end
+
 function patch.on_data_final_fixes()
 	-- Standardize items/fluids.
 	replace_k2_item("kr-sand", "sand")
@@ -80,6 +104,16 @@ function patch.on_data_final_fixes()
 		util.table.remove_with_keyvalues(teleporter.surface_conditions, { property = "cerys-ambient-radiation" })
 		util.table.remove_with_keyvalues(teleporter.surface_conditions, { property = "harenic-energy-signatures" })
 		util.table.remove_with_keyvalues(teleporter.surface_conditions, { property = "temperature-celcius" })
+	end
+
+	-- Various mods add new asteroids, which may be missing (or have incorrectly defined) resistances. Copy over data from existing values.
+	-- This also lets railguns not be quite so overpowered with their full damage against many asteroid types.
+	for _, prototype in pairs(data.raw["asteroid"]) do
+		-- Use default explosion resistance for K2 explosion resistance.
+		copy_resistance_type(prototype, "explosion", "kr-explosion")
+
+		-- Radioactive we can use physical damage for now. Maybe this should bypass damage resistance or something.
+		copy_resistance_type(prototype, "physical", "kr-radioactive")
 	end
 end
 
