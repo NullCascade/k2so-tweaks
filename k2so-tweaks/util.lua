@@ -13,5 +13,6 @@ util.string = require("k2so-tweaks.util.string")
 util.surface = require("k2so-tweaks.util.surface")
 util.table = require("k2so-tweaks.util.table")
 util.technology = require("k2so-tweaks.util.technology")
+util.tile = require("k2so-tweaks.util.tile")
 
 return util

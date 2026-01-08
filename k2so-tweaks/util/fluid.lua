@@ -33,6 +33,7 @@ function util_fluid.replace_all(old, new)
 
 	util.recipe.replace_all(old, new, "fluid")
 	util.minable.replace_all(old, new)
+	util.tile.replace_all(old, new)
 
 	old_entity.hidden = true
 	old_entity.hidden_in_factoriopedia = true
