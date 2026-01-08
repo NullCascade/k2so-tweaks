@@ -3,6 +3,7 @@ Version: 1.17.0
 Date: 2026-01-08
   Changes:
     - Ensured that tiles that produce fluids are properly migrated to standard fluids. Adds initial compatibility with Vesta.
+    - Fix load error when no other planet tries to impose surface conditions on the teleporter.
 ---------------------------------------------------------------------------------------------------
 Version: 1.16.0
 Date: 2026-01-04
