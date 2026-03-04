@@ -13,10 +13,16 @@ local function set_stack_size(prototype, entity, size)
 
 	local thing = parent[entity]
 	if (thing == nil) then
+		util.log("Prototype '%s'/'%s' does not exist.", prototype, entity)
 		return
 	end
 
 	if (thing.stack_size == nil) then
+		util.log("Prototype '%s'/'%s' does not support stack sizes.", prototype, entity)
+		return
+	end
+
+	if (thing.stack_size == size) then
 		return
 	end
 
@@ -79,6 +85,27 @@ function patch.on_data_final_fixes()
 	set_stack_size("item", "rhenium-alloy-plate", default_stack_size)
 	set_stack_size("item", "rhenium-dust", default_stack_size)
 	set_stack_size("item", "rhenium-plate", default_stack_size)
+
+	-- Lignumis
+	set_stack_size("item", "basic-circuit-board", default_stack_size)
+	set_stack_size("item", "basic-repair-pack", default_stack_size)
+	set_stack_size("item", "crushed-gold-ore", default_stack_size)
+	set_stack_size("item", "cupriavidus-necator", default_stack_size)
+	set_stack_size("item", "dead-cupriavidus-necator", default_stack_size)
+	set_stack_size("item", "gold-bacteria", default_stack_size)
+	set_stack_size("item", "gold-cable", default_stack_size)
+	set_stack_size("item", "gold-ore", default_stack_size)
+	set_stack_size("item", "gold-plate", default_stack_size)
+	set_stack_size("item", "gold-quality-catalyst", default_stack_size)
+	set_stack_size("item", "gold-stromatolite-seed", default_stack_size)
+	set_stack_size("item", "lumber", default_stack_size)
+	set_stack_size("item", "moist-stromatolite-remnant", default_stack_size)
+	set_stack_size("item", "peat", default_stack_size)
+	set_stack_size("item", "steam-science-pack-spoiled", default_stack_size)
+	set_stack_size("item", "steam-science-pack", default_stack_size)
+	set_stack_size("item", "wood-darts-magazine", default_stack_size)
+	set_stack_size("item", "wood-science-pack", default_stack_size)
+	set_stack_size("item", "wooden-gear-wheel", default_stack_size)
 
 	-- Maraxsis
 	set_stack_size("item", "maraxsis-big-cliff-explosives", default_stack_size)
