@@ -44,5 +44,12 @@ local settings = {
 		default_value = false,
 		order = "3-maraxsis-quantum-revert",
 	},
+	{
+		type = "bool-setting",
+		name = mod_prefix .. "standardize-electrolysis",
+		setting_type = "startup",
+		default_value = true,
+		order = "4-standardize-electrolysis",
+	},
 }
 data:extend(settings)

@@ -202,6 +202,17 @@ end
 
 --- @param recipe_name string
 --- @param category string
+function util_recipe.set_category(recipe_name, category)
+	local recipe = data.raw["recipe"][recipe_name]
+	if (recipe == nil) then
+		return
+	end
+
+	recipe.category = category
+end
+
+--- @param recipe_name string
+--- @param category string
 function util_recipe.add_additional_category(recipe_name, category)
 	local recipe = data.raw["recipe"][recipe_name]
 	if (recipe == nil) then

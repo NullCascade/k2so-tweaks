@@ -15,4 +15,14 @@ util.table = require("k2so-tweaks.util.table")
 util.technology = require("k2so-tweaks.util.technology")
 util.tile = require("k2so-tweaks.util.tile")
 
+--- @param key string
+--- @param value any
+--- @param default any?
+--- @return boolean
+function util.setting_equal(key, value, default)
+    local var = settings.startup[key]
+    local val = var and var.value or default
+    return val == value
+end
+
 return util
