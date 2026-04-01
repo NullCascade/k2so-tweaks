@@ -87,6 +87,7 @@ function patch.on_data_final_fixes()
 	set_stack_size("item", "rhenium-plate", default_stack_size)
 
 	-- Lignumis
+	set_stack_size("item", "gold-storage-tank", machine_stack_size)
 	set_stack_size("item", "basic-circuit-board", default_stack_size)
 	set_stack_size("item", "basic-repair-pack", default_stack_size)
 	set_stack_size("item", "crushed-gold-ore", default_stack_size)
