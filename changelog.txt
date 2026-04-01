@@ -2,7 +2,9 @@
 Version: 1.18.0
 Date: 2026-04-01
   Changes:
+    - Lignumis: Standardize stack sizes.
     - Maraxsis: Added optional electrolysis recipe conversions. If the default behavior is disabled, existing machines can still function.
+    - Removed now-defunct kr-explosion damage update code.
 ---------------------------------------------------------------------------------------------------
 Version: 1.17.0
 Date: 2026-01-08

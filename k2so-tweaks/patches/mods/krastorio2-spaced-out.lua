@@ -109,9 +109,6 @@ function patch.on_data_final_fixes()
 	-- Various mods add new asteroids, which may be missing (or have incorrectly defined) resistances. Copy over data from existing values.
 	-- This also lets railguns not be quite so overpowered with their full damage against many asteroid types.
 	for _, prototype in pairs(data.raw["asteroid"]) do
-		-- Use default explosion resistance for K2 explosion resistance.
-		copy_resistance_type(prototype, "explosion", "kr-explosion")
-
 		-- Radioactive we can use physical damage for now. Maybe this should bypass damage resistance or something.
 		copy_resistance_type(prototype, "physical", "kr-radioactive")
 	end
