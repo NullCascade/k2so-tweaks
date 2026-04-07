@@ -4,7 +4,7 @@ local util = require("k2so-tweaks.util")
 local patch = util.patch.new_patch("planet-maraxsis")
 patch:add_required_mod("maraxsis")
 
-function copy_buildability_rules(type, from, to)
+local function copy_buildability_rules(type, from, to)
 	local prototype_from = data.raw[type][from]
 	local prototype_to = data.raw[type][to]
 	if (not prototype_from) then
@@ -15,7 +15,17 @@ function copy_buildability_rules(type, from, to)
 		return
 	end
 
+	-- Clone buildability rules.
 	prototype_to.maraxsis_buildability_rules = prototype_from.maraxsis_buildability_rules
+
+	-- Clone mod data.
+	local maraxsis_constants = data.raw["mod-data"]["maraxsis-constants"]
+	if (maraxsis_constants) then
+		-- Determines if a building is excluded from the buildability rules.
+		-- Allows it to be built outside of/only in pressurized domes.
+		local excluded_buildings = maraxsis_constants.data["DOME_EXCLUDED_FROM_DISABLE"] or {} --[[@as table<string, boolean>]]
+		excluded_buildings[to] = excluded_buildings[from]
+	end
 end
 
 function patch.on_data()
