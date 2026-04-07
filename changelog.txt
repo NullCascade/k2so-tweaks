@@ -6,6 +6,8 @@ Date: 2026-04-07
     - Pelagos: Add new technology/recipe to farm coconuts in greenhouses.
     - Lignumis: Standardize stack sizes.
     - Maraxsis: Added optional electrolysis recipe conversions. If the default behavior is disabled, existing machines can still function.
+    - Maraxsis: Allow advanced chemical plants to work when flooded to match chemical plant behavior.
+    - Age of Production: Improve compatibility with xyrc's chemical plant recipes.
     - Removed now-defunct kr-explosion damage update code.
 ---------------------------------------------------------------------------------------------------
 Version: 1.17.0

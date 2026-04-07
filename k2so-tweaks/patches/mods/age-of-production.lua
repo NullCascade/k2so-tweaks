@@ -58,6 +58,11 @@ function patch.on_data_final_fixes()
 	copy_crafting_categories("assembling-machine-3", "kr-advanced-assembling-machine")
 	copy_crafting_categories("chemical-plant", "kr-advanced-chemical-plant")
 	copy_crafting_categories("foundry", "kr-advanced-furnace")
+
+	-- If using xyrc's K2SO Enhancements...
+	if (mods["xy-k2so-enhancements"] and settings.startup['xy-adv-chem-plant-rebalance'].value) then
+		copy_crafting_categories("kr-advanced-chemical-plant", "electrochemical-plant")
+	end
 end
 
 return patch
