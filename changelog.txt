@@ -1,7 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.18.0
-Date: 2026-04-01
+Date: 2026-04-07
   Changes:
+    - Pelagos: Standardize stack sizes.
+    - Pelagos: Add new technology/recipe to farm coconuts in greenhouses.
     - Lignumis: Standardize stack sizes.
     - Maraxsis: Added optional electrolysis recipe conversions. If the default behavior is disabled, existing machines can still function.
     - Removed now-defunct kr-explosion damage update code.

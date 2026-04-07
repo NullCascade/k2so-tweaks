@@ -5,35 +5,35 @@ local util = require("k2so-tweaks.util")
 local patch = util.patch.new_patch("standardize-stack-sizes")
 patch:add_required_startup_setting_equal("nulls-k2so-standardize-stack-sizes", true)
 
-local function set_stack_size(prototype, entity, size)
-	local parent = data.raw[prototype]
-	if (parent == nil) then
+local function set_stack_size(type_name, name, size)
+	local prototypes_of_type = data.raw[type_name]
+	if (prototypes_of_type == nil) then
 		return
 	end
 
-	local thing = parent[entity]
-	if (thing == nil) then
-		util.log("Prototype '%s'/'%s' does not exist.", prototype, entity)
+	local prototype = prototypes_of_type[name]
+	if (prototype == nil) then
+		util.log("Prototype '%s'/'%s' does not exist.", type_name, name)
 		return
 	end
 
-	if (thing.stack_size == nil) then
-		util.log("Prototype '%s'/'%s' does not support stack sizes.", prototype, entity)
+	if (prototype.stack_size == nil) then
+		util.log("Prototype '%s'/'%s' does not support stack sizes.", type_name, name)
 		return
 	end
 
-	if (thing.stack_size == size) then
+	if (prototype.stack_size == size) then
 		return
 	end
 
-	thing.stack_size = size
+	prototype.stack_size = size
 end
 
 function patch.on_data_final_fixes()
 	local default_stack_size = 200
 	local machine_stack_size = 50
 
-	-- Base items? Some mods revert them to vanilla stack sizes, and I don't know why.
+	-- Base items. Some mods revert them to vanilla stack sizes.
 	set_stack_size("item", "explosives", default_stack_size)
 	set_stack_size("item", "rocket-fuel", default_stack_size)
 	set_stack_size("item", "solid-fuel", default_stack_size)
@@ -161,6 +161,22 @@ function patch.on_data_final_fixes()
 	set_stack_size("item", "zinc-rivets", default_stack_size)
 	set_stack_size("item", "zinc-solder", default_stack_size)
 	set_stack_size("item", "zinc", default_stack_size)
+
+	-- Pelagos
+	set_stack_size("capsule", "coconut-meat", default_stack_size)
+	set_stack_size("item", "activated-carbon", default_stack_size)
+	set_stack_size("item", "coconut-husk", default_stack_size)
+	set_stack_size("item", "coconut-meat", default_stack_size)
+	set_stack_size("item", "coconut-sealant", default_stack_size)
+	set_stack_size("item", "coconut-seed", default_stack_size)
+	set_stack_size("item", "coconut", default_stack_size)
+	set_stack_size("item", "copper-biter-egg", default_stack_size)
+	set_stack_size("item", "fermentation-bacteria", default_stack_size)
+	set_stack_size("item", "fermented-fish", default_stack_size)
+	set_stack_size("item", "sand", default_stack_size)
+	set_stack_size("item", "titanium-dust", default_stack_size)
+	set_stack_size("item", "titanium-plate", default_stack_size)
+	set_stack_size("item", "wooden-platform", default_stack_size)
 
 	-- Rubia
 	set_stack_size("item", "craptonite-frame", default_stack_size)
