@@ -47,6 +47,16 @@ function patch.on_data_final_fixes()
 	set_stack_size("item", "aop-deep-mineral", default_stack_size)
 	set_stack_size("item", "aop-refined-mineral", default_stack_size)
 
+	-- Arig
+	set_stack_size("item", "planetaris-glass-panel", default_stack_size)
+	set_stack_size("item", "planetaris-heavy-glass", default_stack_size)
+	set_stack_size("item", "planetaris-polished-diamond", default_stack_size)
+	set_stack_size("item", "planetaris-raw-diamond", default_stack_size)
+	set_stack_size("item", "planetaris-raw-quartz", default_stack_size)
+	set_stack_size("item", "planetaris-sandstone-brick", default_stack_size)
+	set_stack_size("item", "planetaris-silica", default_stack_size)
+	set_stack_size("item", "planetaris-simulating-unit", default_stack_size)
+
 	-- Cerys
 	set_stack_size("item", "cerys-nitrogen-rich-minerals", default_stack_size)
 	set_stack_size("item", "cerys-nuclear-scrap", default_stack_size)

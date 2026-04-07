@@ -2,6 +2,7 @@
 Version: 1.18.0
 Date: 2026-04-07
   Changes:
+    - Arig: Standardize stack sizes.
     - Pelagos: Standardize stack sizes.
     - Pelagos: Add new technology/recipe to farm coconuts in greenhouses.
     - Lignumis: Standardize stack sizes.
