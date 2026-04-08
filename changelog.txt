@@ -2,7 +2,6 @@
 Version: 1.19.0
 Date: 2026-04-08
   Changes:
-    - IN DEVELOPMENT
     - Pelagos: Brought corrosive ammo in line with existing K2 ammo. New icon, buffed damage/magazine size, and requires normal rifle magazine ammo instead of pistol ammo.
     - Pelagos: Brought the heavy gun turret in line with changes K2 makes to the gun turret. Slightly slower, longer range, buffed bonuses from projectile damage researches.
 ---------------------------------------------------------------------------------------------------
