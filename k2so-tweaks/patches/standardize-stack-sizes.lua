@@ -173,6 +173,7 @@ function patch.on_data_final_fixes()
 	set_stack_size("item", "zinc", default_stack_size)
 
 	-- Pelagos
+	set_stack_size("ammo", "corrosive-firearm-magazine", default_stack_size)
 	set_stack_size("capsule", "coconut-meat", default_stack_size)
 	set_stack_size("item", "activated-carbon", default_stack_size)
 	set_stack_size("item", "coconut-husk", default_stack_size)

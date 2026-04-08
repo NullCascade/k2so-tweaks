@@ -123,4 +123,32 @@ function util_technology.set_hidden(id, hidden)
 	prototype.hidden = hidden
 end
 
+--- @param tech_id string
+--- @param old_turret string
+--- @param new_turret string
+function util_technology.sync_turret_effects(tech_id, old_turret, new_turret)
+	local prototype = data.raw["technology"][tech_id]
+	if (prototype == nil) then
+		return
+	end
+
+	if (prototype.effects == nil) then
+		return
+	end
+
+	local util = require("k2so-tweaks.util")
+
+	local old_effect = util.table.find_keyvalues(prototype.effects, { turret_id = old_turret })
+	if (not old_effect) then
+		return
+	end
+
+	local new_effect = util.table.find_keyvalues(prototype.effects, { turret_id = new_turret })
+	if (not new_effect) then
+		return
+	end
+
+	new_effect.modifier = old_effect.modifier
+end
+
 return util_technology

@@ -83,4 +83,27 @@ function patch.on_data()
 		corrosive_ammo.icon = "__nulls-k2so-tweaks__/graphics/ammo/corrosive-rifle-magazine.png"
 		corrosive_ammo.order = "a[basic-clips]-a06[rifle-magazine]"
 	end
+
+	-- Buff the heavy gun turret as well to be in line with Krastorio's direction.
+	local heavy_gun_turret = data.raw["ammo-turret"]["heavy-gun-turret"]
+	if (heavy_gun_turret) then
+		heavy_gun_turret.attack_parameters.cooldown = 3
+		heavy_gun_turret.attack_parameters.call_for_help_radius = 25
+		heavy_gun_turret.max_health = 1500
+
+		-- Only increase range if the realistic weapons setting is enabled.
+		if (util.setting_equal("kr-realistic-weapons", true)) then
+			heavy_gun_turret.attack_parameters.range = 28
+		end
+	end
+end
+
+function patch.on_data_final_fixes()
+	-- Make heavy gun turrets match normal gun turrets for damage scaling techs.
+	local heavy_gun_turret = data.raw["ammo-turret"]["heavy-gun-turret"]
+	if (heavy_gun_turret) then
+		for tech_id, _ in pairs(data.raw["technology"]) do
+			util.technology.sync_turret_effects(tech_id, "gun-turret", "heavy-gun-turret")
+		end
+	end
 end
