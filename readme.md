@@ -65,6 +65,7 @@ Looking for more K2SO fixes/tweaks/enhancements? Check out [xyrc's K2SO Enhancem
 
 - Brings stack sizes in line with Krastorio's defaults.
 - Adds a new technology and recipe to allow growing coconuts in greenhouses. Similar to Gleba's technology/recipe.
+- Updates corrosive magazines to fit in line with Krastorio's ammo. New icon, buffed damage (8 -> 10), increased magazine size (10 -> 30). Requires K2 rifle ammo instead of pistol ammo.
 
 ### [Rubia](https://mods.factorio.com/mod/rubia)
 
