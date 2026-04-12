@@ -5,6 +5,7 @@ TODO:
 		- Krastorio 2: Rare Earth
 		- Krastorio 2: Imersite? Already has crushing in K2...
 		- <other planets>
+	- Allow specifying recipes in the basic crusher.
 --]]
 
 local util = require("k2so-tweaks.util")

@@ -124,9 +124,11 @@ function util_technology.set_hidden(id, hidden)
 end
 
 --- @param tech_id string
---- @param old_turret string
---- @param new_turret string
-function util_technology.sync_turret_effects(tech_id, old_turret, new_turret)
+--- @param search_key string
+--- @param search_value_old string
+--- @param search_value_new string
+--- @param sync_key string
+function util_technology.copy_effect(tech_id, search_key, search_value_old, search_value_new, sync_key)
 	local prototype = data.raw["technology"][tech_id]
 	if (prototype == nil) then
 		return
@@ -138,17 +140,19 @@ function util_technology.sync_turret_effects(tech_id, old_turret, new_turret)
 
 	local util = require("k2so-tweaks.util")
 
-	local old_effect = util.table.find_keyvalues(prototype.effects, { turret_id = old_turret })
-	if (not old_effect) then
+	local old_effect = util.table.find_keyvalues(prototype.effects, { [search_key] = search_value_old })
+	if (old_effect == nil) then
 		return
 	end
 
-	local new_effect = util.table.find_keyvalues(prototype.effects, { turret_id = new_turret })
-	if (not new_effect) then
-		return
+	local new_effect = util.table.find_keyvalues(prototype.effects, { [search_key] = search_value_new })
+	if (new_effect == nil) then
+		new_effect = table.deepcopy(old_effect)
+		new_effect[search_key] = search_value_new
+		table.insert(prototype.effects, new_effect)
 	end
 
-	new_effect.modifier = old_effect.modifier
+	new_effect[sync_key] = old_effect[sync_key]
 end
 
 return util_technology

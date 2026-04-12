@@ -9,7 +9,7 @@ function patch.on_data_updates()
 	if (data.raw["item"]["aluminum-plate"]) then
 		util.recipe.clone("processing-unit", "processing-unit-via-aluminum")
 		util.recipe.replace_ingredient_in_place("processing-unit-via-aluminum", "kr-rare-metals", "aluminum-plate", "item")
-		util.recipe.set_standardized_dual_icon("processing-unit-via-aluminum", "processing-unit", "aluminum-plate")
+		util.graphics.set_standardized_dual_icon("recipe", "processing-unit-via-aluminum", "item", "processing-unit", "item", "aluminum-plate")
 		util.technology.add_recipe_unlock("muluna-aluminum-processing", "processing-unit-via-aluminum")
 
 		-- This is no longer needed because of a recipe added in Muluna 2.0.15.
@@ -22,7 +22,7 @@ function patch.on_data_updates()
 	if (data.raw["item"]["silicon-cell"]) then
 		util.recipe.clone("processing-unit", "processing-unit-via-silicon-cell")
 		util.recipe.replace_ingredient("processing-unit-via-silicon-cell", "kr-rare-metals", "silicon-cell", 1, "item")
-		util.recipe.set_standardized_dual_icon("processing-unit-via-silicon-cell", "processing-unit", "silicon-cell")
+		util.graphics.set_standardized_dual_icon("recipe", "processing-unit-via-silicon-cell", "item", "processing-unit", "item", "silicon-cell")
 		util.technology.add_recipe_unlock("muluna-silicon-processing", "processing-unit-via-silicon-cell")
 		util.technology.add_recipe_unlock("moshine-tech-silicon-cell", "processing-unit-via-silicon-cell")
 

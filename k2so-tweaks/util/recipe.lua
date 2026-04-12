@@ -243,16 +243,6 @@ function util_recipe.clone(recipe_name, copy_name)
 end
 
 --- @param recipe_name string
---- @param primary_item_name string
---- @param secondary_item_name string
-function util_recipe.set_standardized_dual_icon(recipe_name, primary_item_name, secondary_item_name)
-	local util = require("k2so-tweaks.util")
-
-	data.raw["recipe"][recipe_name].icon = nil
-	data.raw["recipe"][recipe_name].icons = util.item.create_dual_icon(primary_item_name, secondary_item_name)
-end
-
---- @param recipe_name string
 function util_recipe.remove(recipe_name)
 	local util = require("k2so-tweaks.util")
 	util.technology.remove_all_unlocks(recipe_name)

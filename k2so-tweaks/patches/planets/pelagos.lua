@@ -23,10 +23,7 @@ function patch.on_data()
 		{
 			type = "recipe",
 			name = "k2sotweak-coconut-greenhouse",
-			icons = {
-				{ icon = "__pelagos__/graphics/coconut.png" },
-				{ icon = "__Krastorio2Assets__/icons/entities/greenhouse.png", scale = 0.22, shift = { -8, 8 }, },
-			},
+			icons = util.graphics.create_dual_icon("item", "coconut", "item", "kr-greenhouse"),
 			subgroup = "raw-resource",
 			order = "a[coconut-with-fertilizer]",
 			enabled = false,
@@ -53,10 +50,11 @@ function patch.on_data()
 			name = "k2sotweak-pelagos-greenhouse",
 			icons = {
 				{ icon = "__Krastorio2Assets__/technologies/greenhouse.png", icon_size = 256 },
-				{ icon = "__pelagos__/graphics/palm/palm-tree-1.png", scale = 1/8, shift = { -32, 16 }, icon_size = 1024, floating = true, },
+				{ icon = "__pelagos__/graphics/palm/palm-tree-5.png", scale = 1/8, shift = { -32, 16 }, icon_size = 1024, floating = true, },
+				{ icon = "__pelagos__/graphics/palm/palm-tree-2.png", scale = 1/8, shift = { 32, 16 }, icon_size = 1024, floating = true, },
 			},
 			unit = {
-				time = 45,
+				time = 60,
 				count = 1000,
 				ingredients = {
 					{ "production-science-pack", 1 },
@@ -88,7 +86,6 @@ function patch.on_data()
 	local heavy_gun_turret = data.raw["ammo-turret"]["heavy-gun-turret"]
 	if (heavy_gun_turret) then
 		heavy_gun_turret.attack_parameters.cooldown = 3
-		heavy_gun_turret.attack_parameters.call_for_help_radius = 25
 		heavy_gun_turret.max_health = 1500
 
 		-- Only increase range if the realistic weapons setting is enabled.
@@ -103,7 +100,7 @@ function patch.on_data_final_fixes()
 	local heavy_gun_turret = data.raw["ammo-turret"]["heavy-gun-turret"]
 	if (heavy_gun_turret) then
 		for tech_id, _ in pairs(data.raw["technology"]) do
-			util.technology.sync_turret_effects(tech_id, "gun-turret", "heavy-gun-turret")
+			util.technology.copy_effect(tech_id, "turret_id", "gun-turret", "heavy-gun-turret", "modifier")
 		end
 	end
 end

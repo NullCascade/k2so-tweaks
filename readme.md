@@ -66,7 +66,7 @@ Looking for more K2SO fixes/tweaks/enhancements? Check out [xyrc's K2SO Enhancem
 - Brings stack sizes in line with Krastorio's defaults.
 - Adds a new technology and recipe to allow growing coconuts in greenhouses. Similar to Gleba's technology/recipe.
 - Updates Corrosive Rifle Magazines to fit in line with Krastorio's ammo. New name, icon, buffed damage (8 -> 10), increased magazine size (10 -> 30). Requires K2 rifle ammo instead of pistol ammo.
-- Updates the Heavy Gun Turret to fit in line with Krastorio's changes to turrets. Slightly buffed range, more health, somewhat slower firing rate, better scaling with physical damage technologies.
+- Updates the Heavy Gun Turret to fit in line with Krastorio's changes to turrets. Slightly buffed range (25 -> 28), more health (1200 -> 1500), somewhat slower firing rate (2 -> 3), better scaling with physical damage technologies (matches K2's gun turret scaling).
 
 ### [Rubia](https://mods.factorio.com/mod/rubia)
 
