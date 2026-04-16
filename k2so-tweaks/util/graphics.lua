@@ -50,4 +50,24 @@ function util_graphics.set_standardized_dual_icon(type, id, primary_icon_type, p
 	prototype.icons = util_graphics.create_dual_icon(primary_icon_type, primary_icon_name, secondary_icon_type, secondary_icon_name)
 end
 
+--- @param old string
+--- @param new string
+function util_graphics.replace_all(old, new)
+	if (old == nil or new == nil) then
+		return
+	end
+
+	for _, prototype in pairs(data.raw["recipe"]) do
+		if (prototype.icon == old) then
+			prototype.icon = new
+		end
+
+		for _, icon in ipairs(prototype.icons or {}) do
+			if (icon.icon == old) then
+				icon.icon = new
+			end
+		end
+	end
+end
+
 return util_graphics
