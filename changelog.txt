@@ -1,4 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.20.0
+Date: 2026-04-11
+  Changes:
+    - !! First pass at Planetaris: Arig tweaks. There should be no breaking changes to existing factories. Things feel a bit less disconnected, but it still needs some work.
+    - Arig: Renamed sand (the fluid) on Arig to "Arigan sand".
+    - Arig: Unified glass to the standard glass item. Hardened glass remains its own item.
+    - Arig: Unified quartz into the standard Krastorio quartz item.
+    - Arig: Allow direct casting pure sand into glass panes using metallury, without barreling.
+    - Arig: Made the "quartz productivity" affect Krastorio quartz production.
+    - Arig: Added sifting recipe to convert Arig sand (fluid) into K2 sand (item).
+    - Arig: Brought the dust-resistant roboport in line with K2 changes to roboports.
+---------------------------------------------------------------------------------------------------
 Version: 1.19.0
 Date: 2026-04-08
   Changes:

@@ -28,4 +28,33 @@ function util_item.replace_all(old, new)
 	end
 end
 
+--- @param type_name string
+--- @param name string
+--- @param size number
+function util_item.set_stack_size(type_name, name, size)
+	local util = require("k2so-tweaks.util")
+
+	local prototypes_of_type = data.raw[type_name]
+	if (prototypes_of_type == nil) then
+		return
+	end
+
+	local prototype = prototypes_of_type[name]
+	if (prototype == nil) then
+		util.log("Prototype '%s'/'%s' does not exist.", type_name, name)
+		return
+	end
+
+	if (prototype.stack_size == nil) then
+		util.log("Prototype '%s'/'%s' does not support stack sizes.", type_name, name)
+		return
+	end
+
+	if (prototype.stack_size == size) then
+		return
+	end
+
+	prototype.stack_size = size
+end
+
 return util_item
