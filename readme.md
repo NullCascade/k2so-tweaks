@@ -15,6 +15,15 @@ Looking for more K2SO fixes/tweaks/enhancements? Check out [xyrc's K2SO Enhancem
 - Fixes ammunition crafting recipes.
 - Ensures that Krastorio 2 advanced crafting machines have access to their non-upgraded base machine crafting categories.
 
+### [Arig](https://mods.factorio.com/mod/planetaris-arig)
+
+- Replaced Planetaris glass and quartz with standard Krastorio resources. Recipes and progression on Arig remain unchanged.
+- Quarts productivity research affects Krastorio quartz production.
+- Allows converting sand from the surface (fluid) into sand (the item) via sifting.
+- After cargo dropping has been researched, metallurgic machines can be dropped which allow direct smelting glass panes via pure sand.
+- Brings stack sizes in line with Krastorio's defaults.
+- Updates the Arig roboport to fit in line with Krastorio's roboport changes.
+
 ### [Cerys](https://mods.factorio.com/mod/Cerys-Moon-of-Fulgora)
 
 - Fixes ammunition crafting categories.
