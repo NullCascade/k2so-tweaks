@@ -3,10 +3,11 @@ Version: 1.20.0
 Date: 2026-04-11
   Changes:
     - When replacing items/fluids, the patch also tries to make the icons consistent.
-    - !! First pass at Planetaris: Arig tweaks. There should be no breaking changes to existing factories. Things feel a bit less disconnected, but it still needs some work.
+    - !! First pass at Planetaris: Arig tweaks. There should be no breaking changes to existing factories. Things feel a bit less disconnected, but it probably needs some work. Suggestions welcome.
+    - !! Some of the below changes also affect other Planetaris surfaces, such as Hyarion.
+    - Planetaris: Unified glass to the standard glass item. Hardened glass remains its own item.
+    - Planetaris: Unified quartz into the standard Krastorio quartz item.
     - Arig: Renamed sand (the fluid) on Arig to "Arigan sand".
-    - Arig: Unified glass to the standard glass item. Hardened glass remains its own item.
-    - Arig: Unified quartz into the standard Krastorio quartz item.
     - Arig: Allow direct casting pure sand into glass panes using metallury, without barreling.
     - Arig: Made the "quartz productivity" affect Krastorio quartz production.
     - Arig: Added sifting recipe to convert Arig sand (fluid) into K2 sand (item).
