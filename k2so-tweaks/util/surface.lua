@@ -32,4 +32,30 @@ function util_surface.relax_conditions_for_planet(entity_type, entity_id, planet
 	end
 end
 
+--- @param entity_type string
+--- @param entity_id string
+--- @param condition string
+--- @param min number
+--- @param max number
+function util_surface.enforce_condition(entity_type, entity_id, condition, min, max)
+	local util = require("k2so-tweaks.util")
+
+	local prototype = data.raw[entity_type][entity_id]
+	if (prototype == nil) then
+		util.log("Entity '%s' of type '%s' does not exist.", entity_id, entity_type)
+		return nil
+	end
+
+	prototype.surface_conditions = prototype.surface_conditions or {}
+	local surface_condition = util.table.find_keyvalues(prototype.surface_conditions, { property = condition }) --[[@as data.SurfaceCondition]]
+	if (surface_condition == nil) then
+		surface_condition = { property = condition, min = min, max = max }
+		table.insert(prototype.surface_conditions, surface_condition)
+		return
+	end
+
+	surface_condition.min = math.min(surface_condition.min, min)
+	surface_condition.max = math.max(surface_condition.max, max)
+end
+
 return util_surface
