@@ -74,7 +74,7 @@ function patch.on_data()
 
 	-- Buff damage and magazine size to be in line with Krastorio's damage values.
 	local corrosive_ammo = data.raw["ammo"]["corrosive-firearm-magazine"]
-	if (corrosive_ammo) then
+	if (corrosive_ammo and util.setting_equal("kr-realistic-weapons", true)) then
 		util.recipe.replace_ingredient_in_place("corrosive-firearm-magazine", "firearm-magazine", "kr-rifle-magazine", "item")
 		util.ammo.set_magazine_size("corrosive-firearm-magazine", 30)
 		util.ammo.update_damage("corrosive-firearm-magazine", 8, 10, "corrosive")

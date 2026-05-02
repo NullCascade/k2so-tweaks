@@ -1,6 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.20.1
+Date: 2026-05-02
+  Changes:
+    - Pelagos: Fix startup error when K2's realistic weaponry is disabled.
+---------------------------------------------------------------------------------------------------
 Version: 1.20.0
-Date: 2026-04-11
+Date: 2026-04-16
   Changes:
     - When replacing items/fluids, the patch also tries to make the icons consistent.
     - !! First pass at Planetaris: Arig tweaks. There should be no breaking changes to existing factories. Things feel a bit less disconnected, but it probably needs some work. Suggestions welcome.
