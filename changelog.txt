@@ -2,6 +2,9 @@
 Version: 1.21.0
 Date: 2026-05-29
   Changes:
+    - !! First pass at Planetaris: Hyarion. There should be no breaking changes to existing factories. Things feel a bit less disconnected, but it probably needs some work. Suggestions welcome.
+    - !! Some of the below changes also affect other Planetaris surfaces, such as Arig.
+    - Hyarion: Standardized stack sizes.
     - Arig: Fix compression research requiring the wrong type of glass.
     - Pelagos: Fix recipe name for creating coconuts in the greenhouse.
 ---------------------------------------------------------------------------------------------------
