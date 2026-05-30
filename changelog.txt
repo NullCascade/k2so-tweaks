@@ -6,6 +6,7 @@ Date: 2026-05-29
     - !! Some of the below changes also affect other Planetaris surfaces, such as Arig.
     - Hyarion: Standardized stack sizes.
     - Hyarion: Restricted Krastorio's fusion reactor from functioning on the surface.
+    - Hyarion: Rebalanced the Ruby Laser Turret with K2's values in mind.
     - Arig: Fix compression research requiring the wrong type of glass.
     - Pelagos: Fix recipe name for creating coconuts in the greenhouse.
 ---------------------------------------------------------------------------------------------------
