@@ -59,6 +59,53 @@ function util_technology.replace_all_unlocks(old, new)
 	end
 end
 
+--- @param tech data.TechnologyPrototype
+--- @param old string
+--- @param new string
+local function replace_unlock_recipes(tech, old, new)
+	for _, effect in ipairs(tech.effects or {}) do
+		if (effect.type == "unlock-recipe" and effect.recipe == old) then
+			effect.recipe = new
+		end
+	end
+end
+
+--- @param tech data.TechnologyPrototype
+--- @param old string
+--- @param new string
+local function replace_research_trigger_item(tech, old, new)
+	local trigger = tech.research_trigger
+
+	if (trigger == nil) then
+		return
+	end
+
+	if (trigger.item == old) then
+		trigger.item = new
+	end
+end
+
+--- Replaces item references used by all technologies.
+--- @param old string
+--- @param new string
+--- @param type "recipe"|"item"
+function util_technology.replace_all(old, new, type)
+	if (data.raw[type][old] == nil) then
+		return
+	end
+	if (data.raw[type][new] == nil) then
+		return
+	end
+
+	for _, tech in pairs(data.raw["technology"]) do
+		if (type == "recipe") then
+			replace_unlock_recipes(tech, old, new)
+		elseif (type == "item") then
+			replace_research_trigger_item(tech, old, new)
+		end
+	end
+end
+
 --- @param id any
 --- @param effect any
 function util_technology.has_effect(id, effect)

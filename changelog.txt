@@ -2,6 +2,7 @@
 Version: 1.21.0
 Date: 2026-05-29
   Changes:
+    - Arig: Fix compression research requiring the wrong type of glass.
     - Pelagos: Fix recipe name for creating coconuts in the greenhouse.
 ---------------------------------------------------------------------------------------------------
 Version: 1.20.1

@@ -16,6 +16,7 @@ function util_item.replace_all(old, new)
 	util.recipe.replace_all(old, new, "item")
 	util.minable.replace_all(old, new)
 	util.graphics.replace_all(old_entity.icon, new_entity.icon)
+	util.technology.replace_all(old, new, "item")
 
 	old_entity.hidden = true
 	old_entity.hidden_in_factoriopedia = true
