@@ -5,6 +5,7 @@ Date: 2026-05-29
     - !! First pass at Planetaris: Hyarion. There should be no breaking changes to existing factories. Things feel a bit less disconnected, but it probably needs some work. Suggestions welcome.
     - !! Some of the below changes also affect other Planetaris surfaces, such as Arig.
     - Hyarion: Standardized stack sizes.
+    - Hyarion: Restricted Krastorio's fusion reactor from functioning on the surface.
     - Arig: Fix compression research requiring the wrong type of glass.
     - Pelagos: Fix recipe name for creating coconuts in the greenhouse.
 ---------------------------------------------------------------------------------------------------

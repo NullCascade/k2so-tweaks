@@ -35,8 +35,8 @@ end
 --- @param entity_type string
 --- @param entity_id string
 --- @param condition string
---- @param min number
---- @param max number
+--- @param min number?
+--- @param max number?
 function util_surface.enforce_condition(entity_type, entity_id, condition, min, max)
 	local util = require("k2so-tweaks.util")
 
