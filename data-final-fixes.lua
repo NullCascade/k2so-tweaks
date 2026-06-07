@@ -12,6 +12,7 @@ require("k2so-tweaks.patches.mods.lighted-poles-plus")
 
 -- Planet-specific compatibility patches.
 require("k2so-tweaks.patches.planets.arig")
+require("k2so-tweaks.patches.planets.lignumis")
 require("k2so-tweaks.patches.planets.maraxsis")
 require("k2so-tweaks.patches.planets.maraxsis-quantum-revert")
 require("k2so-tweaks.patches.planets.muluna")
