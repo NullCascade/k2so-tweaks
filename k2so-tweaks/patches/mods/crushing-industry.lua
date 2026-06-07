@@ -1,11 +1,11 @@
 --[[
-	- Allows imersite to be processed in the burner/electric crushers
+	- Require recipes to be selected in the burner/electric crushers.
+	- Allows imersite to be processed in the burner/electric crushers.
 TODO:
 	- Add ore crushing for:
 		- Krastorio 2: Rare Earth
 		- Krastorio 2: Imersite? Already has crushing in K2...
 		- <other planets>
-	- Allow specifying recipes in the basic crusher.
 --]]
 
 local util = require("k2so-tweaks.util")
@@ -60,7 +60,30 @@ local function handle_technology(name)
 	end
 end
 
+--- Modified from Krastorio 2's data_util library.
+--- @param name string
+local function require_recipe_selection(name)
+	local furnace = data.raw["furnace"][name]
+	if not furnace then
+		util.log("Furnace %s does not exist.", name)
+		return
+	end
+
+	local assembler = table.deepcopy(furnace) --[[@as data.AssemblingMachinePrototype]]
+	assembler.type = "assembling-machine"
+	assembler.source_inventory_size = nil --- @diagnostic disable-line
+	assembler.energy_source.emissions_per_minute = assembler.energy_source.emissions_per_minute or { pollution = 2 }
+	assembler.energy_usage = assembler.energy_usage or "0.2MW"
+	data.raw["furnace"][name] = nil
+	data:extend({ assembler })
+	return assembler
+end
+
 function patch.on_data_final_fixes()
+	-- Make the small crushers behave like the big crusher: recipes must be selected explicitly.
+	require_recipe_selection("burner-crusher")
+	require_recipe_selection("electric-crusher")
+
 	-- Allow more things to be processed by crushing machines.
 	util.recipe.add_additional_category("kr-imersite-powder", "basic-crushing")
 

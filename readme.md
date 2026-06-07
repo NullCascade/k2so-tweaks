@@ -23,6 +23,7 @@ Looking for more K2SO fixes/tweaks/enhancements? Check out [xyrc's K2SO Enhancem
 
 ### [Crushing Industry](https://mods.factorio.com/mod/crushing-industry)
 
+- Burner and electric crushers need their recipes selected, similar to how K2 furnaces need their recipe selected.
 - Re-enables K2's glass smelting from sand recipe.
 - Allows imersite to be crushed in Crushing Industry machines.
 - The Big Crusher can accept fluid inputs, if [More Asteroids](https://mods.factorio.com/mod/More-Asteroids) is installed.

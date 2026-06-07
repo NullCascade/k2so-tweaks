@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.22.0
+Date: 2026-06-07
+  Changes:
+    - !! Crushing Industries: Burner and electric crushers require their recipe to be selected, similar to furnaces. Existing factories will need their recipes manually changed, but should not otherwise break.
+---------------------------------------------------------------------------------------------------
 Version: 1.21.1
 Date: 2026-06-07
   Changes:
