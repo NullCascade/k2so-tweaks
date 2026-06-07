@@ -41,6 +41,10 @@ Looking for more K2SO fixes/tweaks/enhancements? Check out [xyrc's K2SO Enhancem
 
 - Fixes the wire reach and supply area of lighted poles to use K2's settings.
 
+### [Lignumis](https://mods.factorio.com/mod/lignumis)
+
+- Allow Krastorio 2's greenhouses to work on the planet.
+
 ### [Maraxsis](https://mods.factorio.com/mod/maraxsis)
 
 - Allows atmosphere collecting in K2's atmosphere condenser machine.
