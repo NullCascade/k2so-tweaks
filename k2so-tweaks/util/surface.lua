@@ -58,4 +58,20 @@ function util_surface.enforce_condition(entity_type, entity_id, condition, min, 
 	surface_condition.max = math.max(surface_condition.max, max)
 end
 
+--- @param planet_id string
+--- @return number?
+function util_surface.get_pollutant_type(planet_id)
+	local surface = data.raw["planet"][planet_id]
+	if (not surface) then
+		return nil
+	end
+
+	local surface_properties = surface.surface_properties
+	if (not surface_properties) then
+		return nil
+	end
+
+	return surface_properties["pollutant-type"]
+end
+
 return util_surface

@@ -45,6 +45,7 @@ Looking for more K2SO fixes/tweaks/enhancements? Check out [xyrc's K2SO Enhancem
 ### [Lignumis](https://mods.factorio.com/mod/lignumis)
 
 - Allow Krastorio 2's greenhouses to work on the planet.
+- (Optional) Additional Matter Recipes: Adds matter conversion to/from peat and gold ore.
 
 ### [Maraxsis](https://mods.factorio.com/mod/maraxsis)
 
