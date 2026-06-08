@@ -87,8 +87,14 @@ function patch.on_data_final_fixes()
 	-- Allow more things to be processed by crushing machines.
 	util.recipe.add_additional_category("kr-imersite-powder", "basic-crushing")
 
-	-- Allow Imersite Asteroids to be crushed normally if the mod is available.
+	-- Allow more basic asteroid crushing from asteroid-adding mods.
+	util.recipe.add_additional_category("auric-asteroid-crushing", "basic-crushing")
+	util.recipe.add_additional_category("bismuth-asteroid-crushing", "basic-crushing")
 	util.recipe.add_additional_category("imersite-asteroid-crushing", "basic-crushing")
+	util.recipe.add_additional_category("organic-asteroid-crushing", "basic-crushing")
+	util.recipe.add_additional_category("petrified-asteroid-crushing", "basic-crushing")
+	util.recipe.add_additional_category("rock-asteroid-crushing", "basic-crushing")
+	util.recipe.add_additional_category("scrap-asteroid-crushing", "basic-crushing")
 
 	-- Add productivity for K2SO enriched ores in crushing industry.
 	for _, name in ipairs(recipes_to_modify) do
