@@ -59,6 +59,10 @@ Looking for more K2SO fixes/tweaks/enhancements? Check out [xyrc's K2SO Enhancem
 - Brings stack sizes in line with Krastorio's defaults.
 - (Optional) Quantum Computer Revert: Reverts this planet's changes to K2SO's Quantum Computer. This re-enables the use of the machine on most planets, but also removes the 50% quality bonus. This is disabled by default.
 
+### [More Asteroids](https://mods.factorio.com/mod/More-Asteroids)
+
+- **Crushing Industry**: Allow most added asteroids to be crushed in burner/electric crushers.
+
 ### [Moshine](https://mods.factorio.com/mod/Moshine)
 
 - Brings stack sizes in line with Krastorio's defaults.
@@ -91,6 +95,7 @@ Looking for more K2SO fixes/tweaks/enhancements? Check out [xyrc's K2SO Enhancem
 
 - Restricted Krastorio's fusion reactor from functioning on the surface.
 - Rebalanced the Ruby Laser Turret with K2's values in mind.
+- **Crushing Industry**: Allow bismuth asteroids to be crushed in basic crushers.
 - Brings stack sizes in line with Krastorio's defaults.
 
 ### [Rubia](https://mods.factorio.com/mod/rubia)
