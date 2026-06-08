@@ -2,7 +2,7 @@
 Version: 1.22.1
 Date: 2026-06-07
   Changes:
-    - Crushing Industries/Krastorio 2 Imersite Asteroids: Imersite asteroids can be rushed in the CI's burner/electric crushers.
+    - Crushing Industries/Krastorio 2 Imersite Asteroids: Imersite asteroids can be crushed in the burner/electric crushers.
 ---------------------------------------------------------------------------------------------------
 Version: 1.22.0
 Date: 2026-06-07
