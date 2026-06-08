@@ -38,6 +38,10 @@ Looking for more K2SO fixes/tweaks/enhancements? Check out [xyrc's K2SO Enhancem
 - Adds an additional vanilla-style recipe for lithium on Aquilo, using holmium plates. This allows for quality lithium, and provides a minimal bonus for the extra catalyst investment.
 - Overwrites resistances for asteroids against K2's special damage types with vanilla resistances. This makes them less overpowered against big/huge asteroids, and improves compatibility with mods who alter resistances like Rubia. It also changes the name of K2's explosion damage resistance to be tagged and distinguishable from its vanilla version.
 
+### [Krastorio 2 Imersite Asteroids](https://mods.factorio.com/mod/Imersite-Asteroids)
+
+- **Crushing Industry**: Allow imersite asteroids to be crushed in burner/electric crushers.
+
 ### [Lighted Electric Poles +](https://mods.factorio.com/mod/Lighted-Poles-Plus)
 
 - Fixes the wire reach and supply area of lighted poles to use K2's settings.
