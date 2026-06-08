@@ -61,6 +61,7 @@ function util_recipe.add_ingredient(recipe_name, ingredient_name, amount, type)
 	end
 
 	table.insert(recipe.ingredients, { type = type, name = ingredient_name, amount = amount })
+	return true
 end
 
 --- Removes an ingredient from a given recipe.
@@ -107,7 +108,7 @@ end
 --- @param recipe_name string The recipe name.
 --- @param old_ingredient string The ingredient name to replace.
 --- @param new_ingredient string The ingredient name to use instead.
---- @param amount number? The amount of the ingredient needed.
+--- @param amount number The amount of the ingredient needed.
 --- @param type string The ingredient type, defaulting to "item".
 function util_recipe.replace_ingredient(recipe_name, old_ingredient, new_ingredient, amount, type)
 	if (old_ingredient) then
