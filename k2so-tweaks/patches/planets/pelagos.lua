@@ -58,7 +58,7 @@ local function coconuts_in_greenhouses()
 		{
 			type = "recipe",
 			name = "k2sotweak-coconut-greenhouse",
-			icons = util.graphics.create_dual_icon("item", "coconut", "item", "kr-greenhouse"),
+			icon = util.graphics.get_icon("item", "coconut"),
 			subgroup = "raw-resource",
 			order = "a[coconut-with-fertilizer]",
 			enabled = false,

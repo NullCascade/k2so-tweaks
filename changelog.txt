@@ -3,6 +3,7 @@ Version: 1.22.2
 Date: 2026-06-09
   Changes:
     - Pelagos: Support K2 (and other modded) landfill recipes for its landfill production research.
+    - Pelagos: Change recipe icon for coconuts grown in the greenhouse to be consistent with other recipes.
 ---------------------------------------------------------------------------------------------------
 Version: 1.22.1
 Date: 2026-06-07
