@@ -261,4 +261,35 @@ function util_recipe.set_hidden(id, hidden)
 	prototype.hidden = hidden
 end
 
+--- @param type string
+--- @param name string
+--- @param exclusive boolean If true, only recipes that produce only the desired result will be returned.
+--- @return string[]
+function util_recipe.get_with_result(type, name, exclusive)
+	local results = {}
+	local util = require("k2so-tweaks.util")
+
+	--- @param recipe data.RecipePrototype
+	local function recipe_matches(recipe)
+		local recipe_results = recipe.results or {}
+		if (exclusive and #recipe_results > 1) then
+			return false
+		end
+
+		if (not util.table.find_keyvalues(recipe_results, { type = type, name = name })) then
+			return false
+		end
+
+		return true
+	end
+
+	for key, recipe in pairs(data.raw["recipe"]) do
+		if (recipe_matches(recipe)) then
+			table.insert(results, key)
+		end
+	end
+
+	return results
+end
+
 return util_recipe

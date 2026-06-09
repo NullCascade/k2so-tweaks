@@ -11,6 +11,44 @@ local util = require("k2so-tweaks.util")
 local patch = util.patch.new_patch("planet-pelagos")
 patch:add_required_mod("pelagos")
 
+local function support_modded_landfill()
+	local technology = data.raw["technology"]["landfill-productivity"]
+	if (technology == nil) then
+		return
+	end
+
+	if (not technology.effects) then
+		return
+	end
+
+	local standard_effect = util.table.find_keyvalues(technology.effects, { type = "change-recipe-productivity", recipe = "landfill" })
+	if (not standard_effect) then
+		return
+	end
+
+	-- Get a list of recipes to include.
+	local landfill_recipes = util.recipe.get_with_result("item", "landfill", true)
+	local unique_recipes = {}
+	for _, recipe in ipairs(landfill_recipes) do
+		unique_recipes[recipe] = true
+	end
+	unique_recipes["landfill"] = nil
+
+	-- Filter out recipes already included.
+	for _, effect in ipairs(technology.effects) do
+		if (effect.type == "change-recipe-productivity") then
+			unique_recipes[effect.recipe] = nil
+		end
+	end
+
+	for recipe, _ in pairs(unique_recipes) do
+		util.log("Adding landfill productivity to recipes: %s", recipe)
+		local copy = table.deepcopy(standard_effect)
+		copy.recipe = recipe
+		table.insert(technology.effects, copy)
+	end
+end
+
 local function coconuts_in_greenhouses()
 	local greenhouse_batch_mult = 6
 
@@ -110,5 +148,6 @@ function patch.on_data()
 end
 
 function patch.on_data_final_fixes()
+	support_modded_landfill()
 	combat_changes_final_fixes()
 end
