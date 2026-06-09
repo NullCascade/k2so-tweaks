@@ -1,3 +1,12 @@
+
+--[[
+Features: 
+	- Make K2 railguns have the kinetic damage type.
+Todo:
+	- Rebalance sniper turret around K2 military philosophy.
+	- Add a way to do electronic components on Rubia.
+--]]
+
 local util = require("k2so-tweaks.util")
 
 local patch = util.patch.new_patch("planet-rubia")
@@ -15,7 +24,7 @@ local function change_projectile_damage_type(name, from_type, to_type)
 
 	local effects = prototype.action.action_delivery.target_effects
 	for _, effect in ipairs(effects or {}) do
-		if (effect.type == "damage" and effect.damage.type == "physical") then
+		if (effect.type == "damage" and effect.damage.type == from_type) then
 			effect.damage.type = to_type
 		end
 	end
