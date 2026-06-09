@@ -4,17 +4,14 @@ Features:
 	- Change corrosive firearm magazines to be in line with K2. Update graphic.
 Todo:
 	- Diesel greenhouse
-	- Biomass or fertilizer from local resources
 --]]
-
 
 local util = require("k2so-tweaks.util")
 
 local patch = util.patch.new_patch("planet-pelagos")
 patch:add_required_mod("pelagos")
 
-
-function patch.on_data()
+local function coconuts_in_greenhouses()
 	local greenhouse_batch_mult = 6
 
 	-- Core extensions.
@@ -71,7 +68,9 @@ function patch.on_data()
 			},
 		},
 	})
+end
 
+local function combat_changes_data()
 	-- Buff damage and magazine size to be in line with Krastorio's damage values.
 	local corrosive_ammo = data.raw["ammo"]["corrosive-firearm-magazine"]
 	if (corrosive_ammo and util.setting_equal("kr-realistic-weapons", true)) then
@@ -95,7 +94,7 @@ function patch.on_data()
 	end
 end
 
-function patch.on_data_final_fixes()
+local function combat_changes_final_fixes()
 	-- Make heavy gun turrets match normal gun turrets for damage scaling techs.
 	local heavy_gun_turret = data.raw["ammo-turret"]["heavy-gun-turret"]
 	if (heavy_gun_turret) then
@@ -103,4 +102,13 @@ function patch.on_data_final_fixes()
 			util.technology.copy_effect(tech_id, "turret_id", "gun-turret", "heavy-gun-turret", "modifier")
 		end
 	end
+end
+
+function patch.on_data()
+	coconuts_in_greenhouses()
+	combat_changes_data()
+end
+
+function patch.on_data_final_fixes()
+	combat_changes_final_fixes()
 end
