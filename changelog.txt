@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.22.3
+Date: 2026-06-17
+  Changes:
+    - Updated basic resources to ensure they always self-recycle. Vesta will no longer cause rare metal to recycle into algea for example. Affected resources: calcite, carbon, coal, copper-ore, ice, iron-ore, stone, sulfur, kr-imersite, kr-rare-metal-ore.
+---------------------------------------------------------------------------------------------------
 Version: 1.22.2
 Date: 2026-06-09
   Changes:

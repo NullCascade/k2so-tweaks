@@ -7,6 +7,7 @@ Looking for more K2SO fixes/tweaks/enhancements? Check out [xyrc's K2SO Enhancem
 ---
 
 - **Standardize Stack Sizes** (optional): Brings the stack sizes for any list optional dependency mod to be in line with K2's stack size defaults (200 for most items).
+- **Recycling Patches**: Some mods add new ways to generate base resources, such as rare ore or ice. This mod ensures that these new recipes don't cause base resources (ores, asteroid chunk results) don't recycle into exotic modded planet resources. Improves compatibility with Metal and Stars, Vesta, probably others. This also tweaks some other recycling recipes from Automatic Train Painter and Moshine.
 
 ## Mod-Specific Changes
 
