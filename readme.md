@@ -2,7 +2,7 @@ Personally desired tweaks and patches for [Krastorio 2: Spaced Out](https://mods
 
 I'm making this as I play through my current mod list, to fix incompatibilities or shortcomings I find.
 
-Looking for more K2SO fixes/tweaks/enhancements? Check out [xyrc's K2SO Enhancements](https://mods.factorio.com/mod/xy-k2so-enhancements).
+Looking for more K2SO fixes/tweaks/enhancements? Check out [xyrc's K2SO Enhancements](https://mods.factorio.com/mod/xy-k2so-enhancements-nulls-fork).
 
 ---
 
