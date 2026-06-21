@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.23.0
+Date: 2026-06-21
+  Changes:
+    - A final pass is now made to ensure Krastorio machines can craft everything their base machines can craft. This ensures that if any mod adds new crafting categories, the advanced Krastorio machines can be automatically compatible. Affects advanced assembling machines, advanced chemical plants, and advanced furnaces.
+      - If XYRC's mod is installed, and its chem plant rebalance is enabled, this also affects the electrochemical plant.
+---------------------------------------------------------------------------------------------------
 Version: 1.22.3
 Date: 2026-06-17
   Changes:

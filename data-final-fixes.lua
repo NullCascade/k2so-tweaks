@@ -22,6 +22,7 @@ require("k2so-tweaks.patches.planets.rubia")
 -- Other compatibility patches.
 require("k2so-tweaks.patches.modify-recycling-results")
 require("k2so-tweaks.patches.standardize-electrolysis")
+require("k2so-tweaks.patches.consistent-crafting-recipes")
 
 local util = require("k2so-tweaks.util")
 util.patch.do_data_final_fixes()
