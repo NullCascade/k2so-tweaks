@@ -11,6 +11,7 @@ require("k2so-tweaks.patches.mods.krastorio2-spaced-out")
 require("k2so-tweaks.patches.mods.lighted-poles-plus")
 
 -- Planet-specific compatibility patches.
+require("k2so-tweaks.patches.planets.apia-carnova")
 require("k2so-tweaks.patches.planets.arig")
 require("k2so-tweaks.patches.planets.lignumis")
 require("k2so-tweaks.patches.planets.maraxsis")

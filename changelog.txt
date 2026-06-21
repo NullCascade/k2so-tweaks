@@ -6,6 +6,7 @@ Date: 2026-06-21
       - If XYRC's mod is installed, and its chem plant rebalance is enabled, this also affects the electrochemical plant.
     - Initial support for the Apia-Carnova Planet System mod.
       - Standardized stack sizes.
+      - Allowed certain crushing-like recipes (fossile and bone processing) to be done in Krastorio crushers (and any mod that can make use of it).
 ---------------------------------------------------------------------------------------------------
 Version: 1.22.3
 Date: 2026-06-17
