@@ -34,6 +34,20 @@ function util_graphics.create_dual_icon(primary_type, primary_id, secondary_type
 	}
 end
 
+---@param product_type string
+---@param product_id string
+---@param fluid_type string
+---@param fluid_id string
+---@return data.IconData[]
+function util_graphics.create_casting_icon(product_type, product_id, fluid_type, fluid_id)
+	local product_icon = assert(util_graphics.get_icon(product_type, product_id), "Product icon does not exist")
+	local fluid_icon = assert(util_graphics.get_icon(fluid_type, fluid_id), "Fluid icon does not exist")
+	return {
+		{ icon = product_icon, scale = 0.35, shift = { -5, 5 }, draw_background = true },
+		{ icon = fluid_icon, scale = 0.3, shift = { 5, -5 }, draw_background = true },
+	}
+end
+
 --- @param type string
 --- @param id string
 --- @param primary_icon_type string

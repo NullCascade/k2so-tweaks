@@ -7,6 +7,7 @@ Date: 2026-06-21
     - Initial support for the Apia-Carnova Planet System mod.
       - Standardized stack sizes.
       - Allowed certain crushing-like recipes (fossile and bone processing) to be done in Krastorio crushers (and any mod that can make use of it).
+    - Lignumis: Add recipe to direct cast gold cable from molten gold, similar to other metal casting recipes.
 ---------------------------------------------------------------------------------------------------
 Version: 1.22.3
 Date: 2026-06-17
