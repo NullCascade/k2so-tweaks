@@ -8,13 +8,18 @@ Looking for more K2SO fixes/tweaks/enhancements? Check out [xyrc's K2SO Enhancem
 
 - **Standardize Stack Sizes** (optional): Brings the stack sizes for any list optional dependency mod to be in line with K2's stack size defaults (200 for most items).
 - **Recycling Patches**: Some mods add new ways to generate base resources, such as rare ore or ice. This mod ensures that these new recipes don't cause base resources (ores, asteroid chunk results) don't recycle into exotic modded planet resources. Improves compatibility with Metal and Stars, Vesta, probably others. This also tweaks some other recycling recipes from Automatic Train Painter and Moshine.
+- **Consistent Crafting Categories**: Ensures that Krastorio 2 advanced crafting machines have access to their non-upgraded base machine crafting categories. Modded planets often add new categories that Krastorio doesn't get updated to understand. This fixes it so you can always craft something in an Advanced Chemical Plant that a normal Chemical Plant can craft, as an example. Affects the advanced assembling machine, advanced chemical reactor, and advanced furnace.
 
 ## Mod-Specific Changes
 
 ### [Age of Production](https://mods.factorio.com/mod/Age-of-Production)
 
 - Fixes ammunition crafting recipes.
-- Ensures that Krastorio 2 advanced crafting machines have access to their non-upgraded base machine crafting categories.
+
+### [Apia-Carnova Planet System](https://mods.factorio.com/mod/apia)
+
+- Allows crushing bones and fossils in the Krastorio crusher. This only applies to the basic recipe that the normal assembling machine could use.
+- Brings stack sizes in line with Krastorio's defaults.
 
 ### [Cerys](https://mods.factorio.com/mod/Cerys-Moon-of-Fulgora)
 
@@ -49,7 +54,8 @@ Looking for more K2SO fixes/tweaks/enhancements? Check out [xyrc's K2SO Enhancem
 
 ### [Lignumis](https://mods.factorio.com/mod/lignumis)
 
-- Allow Krastorio 2's greenhouses to work on the planet.
+- Allows Krastorio 2's greenhouses to work on the planet.
+- Adds a direct casting recipe for gold cable.
 - (Optional) Additional Matter Recipes: Adds matter conversion to/from peat and gold ore.
 
 ### [Maraxsis](https://mods.factorio.com/mod/maraxsis)
@@ -75,6 +81,11 @@ Looking for more K2SO fixes/tweaks/enhancements? Check out [xyrc's K2SO Enhancem
 - Brings stack sizes in line with Krastorio's defaults.
 - Adds compatibility between Muluna's thruster productivity technology and [K2SO Thruster Recipes Revert](https://mods.factorio.com/mod/k2so-thruster-fix) for those who use it.
 - (Optional) Additional Matter Recipes: Adds matter conversion to/from alumina.
+
+### [Paracelsin](https://mods.factorio.com/mod/Paracelsin)
+
+- If xyrc's mod is installed, and its electrochemical plant changes are active, the electrochemical plant will also benefit from the crafting category consistency changes this mod makes.
+- Brings stack sizes in line with Krastorio's defaults.
 
 ### [Pelagos](https://mods.factorio.com/mod/pelagos)
 
