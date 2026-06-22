@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.23.1
+Date: 2026-06-22
+  Changes:
+    - Fixed issue when trying to use common resources (glass, sand, etc.) without any mods that actually define them.
+---------------------------------------------------------------------------------------------------
 Version: 1.23.0
 Date: 2026-06-21
   Changes:

@@ -1,4 +1,7 @@
 
+-- Ensure standard items are instanced.
+require("k2so-tweaks.patches.mods.krastorio2-spaced-out")
+
 -- Generic patches.
 require("k2so-tweaks.patches.mods.crushing-industry-ratios")
 require("k2so-tweaks.patches.expanded-matter-recipes")

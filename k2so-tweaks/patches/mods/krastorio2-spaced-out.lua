@@ -2,15 +2,20 @@ local util = require("k2so-tweaks.util")
 
 local patch = util.patch.new_patch("mod-krastorio2-spaced-out")
 
-local function replace_k2_item(k2_id, common_id)
+local function ensure_common_item(k2_id, common_id)
 	local item = data.raw["item"][common_id]
-	if (item == nil) then
-		item = table.deepcopy(data.raw["item"][k2_id])
-		item.name = common_id
-		item.localised_name = {"item-name." .. k2_id}
-		item.localised_description = {"item-description." .. k2_id}
-		data:extend({ item })
+	if (item) then
+		return
 	end
+
+	item = table.deepcopy(data.raw["item"][k2_id])
+	item.name = common_id
+	item.localised_name = {"item-name." .. k2_id}
+	item.localised_description = {"item-description." .. k2_id}
+	data:extend({ item })
+end
+
+local function replace_k2_item(k2_id, common_id)
 	util.item.replace_all(k2_id, common_id)
 
 	local k2_recipe = data.raw["recipe"][k2_id]
@@ -19,15 +24,20 @@ local function replace_k2_item(k2_id, common_id)
 	end
 end
 
-local function replace_k2_fluid(k2_id, common_id)
+local function ensure_common_fluid(k2_id, common_id)
 	local fluid = data.raw["fluid"][common_id]
-	if (fluid == nil) then
-		fluid = table.deepcopy(data.raw["fluid"][k2_id])
-		fluid.name = common_id
-		fluid.localised_name = {"fluid-name." .. k2_id}
-		fluid.localised_description = {"fluid-description." .. k2_id}
-		data:extend({ fluid })
+	if (fluid) then
+		return
 	end
+
+	fluid = table.deepcopy(data.raw["fluid"][k2_id])
+	fluid.name = common_id
+	fluid.localised_name = {"fluid-name." .. k2_id}
+	fluid.localised_description = {"fluid-description." .. k2_id}
+	data:extend({ fluid })
+end
+
+local function replace_k2_fluid(k2_id, common_id)
 	util.fluid.replace_all(k2_id, common_id)
 
 	local k2_recipe = data.raw["recipe"][k2_id]
@@ -68,6 +78,16 @@ local function copy_resistance_type(prototype, from_type, to_type)
 
 	resistance_to.percent = resistance_from.percent
 	resistance_to.decrease = resistance_from.decrease
+end
+
+function patch.on_data()
+	-- This patch must be done before any of these items are used.
+	ensure_common_item("kr-sand", "sand")
+	ensure_common_item("kr-glass", "glass")
+	ensure_common_fluid("kr-oxygen", "oxygen")
+	ensure_common_fluid("kr-hydrogen", "hydrogen")
+	ensure_common_fluid("kr-nitrogen", "nitrogen")
+	ensure_common_fluid("kr-nitric-acid", "nitric-acid")
 end
 
 function patch.on_data_final_fixes()
