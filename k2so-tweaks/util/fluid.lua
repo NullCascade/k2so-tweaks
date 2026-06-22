@@ -20,6 +20,15 @@ local function copy_flare_data(old, new)
 	util.recipe.remove("kr-burn-" .. old)
 end
 
+local function replace_barrel(old, new, barrel_type)
+	local util = require("k2so-tweaks.util")
+	local old_barrel_id = string.format("%s-%s", old, barrel_type)
+	local new_barrel_id = string.format("%s-%s", new, barrel_type)
+	util.item.replace_all(old_barrel_id, new_barrel_id)
+	util.recipe.remove(string.format("%s-%s", old, barrel_type))
+	util.recipe.remove(string.format("empty-%s-%s", old, barrel_type))
+end
+
 function util_fluid.replace_all(old, new)
 	local util = require("k2so-tweaks.util")
 	util.log("Replacing all '%s' with '%s'", old, new)
@@ -41,7 +50,12 @@ function util_fluid.replace_all(old, new)
 	new_entity.hidden = false
 	new_entity.hidden_in_factoriopedia = false
 
+	-- Handle flaring.
 	copy_flare_data(old, new)
+
+	-- Handle barrels.
+	replace_barrel(old, new, "barrel")
+	replace_barrel(old, new, "titanium-barrel")
 end
 
 return util_fluid
