@@ -1,7 +1,11 @@
 local util_matter = {}
 
 function util_matter.get_matter_library()
-	return require("__Krastorio2-spaced-out__.prototypes.libraries.matter")
+	if (mods["Krastorio2"]) then
+		return require("__Krastorio2__.prototypes.libraries.matter")
+	else
+		return require("__Krastorio2-spaced-out__.prototypes.libraries.matter")
+	end
 end
 
 --- @param technology_id string

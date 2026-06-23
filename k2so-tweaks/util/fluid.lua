@@ -1,11 +1,21 @@
 local util_fluid = {}
 
-local flare_stack_lib = require("__Krastorio2-spaced-out__.prototypes.libraries.flare-stack")
+function util_fluid.get_flare_stack_library()
+	if (mods["Krastorio2"]) then
+		return require("__Krastorio2__.prototypes.libraries.flare-stack")
+	else
+		return require("__Krastorio2-spaced-out__.prototypes.libraries.flare-stack")
+	end
+end
 
 local function copy_flare_data(old, new)
-	local util = require("k2so-tweaks.util")
+	local flare_stack_lib = util_fluid.get_flare_stack_library()
+	if (not flare_stack_lib) then
+		return
+	end
 
-	if ("kr-burn-" .. new) then
+	local util = require("k2so-tweaks.util")
+	if (data.raw["recipe"]["kr-burn-" .. new]) then
 		return
 	end
 
