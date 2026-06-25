@@ -132,6 +132,33 @@ local function combat_changes_data()
 	end
 end
 
+--- @param type string
+--- @param base string
+--- @param new string
+local function give_grid_if_missing(type, base, new)
+	local base_entity = data.raw[type][base]
+	local new_entity = data.raw[type][new]
+	if (base_entity == nil) then
+		util.log("Cannot assign equipment grid to '%s'/'%s': Base entity '%s' does not exist.", type, new, base)
+		return
+	elseif (new_entity == nil) then
+		util.log("Cannot assign equipment grid to '%s'/'%s': Entity does not exist.", type, new)
+		return
+	elseif (new_entity.equipment_grid ~= nil) then
+		util.log("Cannot assign equipment grid to '%s'/'%s': Entity already has equipment grid '%s'.", type, new, new_entity.equipment_grid)
+		return
+	end
+
+	new_entity.equipment_grid = base_entity.equipment_grid
+end
+
+local function cargo_ship_equipment_grids()
+	-- Cargo ships get base train grids.
+	give_grid_if_missing("locomotive", "locomotive", "cargo_ship_engine")
+	give_grid_if_missing("cargo-wagon", "cargo-wagon", "cargo_ship")
+	give_grid_if_missing("fluid-wagon", "fluid-wagon", "oil_tanker")
+end
+
 local function combat_changes_final_fixes()
 	-- Make heavy gun turrets match normal gun turrets for damage scaling techs.
 	local heavy_gun_turret = data.raw["ammo-turret"]["heavy-gun-turret"]
@@ -150,4 +177,5 @@ end
 function patch.on_data_final_fixes()
 	support_modded_landfill()
 	combat_changes_final_fixes()
+	cargo_ship_equipment_grids()
 end

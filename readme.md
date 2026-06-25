@@ -94,6 +94,7 @@ Looking for more K2SO fixes/tweaks/enhancements? Check out [xyrc's K2SO Enhancem
 - Updates Corrosive Rifle Magazines to fit in line with Krastorio's ammo. New name, icon, buffed damage (8 -> 10), increased magazine size (10 -> 30). Requires K2 rifle ammo instead of pistol ammo.
 - Updates the Heavy Gun Turret to fit in line with Krastorio's changes to turrets. Slightly buffed range (25 -> 28), more health (1200 -> 1500), somewhat slower firing rate (2 -> 3), better scaling with physical damage technologies (matches K2's gun turret scaling).
 - Allows Pelagos' landfill productivity research to affect Krastorio (and other modded) landfill recipes.
+- Adds a Krastorio-style equipment grid to cargo and tanker ships.
 
 ### [Planetaris: Arig](https://mods.factorio.com/mod/planetaris-arig)
 
