@@ -49,6 +49,11 @@ local function support_modded_landfill()
 	end
 end
 
+local function expand_research()
+	-- Piranha roe should be affected like larvae is.
+	util.technology.copy_effect("cultivation-productivity", "recipe", "larvae-cultivation", "roe-reproduction", "change")
+end
+
 local function coconuts_in_greenhouses()
 	local greenhouse_batch_mult = 6
 
@@ -176,6 +181,7 @@ end
 
 function patch.on_data_final_fixes()
 	support_modded_landfill()
+	expand_research()
 	combat_changes_final_fixes()
 	cargo_ship_equipment_grids()
 end
