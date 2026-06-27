@@ -10,4 +10,9 @@ function patch.on_data_final_fixes()
     util.technology.extend_recipe_productivity("pipe-productivity-infinite", "pipe", "kr-steel-pipe")
     util.technology.extend_recipe_productivity("pipe-productivity-infinite", "pipe", "kr-casting-steel-pipe")
     util.technology.extend_recipe_productivity("pipe-productivity-infinite", "pipe", "zinc-pipe")
+
+    -- Allow steam turbine productivity to affect some other modded turbines.
+    util.technology.extend_recipe_productivity("steam-turbine-productivity-infinite", "steam-turbine", "kr-advanced-steam-turbine")
+    util.technology.extend_recipe_productivity("steam-turbine-productivity-infinite", "steam-turbine", "maraxsis-oversized-steam-turbine")
+    util.technology.extend_recipe_productivity("steam-turbine-productivity-infinite", "steam-turbine", "muluna-cycling-steam-turbine")
 end

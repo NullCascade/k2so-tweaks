@@ -4,6 +4,14 @@ I'm making this as I play through my current mod list, to fix incompatibilities 
 
 Looking for more K2SO fixes/tweaks/enhancements? Check out [xyrc's K2SO Enhancements](https://mods.factorio.com/mod/xy-k2so-enhancements-nulls-fork).
 
+**State of Transition**
+
+While mods update, it seems that K2 migration files have broken a lot of mods that use their own basic resources (e.g. nitric acid). These versions are stable and what I am using until other mods can update to be compatible with K2 2.0.
+
+- Krastorio 2: Spaced Out 1.6.20 (2.0 relies on Krastorio 2 which breaks several mods with its migration file)
+- Krastorio2Assets 2.0.4 (2.0.5 and later have breaking changes)
+- k2so-assets 1.0.5
+
 ---
 
 - **Standardize Stack Sizes** (optional): Brings the stack sizes for any list optional dependency mod to be in line with K2's stack size defaults (200 for most items).
@@ -26,6 +34,12 @@ Looking for more K2SO fixes/tweaks/enhancements? Check out [xyrc's K2SO Enhancem
 - Fixes ammunition crafting categories.
 - Brings stack sizes in line with Krastorio's defaults.
 - Allows the placement of K2SO's interplanetary teleporter on the surface.
+
+### [Corrundum](https://mods.factorio.com/mod/corrundum)
+
+- Pipe productivity affects K2 steel pipes, Lignumis gold pipes, and Paracelsin zinc pipes.
+- Steam turbine productivity affects K2 advanced turbines, Muluna condensing turbines, and Maraxsis oversized turbines.
+- Brings stack sizes in line with Krastorio's defaults.
 
 ### [Crushing Industry](https://mods.factorio.com/mod/crushing-industry)
 
