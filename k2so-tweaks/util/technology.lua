@@ -202,4 +202,16 @@ function util_technology.copy_effect(tech_id, search_key, search_value_old, sear
 	new_effect[sync_key] = old_effect[sync_key]
 end
 
+--- Filtered call to util.technology.copy_effect, gated to make sure the recipe exists.
+--- @param technology string
+--- @param base_recipe string
+--- @param new_recipe string
+function util_technology.extend_recipe_productivity(technology, base_recipe, new_recipe)
+    if (not data.raw["recipe"][new_recipe]) then
+        return
+    end
+
+    util_technology.copy_effect(technology, "recipe", base_recipe, new_recipe, "change")
+end
+
 return util_technology

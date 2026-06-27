@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.25.0
+Date: 2026-06-27
+  Changes:
+    - Corrundum: Pipe productivity affects K2 steel pipes, Lignumis gold pipes, and Paracelsin zinc pipes.
+---------------------------------------------------------------------------------------------------
 Version: 1.24.2
 Date: 2026-06-26
   Changes:
