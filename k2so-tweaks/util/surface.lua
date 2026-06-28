@@ -1,5 +1,22 @@
 local util_surface = {}
 
+--- @param surface data.PlanetPrototype
+--- @param property string
+--- @return data.SurfaceCondition?
+function util_surface.create_exact_surface_condition(surface, property)
+	local surface_properties = surface.surface_properties or {}
+	local value = surface_properties[property]
+	if (value == nil) then
+		return nil
+	end
+
+	return {
+		property = property,
+		min = value,
+		max = value,
+	}
+end
+
 --- @param entity_type string
 --- @param entity_id string
 --- @param planet_id string
