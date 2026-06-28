@@ -67,7 +67,7 @@ local function coconuts_in_greenhouses()
 			subgroup = "raw-resource",
 			order = "a[coconut-with-fertilizer]",
 			enabled = false,
-			category = "kr-growing",
+			categories = { "kr-growing" },
 			energy_required = 60,
 			ingredients = {
 				{ type = "fluid", name = "water", amount = 600 * greenhouse_batch_mult },

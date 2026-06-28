@@ -9,7 +9,7 @@ function patch.on_data_final_fixes()
 	local recipe = data.raw["recipe"]["kr-quantum-computer"]
 	if (recipe) then
 		recipe.localised_name = {"entity-name.kr-quantum-computer-reverted"}
-		recipe.category = "cryogenics"
+		recipe.categories = { "cryogenics" }
 		recipe.ingredients = {
 			{ type = "item", name = "kr-rare-metals", amount = 50 },
 			{ type = "item", name = "kr-ai-core", amount = 50 },

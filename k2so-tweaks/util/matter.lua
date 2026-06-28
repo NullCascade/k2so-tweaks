@@ -80,7 +80,7 @@ function util_matter.make_technology(params)
 	}
 	for _, ingredient in ipairs(params.additional_ingredients or {}) do
 		if (data.raw["item"][ingredient]) then
-			table.insert(ingredients, ingredient)
+			table.insert(ingredients, { ingredient, 1 })
 		end
 	end
 	local prerequisites = { "kr-matter-processing" }

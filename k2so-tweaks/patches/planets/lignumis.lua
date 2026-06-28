@@ -19,7 +19,7 @@ function patch.on_data()
                 type = "recipe",
                 name = "casting-gold-cable",
                 icons = util.graphics.create_casting_icon("item", "gold-cable", "fluid", "molten-gold"),
-                category = "metallurgy",
+                categories = { "metallurgy" },
                 energy_required = 1,
                 ingredients = {
                     { type = "fluid", name = "molten-gold", amount = 5, fluidbox_multiplier = 5 },

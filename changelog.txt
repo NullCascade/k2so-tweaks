@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.0
+Date: 2026-06-28
+  Changes:
+    - Updated for Factorio 2.1. Tons of mods are still not updated, and things are still probably broken. Consider this the unstable beta for the unstable beta that it is.
+---------------------------------------------------------------------------------------------------
 Version: 1.26.0
 Date: 2026-06-28
   Changes:

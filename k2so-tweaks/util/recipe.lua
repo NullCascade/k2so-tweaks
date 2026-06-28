@@ -209,7 +209,7 @@ function util_recipe.set_category(recipe_name, category)
 		return
 	end
 
-	recipe.category = category
+	recipe.categories = { category }
 end
 
 --- @param recipe_name string
@@ -220,14 +220,14 @@ function util_recipe.add_additional_category(recipe_name, category)
 		return
 	end
 
-	recipe.additional_categories = recipe.additional_categories or {}
-	for _, existing in ipairs(recipe.additional_categories) do
+	recipe.categories = recipe.categories or {}
+	for _, existing in ipairs(recipe.categories) do
 		if (existing == category) then
 			return
 		end
 	end
 
-	table.insert(recipe.additional_categories, category)
+	table.insert(recipe.categories, category)
 end
 
 --- Creates a copy of a recipe.

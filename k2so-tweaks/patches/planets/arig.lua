@@ -74,7 +74,7 @@ local function add_water_harvesting_recipe(water_settings)
 				type = "recipe",
 				name = recipe_name,
 				localised_name = {"", {"space-location-name." .. water_settings.name}, " ", {"recipe-name.planetaris-water-harvesting"}},
-				category = "water-production",
+				categories = { "water-production" },
 				subgroup = "water-harvesting",
 				order = water_settings.order,
 				icons = {
@@ -110,7 +110,7 @@ function patch.on_data()
 			type = "recipe",
 			name = "k2sotweak-arig-glass-panel-direct",
 			icons = util.graphics.create_dual_icon("item", "glass", "fluid", "planetaris-pure-sand"),
-			category = "metallurgy",
+			categories = { "metallurgy" },
 			energy_required = 3,
 			ingredients = {
 				{ type = "fluid", name = "planetaris-pure-sand", amount = 100 },
@@ -127,7 +127,7 @@ function patch.on_data()
 			name = "k2sotweak-sand-item-sifting",
 			type = "recipe",
 			icons = util.graphics.create_dual_icon("item", "kr-sand", "fluid", "planetaris-sand"),
-			category = "sifting",
+			categories = { "sifting" },
 			energy_required = 0.5,
 			ingredients = {
 				{ type = "fluid", name = "planetaris-sand", amount = 200 },
