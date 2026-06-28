@@ -5,7 +5,7 @@
 	"author": "NullCascade",
 	"factorio_version": "2.1",
 	"dependencies": [
-		"base >= 2.0",
+		"base",
 		"space-age",
 		"Krastorio2-spaced-out",
 		"PlanetsLib",
