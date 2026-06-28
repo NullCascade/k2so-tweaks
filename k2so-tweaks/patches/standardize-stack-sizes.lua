@@ -8,6 +8,8 @@ patch:add_required_startup_setting_equal("nulls-k2so-standardize-stack-sizes", t
 function patch.on_data_final_fixes()
 	local default_stack_size = 200
 	local machine_stack_size = 50
+	local big_machine_stack_size = 20
+	local advanced_pipe_stack_size = 50
 
 	-- Base items. Some mods revert them to vanilla stack sizes.
 	util.item.set_stack_size("item", "explosives", default_stack_size)
@@ -201,10 +203,17 @@ function patch.on_data_final_fixes()
 
 	-- Paracelsin
 	util.item.set_stack_size("item", "electric-coil", default_stack_size)
-	util.item.set_stack_size("item", "galvanized-steel", default_stack_size)
+	util.item.set_stack_size("item", "electromagnetic-plant", big_machine_stack_size)
+	util.item.set_stack_size("item", "galvanized-iron-gear-wheel", default_stack_size)
+	util.item.set_stack_size("item", "galvanized-iron-plate", default_stack_size)
+	util.item.set_stack_size("item", "galvanized-steel-plate", default_stack_size)
+	util.item.set_stack_size("item", "macerator", big_machine_stack_size)
+	util.item.set_stack_size("item", "mechanical-plant", big_machine_stack_size)
 	util.item.set_stack_size("item", "sphalerite", default_stack_size)
 	util.item.set_stack_size("item", "tetrahedrite", default_stack_size)
 	util.item.set_stack_size("item", "vaterite", default_stack_size)
+	util.item.set_stack_size("item", "zinc-pipe-to-ground", advanced_pipe_stack_size)
+	util.item.set_stack_size("item", "zinc-pipe", advanced_pipe_stack_size)
 	util.item.set_stack_size("item", "zinc-plate", default_stack_size)
 	util.item.set_stack_size("item", "zinc-rivets", default_stack_size)
 	util.item.set_stack_size("item", "zinc-solder", default_stack_size)

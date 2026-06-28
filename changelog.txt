@@ -3,6 +3,7 @@ Version: 1.26.0
 Date: 2026-06-28
   Changes:
     - Corrundum: Blue rockets damage values have been adjusted proportionally to changes Krastorio 2 makes to its ammo.
+    - Paracelsin: Stack size standardization improvements. Advanced machines stack to 20, resources to 200, advanced pipes to 50.
 ---------------------------------------------------------------------------------------------------
 Version: 1.25.0
 Date: 2026-06-27
