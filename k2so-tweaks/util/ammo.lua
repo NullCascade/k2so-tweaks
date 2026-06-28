@@ -1,4 +1,5 @@
 local util_ammo = {}
+local util_trigger = require("k2so-tweaks.util.trigger")
 
 --- @param ammo_name string
 --- @param new_size number
@@ -27,17 +28,7 @@ function util_ammo.update_damage(ammo_name, old_damage, new_damage, damage_type)
 		return
 	end
 
-	for _, action in ipairs(ammo_action) do
-		local deliveries = action.action_delivery
-		for _, delivery in ipairs(deliveries or {}) do
-			local target_effects = delivery.target_effects
-			for _, effect in ipairs(target_effects or {}) do
-				if (effect.type == "damage" and effect.damage.type == damage_type and effect.damage.amount == old_damage) then
-					effect.damage.amount = new_damage
-				end
-			end
-		end
-	end
+	util_trigger.update_damage(ammo_action, old_damage, new_damage, damage_type)
 end
 
 return util_ammo

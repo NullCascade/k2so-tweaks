@@ -10,6 +10,7 @@ util.log = require("k2so-tweaks.util.log")
 util.matter = require("k2so-tweaks.util.matter")
 util.minable = require("k2so-tweaks.util.minable")
 util.patch = require("k2so-tweaks.util.patch")
+util.projectile = require("k2so-tweaks.util.projectile")
 util.recipe = require("k2so-tweaks.util.recipe")
 util.recycling = require("k2so-tweaks.util.recycling")
 util.string = require("k2so-tweaks.util.string")
@@ -17,6 +18,7 @@ util.surface = require("k2so-tweaks.util.surface")
 util.table = require("k2so-tweaks.util.table")
 util.technology = require("k2so-tweaks.util.technology")
 util.tile = require("k2so-tweaks.util.tile")
+util.trigger = require("k2so-tweaks.util.trigger")
 
 --- @param key string
 --- @param value any

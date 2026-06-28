@@ -37,6 +37,7 @@ While mods update, it seems that K2 migration files have broken a lot of mods th
 
 ### [Corrundum](https://mods.factorio.com/mod/corrundum)
 
+- Blue rocket damage is buffed proportionally to other changes Krastorio 2 does to rocket damage.
 - Pipe productivity affects K2 steel pipes, Lignumis gold pipes, and Paracelsin zinc pipes.
 - Steam turbine productivity affects K2 advanced turbines, Muluna condensing turbines, and Maraxsis oversized turbines.
 - Brings stack sizes in line with Krastorio's defaults.

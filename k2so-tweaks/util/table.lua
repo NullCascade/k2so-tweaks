@@ -20,6 +20,22 @@ function util_table.values(t)
 	return values
 end
 
+--- Converts a value that may be a single table or an array-style table into an array-style table.
+--- This matches several Factorio prototype fields that accept either one definition or many definitions.
+--- @param value table|nil
+--- @return table[]
+function util_table.as_array(value)
+	if (value == nil or next(value) == nil) then
+		return {}
+	end
+
+	if (value[1] ~= nil) then
+		return value
+	end
+
+	return { value }
+end
+
 --- @param t table
 --- @return number
 function util_table.size(t)
