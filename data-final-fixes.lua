@@ -18,7 +18,6 @@ require("k2so-tweaks.patches.planets.lignumis")
 require("k2so-tweaks.patches.planets.maraxsis")
 require("k2so-tweaks.patches.planets.maraxsis-quantum-revert")
 require("k2so-tweaks.patches.planets.muluna")
-require("k2so-tweaks.patches.planets.outer-rim")
 require("k2so-tweaks.patches.planets.pelagos")
 require("k2so-tweaks.patches.planets.rubia")
 
