@@ -1,0 +1,33 @@
+{
+	"item": [
+		[ "sand", "kr-sand" ],
+		[ "glass", "kr-glass" ],
+		[ "silicon", "kr-silicon" ],
+		[ "planetaris-glass-panel", "kr-glass" ],
+		[ "planetaris-raw-quartz", "kr-quartz" ]
+	],
+	"fluid": [
+		[ "oxygen", "kr-oxygen" ],
+		[ "hydrogen", "kr-hydrogen" ],
+		[ "nitric-acid", "kr-nitric-acid" ],
+		[ "nitrogen", "kr-nitrogen" ]
+	],
+    "recipe": [
+        [ "oxygen-barrel", "kr-oxygen-barrel" ],
+        [ "empty-oxygen-barrel", "empty-kr-oxygen-barrel" ],
+        [ "hydrogen-barrel", "kr-hydrogen-barrel" ],
+        [ "empty-hydrogen-barrel", "empty-kr-hydrogen-barrel" ],
+        [ "nitrogen-barrel", "kr-nitrogen-barrel" ],
+        [ "empty-nitrogen-barrel", "empty-kr-nitrogen-barrel" ],
+        [ "nitric-acid-barrel", "kr-nitric-acid-barrel" ],
+        [ "empty-nitric-acid-barrel", "empty-kr-nitric-acid-barrel" ],
+        [ "oxygen-titanium-barrel", "kr-oxygen-titanium-barrel" ],
+        [ "empty-oxygen-titanium-barrel", "empty-kr-oxygen-titanium-barrel" ],
+        [ "hydrogen-titanium-barrel", "kr-hydrogen-titanium-barrel" ],
+        [ "empty-hydrogen-titanium-barrel", "empty-kr-hydrogen-titanium-barrel" ],
+        [ "nitrogen-titanium-barrel", "kr-nitrogen-titanium-barrel" ],
+        [ "empty-nitrogen-titanium-barrel", "empty-kr-nitrogen-titanium-barrel" ],
+        [ "nitric-acid-titanium-barrel", "kr-nitric-acid-titanium-barrel" ],
+        [ "empty-nitric-acid-titanium-barrel", "empty-kr-nitric-acid-titanium-barrel" ]
+    ]
+}

@@ -3,6 +3,7 @@ Version: 1.27.2
 Date: 2026-06-29
   Changes:
     - Paracelsin: Removed Outer Rim patch, as official support is added.
+    - Planetaris: Migrate planetaris-glass-panel into kr-glass.
 ---------------------------------------------------------------------------------------------------
 Version: 1.27.1
 Date: 2026-06-28
