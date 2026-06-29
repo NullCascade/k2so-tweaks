@@ -171,11 +171,7 @@ function patch.on_data()
 end
 
 function patch.on_data_final_fixes()
-	-- No need for Arig to have its own glass or quartz.
-	util.item.replace_all("planetaris-glass-panel", "glass")
-	util.item.replace_all("planetaris-raw-quartz", "kr-quartz")
-
 	-- Standardize some icons.
-	util.graphics.set_standardized_dual_icon("recipe", "planetaris-glass-panel", "item", "glass", "item", "planetaris-pure-sand-barrel")
-	util.graphics.set_standardized_dual_icon("recipe", "planetaris-raw-quartz", "item", "planetaris-raw-quartz", "item", "planetaris-sandstone-brick")
+	util.graphics.set_standardized_dual_icon("recipe", "planetaris-glass-panel", "item", "kr-glass", "item", "planetaris-pure-sand-barrel")
+	util.graphics.set_standardized_dual_icon("recipe", "planetaris-raw-quartz", "item", "kr-quartz", "item", "planetaris-sandstone-brick")
 end

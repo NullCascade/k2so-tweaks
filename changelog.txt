@@ -15,6 +15,12 @@ Date: 2026-06-28
     - This version is synced with 1.26.0.
     - Updated for Factorio 2.1. Tons of mods are still not updated, and things are still probably broken. Consider this the unstable beta for the unstable beta that it is.
 ---------------------------------------------------------------------------------------------------
+Version: 1.27.2
+Date: 2026-06-29
+  Changes:
+    - Planetaris: Migrate planetaris-glass-panel into kr-glass.
+    - Code cleanup. Removed some patches that aren't needed anymore.
+---------------------------------------------------------------------------------------------------
 Version: 1.27.1
 Date: 2026-06-28
   Changes:
