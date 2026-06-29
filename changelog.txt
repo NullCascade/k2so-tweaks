@@ -4,6 +4,16 @@ Date: 2026-06-28
   Changes:
     - Updated for Factorio 2.1. Tons of mods are still not updated, and things are still probably broken. Consider this the unstable beta for the unstable beta that it is.
 ---------------------------------------------------------------------------------------------------
+Version: 1.27.0
+Date: 2026-06-28
+  Changes:
+    - Change to favor Krastorio versions of common items and fluids. Krastorio 2 makes this change for us, and factories would break in the transition to 2.0/2.1 without me doing similarly.
+---------------------------------------------------------------------------------------------------
+Version: 1.26.1
+Date: 2026-06-28
+  Changes:
+    - Pelagos: Ensure that diesel fuel is used for cargo ships. K2SO requiring K2 causes them to revert to base K2 fuels.
+---------------------------------------------------------------------------------------------------
 Version: 1.26.0
 Date: 2026-06-28
   Changes:
