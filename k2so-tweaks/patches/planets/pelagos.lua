@@ -164,6 +164,33 @@ local function cargo_ship_equipment_grids()
 	give_grid_if_missing("fluid-wagon", "fluid-wagon", "oil_tanker")
 end
 
+--- @param type string
+--- @param name string
+local function set_diesel_fuel_categories(type, name)
+	local prototypes = data.raw[type]
+	local entity = prototypes and prototypes[name]
+	if (entity == nil) then
+		return
+	end
+
+	if (entity.energy_source == nil) then
+		return
+	end
+
+	entity.energy_source.fuel_categories = { "diesel-fuel" }
+end
+
+--- @return nil
+local function restore_cargo_ship_diesel_fuel()
+	if (data.raw["fuel-category"]["diesel-fuel"] == nil) then
+		return
+	end
+
+	set_diesel_fuel_categories("locomotive", "cargo_ship_engine")
+	set_diesel_fuel_categories("locomotive", "boat_engine")
+	set_diesel_fuel_categories("car", "indep-boat")
+end
+
 local function combat_changes_final_fixes()
 	-- Make heavy gun turrets match normal gun turrets for damage scaling techs.
 	local heavy_gun_turret = data.raw["ammo-turret"]["heavy-gun-turret"]
@@ -184,4 +211,5 @@ function patch.on_data_final_fixes()
 	expand_research()
 	combat_changes_final_fixes()
 	cargo_ship_equipment_grids()
+	restore_cargo_ship_diesel_fuel()
 end

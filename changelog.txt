@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.26.1
+Date: 2026-06-28
+  Changes:
+    - Pelagos: Ensure that diesel fuel is used for cargo ships. K2SO requiring K2 causes them to revert to base K2 fuels.
+---------------------------------------------------------------------------------------------------
 Version: 1.26.0
 Date: 2026-06-28
   Changes:
