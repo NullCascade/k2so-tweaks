@@ -2,8 +2,8 @@
 	"item": [
 		[ "sand", "kr-sand" ],
 		[ "glass", "kr-glass" ],
-		[ "kr-silicon", "silicon" ],
-		[ "kr-quartz", "planetaris-raw-quartz" ]
+		[ "silicon", "kr-silicon" ],
+		[ "planetaris-raw-quartz", "kr-quartz" ]
 	],
 	"fluid": [
 		[ "oxygen", "kr-oxygen" ],

@@ -94,6 +94,8 @@ function patch.on_data_final_fixes()
 	-- Standardize items/fluids.
 	replace_k2_item("sand", "kr-sand")
 	replace_k2_item("glass", "kr-glass")
+	replace_k2_item("silicon", "kr-silicon")
+	replace_k2_item("planetaris-raw-quartz", "kr-quartz")
 	replace_k2_fluid("oxygen", "kr-oxygen")
 	replace_k2_fluid("hydrogen", "kr-hydrogen")
 	replace_k2_fluid("nitrogen", "kr-nitrogen")
