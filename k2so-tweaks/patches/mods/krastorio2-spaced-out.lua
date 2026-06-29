@@ -82,22 +82,22 @@ end
 
 function patch.on_data()
 	-- This patch must be done before any of these items are used.
-	ensure_common_item("kr-sand", "sand")
-	ensure_common_item("kr-glass", "glass")
-	ensure_common_fluid("kr-oxygen", "oxygen")
-	ensure_common_fluid("kr-hydrogen", "hydrogen")
-	ensure_common_fluid("kr-nitrogen", "nitrogen")
-	ensure_common_fluid("kr-nitric-acid", "nitric-acid")
+	ensure_common_item("sand", "kr-sand")
+	ensure_common_item("glass", "kr-glass")
+	ensure_common_fluid("oxygen", "kr-oxygen")
+	ensure_common_fluid("hydrogen", "kr-hydrogen")
+	ensure_common_fluid("nitrogen", "kr-nitrogen")
+	ensure_common_fluid("nitric-acid", "kr-nitric-acid")
 end
 
 function patch.on_data_final_fixes()
 	-- Standardize items/fluids.
-	replace_k2_item("kr-sand", "sand")
-	replace_k2_item("kr-glass", "glass")
-	replace_k2_fluid("kr-oxygen", "oxygen")
-	replace_k2_fluid("kr-hydrogen", "hydrogen")
-	replace_k2_fluid("kr-nitrogen", "nitrogen")
-	replace_k2_fluid("kr-nitric-acid", "nitric-acid")
+	replace_k2_item("sand", "kr-sand")
+	replace_k2_item("glass", "kr-glass")
+	replace_k2_fluid("oxygen", "kr-oxygen")
+	replace_k2_fluid("hydrogen", "kr-hydrogen")
+	replace_k2_fluid("nitrogen", "kr-nitrogen")
+	replace_k2_fluid("nitric-acid", "kr-nitric-acid")
 
 	-- Enforce burn limits to 100 fluid/2 seconds.
 	enforce_burn_limits()
