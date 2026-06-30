@@ -4,6 +4,7 @@ require("k2so-tweaks.patches.expanded-alternate-recipes")
 require("k2so-tweaks.patches.expanded-matter-recipes")
 
 -- Mod-specific patches.
+require("k2so-tweaks.patches.mods.krastorio2-spaced-out")
 require("k2so-tweaks.patches.mods.more-asteroids")
 
 local util = require("k2so-tweaks.util")
