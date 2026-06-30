@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.2.0
+Date: 2026-06-30
+  Changes:
+    - This version is synced with 1.28.0.
+    - Fix that adding additional categories to recipes didn't inherit the base crafting category.
+---------------------------------------------------------------------------------------------------
 Version: 2.1.3
 Date: 2026-06-29
   Changes:

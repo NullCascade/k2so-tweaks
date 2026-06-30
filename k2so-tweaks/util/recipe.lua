@@ -230,7 +230,7 @@ function util_recipe.add_additional_category(recipe_name, category)
 		return
 	end
 
-	recipe.categories = recipe.categories or {}
+	recipe.categories = recipe.categories or { "crafting" }
 	for _, existing in ipairs(recipe.categories) do
 		if (existing == category) then
 			return
