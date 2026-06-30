@@ -66,7 +66,7 @@ local function coconuts_in_greenhouses()
 			icon = util.graphics.get_icon("item", "coconut"),
 			subgroup = "raw-resource",
 			order = "a[coconut-with-fertilizer]",
-			enabled = false,
+			enabled = true,
 			category = "kr-growing",
 			energy_required = 60,
 			ingredients = {
@@ -84,33 +84,10 @@ local function coconuts_in_greenhouses()
 				{ property = "pressure", min = 1809, max = 1809 },
 			},
 		},
-		-- Add the technology to unlock the above recipe.
-		{
-			type = "technology",
-			name = "k2sotweak-pelagos-greenhouse",
-			icons = {
-				{ icon = "__Krastorio2Assets__/technologies/greenhouse.png", icon_size = 256 },
-				{ icon = "__pelagos__/graphics/palm/palm-tree-5.png", scale = 1/8, shift = { -32, 16 }, icon_size = 1024, floating = true, },
-				{ icon = "__pelagos__/graphics/palm/palm-tree-2.png", scale = 1/8, shift = { 32, 16 }, icon_size = 1024, floating = true, },
-			},
-			unit = {
-				time = 60,
-				count = 1000,
-				ingredients = {
-					{ "production-science-pack", 1 },
-					{ "utility-science-pack", 1 },
-					{ "space-science-pack", 1 },
-					{ "kr-advanced-tech-card", 1 },
-					{ "agricultural-science-pack", 1 },
-					{ "pelagos-science-pack", 1 },
-				},
-			},
-			prerequisites = { "pelagos-science-pack", "kr-advanced-tech-card" },
-			effects = {
-				{ type = "unlock-recipe", recipe = "k2sotweak-coconut-greenhouse" },
-			},
-		},
 	})
+
+	-- The author of Pelagos doesn't like this on their planet, so we're disabling this.
+	util.recipe.set_hidden("k2sotweak-coconut-greenhouse", true)
 end
 
 local function combat_changes_data()

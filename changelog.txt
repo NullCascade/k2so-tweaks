@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.28.0
+Date: 2026-06-30
+  Changes:
+    - Removed the coconut greenhouse recipe on Pelagos at the mod author's wishes. The recipe is set to hidden so existing factories can migrate to using agricultural towers.
+---------------------------------------------------------------------------------------------------
 Version: 1.27.4
 Date: 2026-06-29
   Changes:
