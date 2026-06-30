@@ -99,10 +99,10 @@ end
 --- This backports the changes so 2.0 can remain stable.
 local function fix_k2so2()
 	-- v2.0.2: Fixed that biofuel couldn't be used in vehicles
-	local fuels = { "wood", "carbon", "rocket_fuel", "small_electric_pole", "solid-fuel", "wooden-chest", "kr-biofuel" }
+	local fuels = { "kr-biofuel" }
 	for _, fuel in ipairs(fuels) do
 		local item = data.raw["item"][fuel]
-		if (item) then
+		if (item and item.fuel_category == "chemical") then
 			item.fuel_category = "kr-vehicle-fuel"
 		end
 	end

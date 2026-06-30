@@ -66,7 +66,7 @@ local function coconuts_in_greenhouses()
 			icon = util.graphics.get_icon("item", "coconut"),
 			subgroup = "raw-resource",
 			order = "a[coconut-with-fertilizer]",
-			enabled = false,
+			enabled = true,
 			categories = { "kr-growing" },
 			energy_required = 60,
 			ingredients = {
@@ -111,6 +111,9 @@ local function coconuts_in_greenhouses()
 			},
 		},
 	})
+
+	-- The author of Pelagos doesn't like this on their planet, so we're disabling this.
+	util.recipe.set_hidden("k2sotweak-coconut-greenhouse", true)
 end
 
 local function combat_changes_data()

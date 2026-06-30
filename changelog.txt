@@ -25,6 +25,17 @@ Date: 2026-06-28
     - This version is synced with 1.26.0.
     - Updated for Factorio 2.1. Tons of mods are still not updated, and things are still probably broken. Consider this the unstable beta for the unstable beta that it is.
 ---------------------------------------------------------------------------------------------------
+Version: 1.28.0
+Date: 2026-06-30
+  Changes:
+    - Removed the coconut greenhouse recipe on Pelagos at the mod author's wishes. The recipe is set to hidden so existing factories can migrate to using agricultural towers.
+    - Polish translation by S3BA.
+---------------------------------------------------------------------------------------------------
+Version: 1.27.4
+Date: 2026-06-29
+  Changes:
+    - Fix biofuel fix affecting more than just biofuel.
+---------------------------------------------------------------------------------------------------
 Version: 1.27.3
 Date: 2026-06-29
   Changes:
