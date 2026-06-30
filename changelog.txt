@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.27.3
+Date: 2026-06-29
+  Changes:
+    - Backport fixes from Krastorio Spaced Out for Factorio 2.1:
+      - Fixed that biofuel couldn't be used in vehicles
+      - Fixed that superior inserters couldn't stack items
+      - Fixed that crash landing lab couldn't research with automation tech cards 
+      - Tier 3 modules once again require vanilla spece age ingredients
+      - Fixed that express underground belts produced lubricant instead of requiring it
+      - Fixed coke from carbon locale
+---------------------------------------------------------------------------------------------------
 Version: 1.27.2
 Date: 2026-06-29
   Changes:

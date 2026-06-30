@@ -201,6 +201,16 @@ function util_recipe.has_result(recipe, item)
 	return util_recipe.find_result(recipe, item, "item") ~= nil
 end
 
+function util_recipe.remove_result(recipe, type, name)
+	local result = util_recipe.find_result(recipe, name, type)
+	if (not result) then
+		return
+	end
+
+	local recipe_prototype = data.raw["recipe"][recipe]
+	util_table.remove_value(recipe_prototype.results, result)
+end
+
 --- @param recipe_name string
 --- @param category string
 function util_recipe.set_category(recipe_name, category)

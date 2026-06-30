@@ -95,6 +95,65 @@ function patch.on_data()
 	ensure_common_resources()
 end
 
+--- Krastorio Spaced Out 2.0 introduced a ton of bugs that won't likely be fixed, making the project unviable on an up to date Factorio 2.0.
+--- This backports the changes so 2.0 can remain stable.
+local function fix_k2so2()
+	-- v2.0.2: Fixed that biofuel couldn't be used in vehicles
+	local fuels = { "wood", "carbon", "rocket_fuel", "small_electric_pole", "solid-fuel", "wooden-chest", "kr-biofuel" }
+	for _, fuel in ipairs(fuels) do
+		local item = data.raw["item"][fuel]
+		if (item) then
+			item.fuel_category = "kr-vehicle-fuel"
+		end
+	end
+
+	-- v2.0.3: Fixed that superior inserters couldn't stack items
+	util.inserter.set_max_belt_stack_size("kr-superior-inserter", 4)
+	util.inserter.set_max_belt_stack_size("kr-superior-long-inserter", 4)
+
+	-- v2.0.4: Fixed that crash landing lab couldn't research with automation tech cards 
+	local spaceship_research_computer = data.raw.lab["kr-spaceship-research-computer"]
+	if (spaceship_research_computer) then
+		util.table.insert_unique(spaceship_research_computer.inputs, "automation-science-pack")
+	end
+
+	-- v2.0.5: Fixed that "Welcome to the jungle" research didn't unlock any recipes
+	local decorations_tech = data.raw["technology"]["kr-decorations"]
+	if (decorations_tech) then
+		decorations_tech.unit = nil
+		decorations_tech.research_trigger = {
+			type = "craft-item",
+			item = "kr-greenhouse",
+			count = 1,
+		}
+		local tree_recipes = { "tree-01", "tree-02", "tree-02-red", "tree-03", "tree-04", "tree-05", "tree-06", "tree-06-brown", "tree-07", "tree-08", "tree-08-brown", "tree-08-red", "tree-09", "tree-09-brown", "tree-09-red", "dry-tree", "dead-tree-desert", "dead-grey-trunk", "dead-dry-hairy-tree", "dry-hairy-tree", "ashland-lichen-tree", "ashland-lichen-tree-flaming", "cuttlepop", "slipstack", "funneltrunk", "hairyclubnub", "teflilly", "lickmaw", "stingfrond", "boompuff", "sunnycomb", "water-cane", "honey-mushroom", "gold-stromatolite", "huge-rock", "big-rock", "big-sand-rock", "huge-volcanic-rock", "huge-volcanic-rock-hot", "big-volcanic-rock", "big-volcanic-rock-hot", "big-fulgora-rock", "huge-corrundum-rock", "vesta_rock_huge", "big-metallic-rock", "moshine-huge-volcanic-rock", "moshine-big-fulgora-rock", "lunar-rock", "lunar-huge-rock" }
+		for _, recipe in ipairs(tree_recipes) do
+			util.technology.add_recipe_unlock("kr-decorations", recipe)
+		end
+	end
+
+	-- v2.0.6: Tier 3 modules once again require vanilla spece age ingredients
+	util.recipe.add_ingredient("speed-module-3", "tungsten-carbide", 1, "item")
+	util.recipe.replace_ingredient_amount("speed-module-3", "speed-module-2", 4, "item")
+	util.recipe.add_ingredient("productivity-module-3", "biter-egg", 1, "item")
+	util.recipe.replace_ingredient_amount("productivity-module-3", "productivity-module-2", 4, "item")
+	util.recipe.add_ingredient("efficiency-module-3", "spoilage", 1, "item")
+	util.recipe.replace_ingredient_amount("efficiency-module-3", "efficiency-module-2", 4, "item")
+	util.recipe.add_ingredient("quality-module-3", "superconductor", 1, "item")
+	util.recipe.replace_ingredient_amount("quality-module-3", "quality-module-2", 4, "item")
+
+	-- v2.0.6: Fixed that express underground belts produced lubricant instead of requiring it
+	util.recipe.remove_result("express-underground-belt", "fluid", "lubricant")
+	util.recipe.add_ingredient("express-underground-belt", "lubricant", 40, "fluid")
+end
+
+function patch.on_data_updates()
+	-- We only do this for K2SO v2.0.0 explicitly. 2.0.1 is another unrelated breaking change whose branch gets updates.
+	if (mods["Krastorio2-spaced-out"] == "2.0.0") then
+		fix_k2so2()
+	end
+end
+
 --- Standardize items/fluids.
 local function replace_common_resources()
 	replace_item("sand", "kr-sand")

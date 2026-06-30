@@ -6,19 +6,24 @@ function util_technology.add_recipe_unlock(technology, recipe)
 	assert(type(technology) == "string")
 	assert(type(recipe) == "string")
 
-	local tech = data.raw["technology"][technology]
-	if (not tech) then
+	local tech_prototype = data.raw["technology"][technology]
+	if (not tech_prototype) then
 		return
 	end
 
-	for _, effect in ipairs(tech.effects) do
+	local recipe_prototype = data.raw["recipe"][recipe]
+	if (not recipe_prototype) then
+		return
+	end
+
+	for _, effect in ipairs(tech_prototype.effects) do
 		-- Prevent duplicates
 		if (effect.type == "unlock-recipe" and effect.recipe == recipe) then
 			return
 		end
 	end
 
-	table.insert(tech.effects, { type = "unlock-recipe", recipe = recipe })
+	table.insert(tech_prototype.effects, { type = "unlock-recipe", recipe = recipe })
 end
 
 --- @param id string
