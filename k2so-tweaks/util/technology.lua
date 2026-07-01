@@ -1,4 +1,5 @@
 local util_technology = {}
+local util_table = require("k2so-tweaks.util.table")
 
 --- @param technology string
 --- @param recipe string
@@ -119,9 +120,8 @@ function util_technology.has_effect(id, effect)
 		return
 	end
 
-	local util = require("k2so-tweaks.util")
 	for _, existing_effect in ipairs(prototype.effects or {}) do
-		if util.table.match_all(effect, existing_effect) then
+		if util_table.match_all(effect, existing_effect) then
 			return true
 		end
 	end
@@ -140,9 +140,8 @@ function util_technology.remove(id, replace_with)
 	prototype.hidden = true
 	prototype.hidden_in_factoriopedia = true
 
-	local util = require("k2so-tweaks.util")
 	for _, tech in pairs(data.raw["technology"]) do
-		if (util.table.remove_value(tech.prerequisites or {}, id) and replace_with) then
+		if (util_table.remove_value(tech.prerequisites or {}, id) and replace_with) then
 			table.insert(tech.prerequisites, replace_with)
 		end
 	end
@@ -150,7 +149,6 @@ end
 
 --- @param id string
 function util_technology.remove_all_unlocks(id)
-	local util = require("k2so-tweaks.util")
 	for _, tech in pairs(data.raw["technology"]) do
 		local to_remove = {}
 		for _, effect in ipairs(tech.effects or {}) do
@@ -159,9 +157,31 @@ function util_technology.remove_all_unlocks(id)
 			end
 		end
 		for _, effect in ipairs(to_remove) do
-			util.table.remove_value(tech.effects, effect)
+			util_table.remove_value(tech.effects, effect)
 		end
 	end
+end
+
+--- @param id string
+--- @param prerequisite string
+function util_technology.remove_prerequisite(id, prerequisite)
+	local tech_prototype = data.raw["technology"][id]
+	if (tech_prototype == nil or tech_prototype.prerequisites == nil) then
+		return
+	end
+
+	util_table.remove_value(tech_prototype.prerequisites, prerequisite)
+end
+
+--- @param id string
+--- @param unit string
+function util_technology.remove_unit(id, unit)
+	local tech_prototype = data.raw["technology"][id]
+	if (tech_prototype == nil or tech_prototype.unit == nil) then
+		return
+	end
+
+	util_table.remove_with_keyvalue(tech_prototype.unit.ingredients, 1, unit)
 end
 
 --- @param id string
@@ -190,14 +210,12 @@ function util_technology.copy_effect(tech_id, search_key, search_value_old, sear
 		return
 	end
 
-	local util = require("k2so-tweaks.util")
-
-	local old_effect = util.table.find_keyvalues(prototype.effects, { [search_key] = search_value_old })
+	local old_effect = util_table.find_keyvalues(prototype.effects, { [search_key] = search_value_old })
 	if (old_effect == nil) then
 		return
 	end
 
-	local new_effect = util.table.find_keyvalues(prototype.effects, { [search_key] = search_value_new })
+	local new_effect = util_table.find_keyvalues(prototype.effects, { [search_key] = search_value_new })
 	if (new_effect == nil) then
 		new_effect = table.deepcopy(old_effect)
 		new_effect[search_key] = search_value_new

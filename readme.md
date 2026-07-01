@@ -21,7 +21,6 @@ While mods update, it seems that K2 migration files have broken a lot of mods th
 - **Standardize Stack Sizes** (optional): Brings the stack sizes for any list optional dependency mod to be in line with K2's stack size defaults (200 for most items).
 - **Recycling Patches**: Some mods add new ways to generate base resources, such as rare ore or ice. This mod ensures that these new recipes don't cause base resources (ores, asteroid chunk results) don't recycle into exotic modded planet resources. Improves compatibility with Metal and Stars, Vesta, probably others. This also tweaks some other recycling recipes from Automatic Train Painter and Moshine.
 - **Consistent Crafting Categories**: Ensures that Krastorio 2 advanced crafting machines have access to their non-upgraded base machine crafting categories. Modded planets often add new categories that Krastorio doesn't get updated to understand. This fixes it so you can always craft something in an Advanced Chemical Plant that a normal Chemical Plant can craft, as an example. Affects the advanced assembling machine, advanced chemical reactor, and advanced furnace.
-- **Backported Fixes** (K2SO 2.0 only): Backports fixes to the broken latest version from Factorio 2.1 to Factorio 2.0.
 
 ### Mod-Specific Changes
 
@@ -58,6 +57,7 @@ While mods update, it seems that K2 migration files have broken a lot of mods th
 
 #### [Krastorio 2: Spaced Out](https://mods.factorio.com/mod/Krastorio2-spaced-out)
 
+- **Backported Fixes** (K2SO 2.0.0 only): Backports fixes to the broken latest version from Factorio 2.1 to Factorio 2.0.
 - **Item Standardization**: Fixes incompatibilities between Crushing Industry, Moshine, Maraxis, and K2SO, which each try to switch which glass/sand is used, often in contradiction to one another. All mods will use a standard sand and glass. This is more comprehensive than some other attempts at this, and include minables such as Moshine's mixed ores and Maraxis' sand sources. Existing factories have their items automatically converted.
 - **Fluid Standardization**: Fixes redundancies with K2SO, Maraxsis, Muluna, and Paracelsin. Oxygen, Hydrogen, and Nitrogen are common now. Existing factories have their K2 fluids automatically converted.
 - (Optional) Additional Matter Recipes: Adds matter deconversion recipe for basic gases (oxygen, hydrogen, nitrogen). This is intended to make producing things like nitric acid on other planets more viable.
@@ -110,6 +110,7 @@ While mods update, it seems that K2 migration files have broken a lot of mods th
 #### [Pelagos](https://mods.factorio.com/mod/pelagos)
 
 - Brings stack sizes in line with Krastorio's defaults.
+- Adds a new technology and recipe to allow growing coconuts in greenhouses. Similar to Gleba's technology/recipe.
 - Updates Corrosive Rifle Magazines to fit in line with Krastorio's ammo. New name, icon, buffed damage (8 -> 10), increased magazine size (10 -> 30). Requires K2 rifle ammo instead of pistol ammo.
 - Updates the Heavy Gun Turret to fit in line with Krastorio's changes to turrets. Slightly buffed range (25 -> 28), more health (1200 -> 1500), somewhat slower firing rate (2 -> 3), better scaling with physical damage technologies (matches K2's gun turret scaling).
 - Allows Pelagos' landfill productivity research to affect Krastorio (and other modded) landfill recipes.

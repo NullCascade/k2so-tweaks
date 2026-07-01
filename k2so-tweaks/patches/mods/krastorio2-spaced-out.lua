@@ -145,6 +145,10 @@ local function fix_k2so2()
 	-- v2.0.6: Fixed that express underground belts produced lubricant instead of requiring it
 	util.recipe.remove_result("express-underground-belt", "fluid", "lubricant")
 	util.recipe.add_ingredient("express-underground-belt", "lubricant", 40, "fluid")
+
+	-- v2.0.9: Radar technology no longer requires chemical tech card
+	util.technology.remove_prerequisite("radar", "chemical-science-pack")
+	util.technology.remove_unit("radar", "chemical-science-pack")
 end
 
 function patch.on_data_updates()

@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.28.1
+Date: 2026-06-30
+  Changes:
+    - Backported another fix from Krastorio Spaced Out for Factorio 2.1:
+      - Radar technology no longer requires chemical tech card
+---------------------------------------------------------------------------------------------------
 Version: 1.28.0
 Date: 2026-06-30
   Changes:
