@@ -174,6 +174,16 @@ function util_technology.remove_prerequisite(id, prerequisite)
 end
 
 --- @param id string
+function util_technology.clear_prerequisites(id)
+	local tech_prototype = data.raw["technology"][id]
+	if (tech_prototype == nil) then
+		return
+	end
+
+	tech_prototype.prerequisites = nil
+end
+
+--- @param id string
 --- @param unit string
 function util_technology.remove_unit(id, unit)
 	local tech_prototype = data.raw["technology"][id]
@@ -185,6 +195,34 @@ function util_technology.remove_unit(id, unit)
 end
 
 --- @param id string
+--- @param prerequisite string
+function util_technology.add_prerequisite(id, prerequisite)
+	local tech_prototype = data.raw["technology"][id]
+	if (tech_prototype == nil) then
+		return
+	end
+
+	tech_prototype.prerequisites = tech_prototype.prerequisites or {}
+	util_table.insert_unique(tech_prototype.prerequisites, prerequisite)
+end
+
+--- @param id string
+--- @param unit string
+--- @param amount number?
+function util_technology.add_unit(id, unit, amount)
+	local tech_prototype = data.raw["technology"][id]
+	if (tech_prototype == nil or tech_prototype.unit == nil) then
+		return
+	end
+
+	if (util_table.get_index_with_keyvalue(tech_prototype.unit.ingredients, 1, unit)) then
+		return
+	end
+
+	table.insert(tech_prototype.unit.ingredients, { unit, amount or 1 })
+end
+
+--- @param id string
 --- @param hidden boolean
 function util_technology.set_hidden(id, hidden)
 	local prototype = data.raw["technology"][id]
@@ -193,6 +231,24 @@ function util_technology.set_hidden(id, hidden)
 	end
 
 	prototype.hidden = hidden
+	prototype.hidden_in_factoriopedia = hidden
+end
+
+--- @param id string
+--- @param item string
+--- @param count integer?
+function util_technology.set_craft_item_trigger(id, item, count)
+	local prototype = data.raw["technology"][id]
+	if (prototype == nil) then
+		return
+	end
+
+	prototype.unit = nil
+	prototype.research_trigger = {
+		type = "craft-item",
+		item = item,
+		count = count or 1,
+	}
 end
 
 --- @param tech_id string

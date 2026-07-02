@@ -6,6 +6,12 @@ local limitation_strings = {
 	effectivity = "efficiency-module-not-allowed",
 }
 
+--- @param recipe_name string
+--- @return boolean
+function util_recipe.exists(recipe_name)
+	return data.raw["recipe"][recipe_name] ~= nil
+end
+
 --- Allows the use of a module by a given recipe.
 --- @param module string The substring name for the module.
 --- @param recipe_name string The id of the recipe.
@@ -211,6 +217,27 @@ function util_recipe.remove_result(recipe, type, name)
 	util_table.remove_value(recipe_prototype.results, result)
 end
 
+--- Adds or replaces a result in a recipe.
+--- @param recipe_name string
+--- @param old_result_name string
+--- @param result data.ProductPrototype
+function util_recipe.add_or_replace_result(recipe_name, old_result_name, result)
+	local recipe = data.raw["recipe"][recipe_name]
+	if (not recipe) then
+		return
+	end
+
+	recipe.results = recipe.results or {}
+
+	local _, result_index = util_recipe.find_result(recipe_name, old_result_name, result.type)
+	if (result_index) then
+		recipe.results[result_index] = result
+		return
+	end
+
+	table.insert(recipe.results, result)
+end
+
 --- @param recipe_name string
 --- @param category string
 function util_recipe.set_category(recipe_name, category)
@@ -269,6 +296,42 @@ function util_recipe.set_hidden(id, hidden)
 	end
 
 	prototype.hidden = hidden
+	prototype.hidden_in_factoriopedia = hidden
+end
+
+--- @param id string
+--- @param hidden boolean
+function util_recipe.set_hidden_in_factoriopedia(id, hidden)
+	local prototype = data.raw["recipe"][id]
+	if (prototype == nil) then
+		return
+	end
+
+	prototype.hidden_in_factoriopedia = hidden
+end
+
+--- @param id string
+--- @param subgroup string
+--- @param order string
+function util_recipe.set_subgroup_order(id, subgroup, order)
+	local prototype = data.raw["recipe"][id]
+	if (prototype == nil) then
+		return
+	end
+
+	prototype.subgroup = subgroup
+	prototype.order = order
+end
+
+--- @param id string
+--- @param localised_name LocalisedString
+function util_recipe.set_localised_name(id, localised_name)
+	local prototype = data.raw["recipe"][id]
+	if (prototype == nil) then
+		return
+	end
+
+	prototype.localised_name = localised_name
 end
 
 --- @param type string

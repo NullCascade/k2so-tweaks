@@ -4,6 +4,13 @@ local mod_prefix = "nulls-k2so-"
 local settings = {
 	{
 		type = "bool-setting",
+		name = mod_prefix .. "backport-K2SO-features",
+		setting_type = "startup",
+		default_value = true,
+		order = "1-backport-k2so-features",
+	},
+	{
+		type = "bool-setting",
 		name = mod_prefix .. "expanded-alternate-recipes",
 		setting_type = "startup",
 		default_value = true,

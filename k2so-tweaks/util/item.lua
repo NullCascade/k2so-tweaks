@@ -1,5 +1,11 @@
 local util_item = {}
 
+--- @param name string
+--- @return boolean
+function util_item.exists(name)
+	return data.raw["item"][name] ~= nil
+end
+
 --- @param old string
 --- @param new string
 function util_item.replace_all(old, new)
@@ -28,6 +34,18 @@ function util_item.replace_all(old, new)
 		old_entity.spoil_result = new
 		old_entity.spoil_ticks = 1
 	end
+end
+
+--- @param name string
+--- @param hidden boolean
+function util_item.set_hidden(name, hidden)
+	local prototype = data.raw["item"][name]
+	if (prototype == nil) then
+		return
+	end
+
+	prototype.hidden = hidden
+	prototype.hidden_in_factoriopedia = hidden
 end
 
 --- @param type_name string
