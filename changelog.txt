@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.2.1
+Date: 2026-07-01
+  Changes:
+    - This version is synced with 1.27.3. No functional changes. This version only exists to fix up the mod portal not supporting branches.
+---------------------------------------------------------------------------------------------------
 Version: 2.2.0
 Date: 2026-06-30
   Changes:
@@ -30,6 +35,25 @@ Date: 2026-06-28
   Changes:
     - This version is synced with 1.26.0.
     - Updated for Factorio 2.1. Tons of mods are still not updated, and things are still probably broken. Consider this the unstable beta for the unstable beta that it is.
+---------------------------------------------------------------------------------------------------
+Version: 1.29.0
+Date: 2026-0-01
+  Changes:
+    - Added a startup setting to backport newer Krastorio 2 Spaced Out for Factorio 2.1 updates when running K2SO 2.0.0 or lower. Backported Krastorio 2 Spaced Out updates:
+      - Added geothermal power from lava on Vulcanus.
+      - Added imersite productivity research.
+      - Updated Muluna tree unification for the tree-01 recipe.
+      - Allowed the Age of Production quantum assembler to craft tech cards.
+      - Updated map generation ordering for imersite, rare metals, and mineral water.
+      - Removed organic crafting from assembling machine 1.
+      - Fixed AAI Loaders and AAI Industry compatibility for K2SO loader progression, hidden labs/loaders, burner lab research triggers, and early science prerequisites.
+      - Hid obsolete water recipes and fixed dirty water filtering to return water instead of creating loops.
+      - Increased K2 energy storage throughput to 20 MW.
+    - Updated existing K2SO 2.0.0 fixes:
+      - Restored the Welcome to the jungle trigger and recipe unlocks after K2SO final fixes.
+      - Moved crash landing lab science inputs to final fixes so later K2SO changes do not overwrite them.
+      - Corrected the efficiency module 3 spoilage ingredient amount.
+      - Radar technology no longer requires chemical tech card.
 ---------------------------------------------------------------------------------------------------
 Version: 1.28.0
 Date: 2026-06-30
