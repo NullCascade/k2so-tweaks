@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.3.0
+Date: 2026-07-04
+  Changes:
+    - This version is synced with 1.30.0. See earlier changelog version for details.
+---------------------------------------------------------------------------------------------------
 Version: 2.2.1
 Date: 2026-07-01
   Changes:
@@ -36,8 +41,24 @@ Date: 2026-06-28
     - This version is synced with 1.26.0.
     - Updated for Factorio 2.1. Tons of mods are still not updated, and things are still probably broken. Consider this the unstable beta for the unstable beta that it is.
 ---------------------------------------------------------------------------------------------------
+Version: 1.30.0
+Date: 2026-07-04
+  Changes:
+    - Updated existing K2SO 2.0.0 fixes:
+      - Recyclers require steel instead of rare metals once again
+      - Personal roboport mk2 can support up to 50 bots
+    - Expanded the optional additional matter recipes patch:
+      - Carnova: Added matter conversion to/from bones and lymph.
+      - Paracelsin: Added matter conversion from sphalerite and tetrahedrite to matter, and matter conversion to/from vaterite.
+      - Corrundum: Added matter conversion to/from chalcopyrite ore and platinum ore. Calcite from matter can now be crafted on Corrundum.
+      - Rubia: Added matter conversion to/from ferric scrap, cupric scrap, and bacterial sludge.
+      - Cerys: Added matter conversion to/from methane ice and nitrogen-rich minerals, and nuclear scrap to matter. Also allowed lithium brine from matter on Cerys.
+      - Frozeta: Added spaceship scrap to matter.
+      - Hyarion: Added matter conversion to/from raw emeralds, raw rubies, and raw sapphires. Quartz from matter can now be crafted on Hyarion.
+      - Arig: Gold ore matter recipes can now be crafted on Arig.
+---------------------------------------------------------------------------------------------------
 Version: 1.29.0
-Date: 2026-0-01
+Date: 2026-07-01
   Changes:
     - Added a startup setting to backport newer Krastorio 2 Spaced Out for Factorio 2.1 updates when running K2SO 2.0.0 or lower. Backported Krastorio 2 Spaced Out updates:
       - Added geothermal power from lava on Vulcanus.
