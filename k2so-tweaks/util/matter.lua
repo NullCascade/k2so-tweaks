@@ -13,6 +13,33 @@ end
 --- @param entity_id string
 --- @param entity_amount number
 --- @param matter_amount number
+function util_matter.make_conversion_recipe(technology_id, entity_type, entity_id, entity_amount, matter_amount)
+	local util = require("k2so-tweaks.util")
+
+	if (data.raw[entity_type][entity_id] == nil) then
+		util.log("Cannot make conversion matter recipe. '%s/%s' does not exist.", entity_id, entity_type)
+		return
+	end
+
+	if (data.raw["technology"][technology_id] == nil) then
+		util.log("Technology '%s' does not exist when creating matter conversion for '%s/%s'.", technology_id, entity_id, entity_type)
+		return
+	end
+
+	local matter_lib = util_matter.get_matter_library()
+	matter_lib.make_conversion_recipe({
+		material = { type = entity_type, name = entity_id, amount = entity_amount },
+		matter_count = matter_amount,
+		energy_required = 2,
+		unlocked_by = technology_id,
+	})
+end
+
+--- @param technology_id string
+--- @param entity_type string
+--- @param entity_id string
+--- @param entity_amount number
+--- @param matter_amount number
 function util_matter.make_recipes(technology_id, entity_type, entity_id, entity_amount, matter_amount)
 	local util = require("k2so-tweaks.util")
 

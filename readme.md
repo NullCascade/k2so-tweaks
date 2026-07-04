@@ -32,12 +32,14 @@ While mods update, it seems that K2 migration files have broken a lot of mods th
 
 - Allows crushing bones and fossils in the Krastorio crusher. This only applies to the basic recipe that the normal assembling machine could use.
 - Brings stack sizes in line with Krastorio's defaults.
+- (Optional) Additional Matter Recipes: Adds matter conversion to/from bones and lymph.
 
 #### [Cerys](https://mods.factorio.com/mod/Cerys-Moon-of-Fulgora)
 
 - Fixes ammunition crafting categories.
 - Brings stack sizes in line with Krastorio's defaults.
 - Allows the placement of K2SO's interplanetary teleporter on the surface.
+- (Optional) Additional Matter Recipes: Adds matter conversion to/from methane ice and nitrogen-rich minerals, and nuclear scrap to matter. Also allows lithium brine from matter on Cerys.
 
 #### [Corrundum](https://mods.factorio.com/mod/corrundum)
 
@@ -45,6 +47,7 @@ While mods update, it seems that K2 migration files have broken a lot of mods th
 - Pipe productivity affects K2 steel pipes, Lignumis gold pipes, and Paracelsin zinc pipes.
 - Steam turbine productivity affects K2 advanced turbines, Muluna condensing turbines, and Maraxsis oversized turbines.
 - Brings stack sizes in line with Krastorio's defaults.
+- (Optional) Additional Matter Recipes: Adds matter conversion to/from chalcopyrite ore and platinum ore, and allows calcite from matter on Corrundum.
 
 #### [Crushing Industry](https://mods.factorio.com/mod/crushing-industry)
 
@@ -76,7 +79,7 @@ While mods update, it seems that K2 migration files have broken a lot of mods th
 
 - Allows Krastorio 2's greenhouses to work on the planet.
 - Adds a direct casting recipe for gold cable.
-- (Optional) Additional Matter Recipes: Adds matter conversion to/from peat and gold ore.
+- (Optional) Additional Matter Recipes: Adds matter conversion to/from peat and gold ore. Gold ore matter recipes are also available on Arig.
 
 #### [Maraxsis](https://mods.factorio.com/mod/maraxsis)
 
@@ -106,6 +109,7 @@ While mods update, it seems that K2 migration files have broken a lot of mods th
 
 - If xyrc's mod is installed, and its electrochemical plant changes are active, the electrochemical plant will also benefit from the crafting category consistency changes this mod makes.
 - Brings stack sizes in line with Krastorio's defaults.
+- (Optional) Additional Matter Recipes: Adds matter conversion from sphalerite and tetrahedrite to matter, and matter conversion to/from vaterite.
 
 #### [Pelagos](https://mods.factorio.com/mod/pelagos)
 
@@ -132,7 +136,13 @@ While mods update, it seems that K2 migration files have broken a lot of mods th
 - Rebalanced the Ruby Laser Turret with K2's values in mind.
 - **Crushing Industry**: Allow bismuth asteroids to be crushed in basic crushers.
 - Brings stack sizes in line with Krastorio's defaults.
+- (Optional) Additional Matter Recipes: Adds matter conversion to/from raw emeralds, raw rubies, and raw sapphires, and allows quartz from matter on Hyarion.
 
 #### [Rubia](https://mods.factorio.com/mod/rubia)
 
 - Makes K2SO's railgun turrets deal Rubia's kinetic damage instead of physical damage.
+- (Optional) Additional Matter Recipes: Adds matter conversion to/from ferric scrap, cupric scrap, and bacterial sludge.
+
+#### [Secretas & Frozeta](https://mods.factorio.com/mod/secretas)
+
+- (Optional) Additional Matter Recipes: Adds spaceship scrap to matter on Frozeta.
