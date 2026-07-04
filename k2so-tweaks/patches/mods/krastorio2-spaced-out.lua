@@ -260,6 +260,15 @@ local function fix_k2so2()
 	-- v2.0.9: Radar technology no longer requires chemical tech card
 	util.technology.remove_prerequisite("radar", "chemical-science-pack")
 	util.technology.remove_unit("radar", "chemical-science-pack")
+
+	-- v2.0.10: Recyclers require steel instead of rare metals once again
+	util.recipe.replace_ingredient_in_place("recycler", "kr-rare-metals", "steel-plate", "item")
+
+	-- v2.0.10: Personal roboport mk2 can support up to 50 bots
+	local personal_roboport_mk2 = data.raw["roboport-equipment"]["personal-roboport-mk2-equipment"]
+	if (personal_roboport_mk2 and personal_roboport_mk2.robot_limit < 50) then
+		personal_roboport_mk2.robot_limit = 50
+	end
 end
 
 --- Backport K2SO v2.0.2-v2.0.9 non-graphical prototype updates for K2SO 2.0.0 and lower.
