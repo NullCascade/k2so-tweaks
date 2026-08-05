@@ -109,7 +109,7 @@ function patch.on_data()
 		{
 			type = "recipe",
 			name = "k2sotweak-arig-glass-panel-direct",
-			icons = util.graphics.create_dual_icon("item", "glass", "fluid", "planetaris-pure-sand"),
+			icons = util.graphics.create_dual_icon("item", "kr-glass", "fluid", "planetaris-pure-sand"),
 			category = "metallurgy",
 			energy_required = 3,
 			ingredients = {
