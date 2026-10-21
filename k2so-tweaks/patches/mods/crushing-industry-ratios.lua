@@ -43,6 +43,7 @@ local util = require("k2so-tweaks.util")
 local patch = util.patch.new_patch("mod-crushing-industry-ratios")
 patch:add_required_mod("crushing-industry")
 patch:add_required_startup_setting_equal("nulls-k2so-crushing-industry-ratios", true)
+patch:add_required_startup_setting_equal("crushing-industry-ore", true) -- crushed iron and copper ores exist only with this
 
 function patch.on_data()
 	-- Enriched crushed iron
