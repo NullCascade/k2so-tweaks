@@ -42,6 +42,9 @@ end
 function patch.on_data_final_fixes()
 	-- Lignumis seems perfectly legit for greenhouses.
     util.surface.relax_conditions_for_planet("assembling-machine", "kr-greenhouse", "lignumis")
+
+    -- It also has plenty of oxygen in the atmosphere.
+    util.surface.relax_conditions_for_planet("recipe", "kr-oxygen", "lignumis")
 end
 
 return patch
