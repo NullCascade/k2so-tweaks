@@ -13,52 +13,15 @@ local util = require("k2so-tweaks.util")
 local patch = util.patch.new_patch("mod-crushing-industry")
 patch:add_required_mod("crushing-industry")
 
-local recipes_to_modify = {
-	"crushed-ore-smelting-productivity-1",
-	"crushed-ore-smelting-productivity-2",
-	"crushed-ore-smelting-productivity-3",
-	"molten-crushed-ore-productivity",
+local smelting_recipes = {
+	"kr-iron-plate-from-enriched-iron",
+	"kr-copper-plate-from-enriched-copper",
 }
 
-local recipe_extensions = {
-	["crushed-iron-smelting"] = { "kr-iron-plate-from-enriched-iron" },
-	["crushed-copper-smelting"] = { "kr-copper-plate-from-enriched-copper" },
-	["molten-iron"] = { "molten-enriched-iron" },
-	["molten-copper"] = { "molten-enriched-copper" },
+local molten_recipes = {
+	"molten-enriched-iron",
+	"molten-enriched-copper",
 }
-
---- @param name string
-local function handle_technology(name)
-	local prototype = data.raw["technology"][name]
-	if (prototype == nil) then
-		return
-	end
-
-	local effects_to_add = {}
-	for _, effect in ipairs(prototype.effects or {}) do
-		if (effect.type == "change-recipe-productivity") then
-			for _, recipe in ipairs(recipe_extensions[effect.recipe] or {}) do
-				if (data.raw["recipe"][recipe]) then
-					local to_add = table.deepcopy(effect)
-					to_add.recipe = recipe
-					table.insert(effects_to_add, to_add)
-				else
-					util.log("WARNING: Productivity research cloning failed. No recipe '%s' exists.", recipe)
-				end
-			end
-		end
-	end
-
-	if (#effects_to_add > 0) then
-		util.log("Extending bonus for enriched productivity to technology '%s'.", name)
-	end
-
-	for _, effect in ipairs(effects_to_add) do
-		if (not util.technology.has_effect(name, effect)) then
-			table.insert(prototype.effects, effect)
-		end
-	end
-end
 
 --- Modified from Krastorio 2's data_util library.
 --- @param name string
@@ -97,8 +60,15 @@ function patch.on_data_final_fixes()
 	util.recipe.add_additional_category("scrap-asteroid-crushing", "basic-crushing")
 
 	-- Add productivity for K2SO enriched ores in crushing industry.
-	for _, name in ipairs(recipes_to_modify) do
-		handle_technology(name)
+	if (CrushingIndustry) then
+		for _, tech_name in ipairs(smelting_recipes) do
+			CrushingIndustry.add_smelting_productivity(tech_name)
+		end
+		for _, tech_name in ipairs(molten_recipes) do
+			CrushingIndustry.add_molten_productivity(tech_name)
+		end
+	else
+		util.log("Could not find CrushingIndustry API!")
 	end
 end
 
