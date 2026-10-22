@@ -420,6 +420,26 @@ local function backport_k2so2_features_on_data_final_fixes()
 	end
 end
 
+local function set_roboport_logistics_radius_min(id, min)
+	local roboport = data.raw["roboport"][id]
+	if (roboport == nil) then
+		return
+	end
+
+	if (roboport.logistics_radius >= min) then
+		return
+	end
+
+	roboport.logistics_radius = min
+end
+
+local function fix_k2_roboport_repair_packs()
+	set_roboport_logistics_radius_min("roboport-construction-mode", 1)
+	set_roboport_logistics_radius_min("kr-small-roboport-construction-mode", 1)
+	set_roboport_logistics_radius_min("kr-big-roboport-construction-mode", 1)
+	set_roboport_logistics_radius_min("ee-super-roboport-construction-mode", 1)
+end
+
 function patch.on_data_final_fixes()
 	backport_k2so2_fixes_on_data_final_fixes()
 	backport_k2so2_features_on_data_final_fixes()
@@ -428,6 +448,7 @@ function patch.on_data_final_fixes()
 	add_new_recipes()
 	unrestrict_teleporter()
 	standardize_asteroid_resistances()
+	fix_k2_roboport_repair_packs()
 end
 
 return patch
