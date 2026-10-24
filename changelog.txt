@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.3.2
+Date: 2026-10-24
+  Changes:
+    - Crushing Industry: Fix/improve compatibility with potentially changed recipe names.
+    - Lignumis: Added oxygen collection from Lignumis' atmosphere.
+    - Krastorio 2: Fix an issue with construction-mode roboports not supplying their own internal buffer of items, making repair packs leak endlessly into the system. K2 dev claims this is a vanilla bug and is thus unlikely to implement this workaround themselves.
+    - Maraxis Classic: Improved compatibility.
+---------------------------------------------------------------------------------------------------
 Version: 2.3.1
 Date: 2026-08-05
   Changes:
